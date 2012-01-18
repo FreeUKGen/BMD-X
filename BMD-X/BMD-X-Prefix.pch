@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'BMD-X' target in the 'BMD-X' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

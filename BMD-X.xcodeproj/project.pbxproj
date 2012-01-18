@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAC94DAA14C6EE0200407CF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC94DA914C6EE0200407CF4 /* Cocoa.framework */; };
+		AAC94DB414C6EE0200407CF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DB214C6EE0200407CF4 /* InfoPlist.strings */; };
+		AAC94DB714C6EE0200407CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC94DB614C6EE0200407CF4 /* main.m */; };
+		AAC94DBA14C6EE0200407CF4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DB814C6EE0200407CF4 /* Credits.rtf */; };
+		AAC94DBD14C6EE0200407CF4 /* BMDDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC94DBC14C6EE0200407CF4 /* BMDDocument.m */; };
+		AAC94DC014C6EE0200407CF4 /* BMDDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DBE14C6EE0200407CF4 /* BMDDocument.xib */; };
+		AAC94DC314C6EE0200407CF4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DC114C6EE0200407CF4 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AAC94DA514C6EE0200407CF4 /* BMD-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMD-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAC94DA914C6EE0200407CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AAC94DAC14C6EE0200407CF4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AAC94DAD14C6EE0200407CF4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AAC94DAE14C6EE0200407CF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AAC94DB114C6EE0200407CF4 /* BMD-X-Info.plist */ = {isa = PBXFileReference; path = "BMD-X-Info.plist"; sourceTree = "<group>"; };
+		AAC94DB314C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AAC94DB514C6EE0200407CF4 /* BMD-X-Prefix.pch */ = {isa = PBXFileReference; path = "BMD-X-Prefix.pch"; sourceTree = "<group>"; };
+		AAC94DB614C6EE0200407CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AAC94DB914C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AAC94DBB14C6EE0200407CF4 /* BMDDocument.h */ = {isa = PBXFileReference; path = BMDDocument.h; sourceTree = "<group>"; };
+		AAC94DBC14C6EE0200407CF4 /* BMDDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDDocument.m; sourceTree = "<group>"; };
+		AAC94DBF14C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BMDDocument.xib; sourceTree = "<group>"; };
+		AAC94DC214C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAC94DA214C6EE0200407CF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAC94DAA14C6EE0200407CF4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAC94D9A14C6EE0200407CF4 = {
+			isa = PBXGroup;
+			children = (
+				AAC94DAF14C6EE0200407CF4 /* BMD-X */,
+				AAC94DA814C6EE0200407CF4 /* Frameworks */,
+				AAC94DA614C6EE0200407CF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAC94DA614C6EE0200407CF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAC94DA514C6EE0200407CF4 /* BMD-X.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAC94DA814C6EE0200407CF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAC94DA914C6EE0200407CF4 /* Cocoa.framework */,
+				AAC94DAB14C6EE0200407CF4 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAC94DAB14C6EE0200407CF4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAC94DAC14C6EE0200407CF4 /* AppKit.framework */,
+				AAC94DAD14C6EE0200407CF4 /* CoreData.framework */,
+				AAC94DAE14C6EE0200407CF4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		AAC94DAF14C6EE0200407CF4 /* BMD-X */ = {
+			isa = PBXGroup;
+			children = (
+				AAC94DBB14C6EE0200407CF4 /* BMDDocument.h */,
+				AAC94DBC14C6EE0200407CF4 /* BMDDocument.m */,
+				AAC94DBE14C6EE0200407CF4 /* BMDDocument.xib */,
+				AAC94DC114C6EE0200407CF4 /* MainMenu.xib */,
+				AAC94DB014C6EE0200407CF4 /* Supporting Files */,
+			);
+			path = "BMD-X";
+			sourceTree = "<group>";
+		};
+		AAC94DB014C6EE0200407CF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAC94DB114C6EE0200407CF4 /* BMD-X-Info.plist */,
+				AAC94DB214C6EE0200407CF4 /* InfoPlist.strings */,
+				AAC94DB514C6EE0200407CF4 /* BMD-X-Prefix.pch */,
+				AAC94DB614C6EE0200407CF4 /* main.m */,
+				AAC94DB814C6EE0200407CF4 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAC94DA414C6EE0200407CF4 /* BMD-X */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAC94DC614C6EE0200407CF4 /* Build configuration list for PBXNativeTarget "BMD-X" */;
+			buildPhases = (
+				AAC94DA114C6EE0200407CF4 /* Sources */,
+				AAC94DA214C6EE0200407CF4 /* Frameworks */,
+				AAC94DA314C6EE0200407CF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BMD-X";
+			productName = "BMD-X";
+			productReference = AAC94DA514C6EE0200407CF4 /* BMD-X.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAC94D9C14C6EE0200407CF4 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = AAC94D9F14C6EE0200407CF4 /* Build configuration list for PBXProject "BMD-X" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AAC94D9A14C6EE0200407CF4;
+			productRefGroup = AAC94DA614C6EE0200407CF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAC94DA414C6EE0200407CF4 /* BMD-X */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAC94DA314C6EE0200407CF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAC94DB414C6EE0200407CF4 /* InfoPlist.strings in Resources */,
+				AAC94DBA14C6EE0200407CF4 /* Credits.rtf in Resources */,
+				AAC94DC014C6EE0200407CF4 /* BMDDocument.xib in Resources */,
+				AAC94DC314C6EE0200407CF4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAC94DA114C6EE0200407CF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAC94DB714C6EE0200407CF4 /* main.m in Sources */,
+				AAC94DBD14C6EE0200407CF4 /* BMDDocument.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AAC94DB214C6EE0200407CF4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAC94DB314C6EE0200407CF4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AAC94DB814C6EE0200407CF4 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAC94DB914C6EE0200407CF4 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		AAC94DBE14C6EE0200407CF4 /* BMDDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAC94DBF14C6EE0200407CF4 /* en */,
+			);
+			name = BMDDocument.xib;
+			sourceTree = "<group>";
+		};
+		AAC94DC114C6EE0200407CF4 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAC94DC214C6EE0200407CF4 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAC94DC414C6EE0200407CF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AAC94DC514C6EE0200407CF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AAC94DC714C6EE0200407CF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BMD-X/BMD-X-Prefix.pch";
+				INFOPLIST_FILE = "BMD-X/BMD-X-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AAC94DC814C6EE0200407CF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BMD-X/BMD-X-Prefix.pch";
+				INFOPLIST_FILE = "BMD-X/BMD-X-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAC94D9F14C6EE0200407CF4 /* Build configuration list for PBXProject "BMD-X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAC94DC414C6EE0200407CF4 /* Debug */,
+				AAC94DC514C6EE0200407CF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAC94DC614C6EE0200407CF4 /* Build configuration list for PBXNativeTarget "BMD-X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAC94DC714C6EE0200407CF4 /* Debug */,
+				AAC94DC814C6EE0200407CF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAC94D9C14C6EE0200407CF4 /* Project object */;
+}
