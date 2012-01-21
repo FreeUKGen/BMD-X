@@ -22,12 +22,12 @@
 		AAC94DAC14C6EE0200407CF4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		AAC94DAD14C6EE0200407CF4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AAC94DAE14C6EE0200407CF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		AAC94DB114C6EE0200407CF4 /* BMD-X-Info.plist */ = {isa = PBXFileReference; path = "BMD-X-Info.plist"; sourceTree = "<group>"; };
+		AAC94DB114C6EE0200407CF4 /* BMD-X-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BMD-X-Info.plist"; sourceTree = "<group>"; };
 		AAC94DB314C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AAC94DB514C6EE0200407CF4 /* BMD-X-Prefix.pch */ = {isa = PBXFileReference; path = "BMD-X-Prefix.pch"; sourceTree = "<group>"; };
+		AAC94DB514C6EE0200407CF4 /* BMD-X-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BMD-X-Prefix.pch"; sourceTree = "<group>"; };
 		AAC94DB614C6EE0200407CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAC94DB914C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		AAC94DBB14C6EE0200407CF4 /* BMDDocument.h */ = {isa = PBXFileReference; path = BMDDocument.h; sourceTree = "<group>"; };
+		AAC94DBB14C6EE0200407CF4 /* BMDDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDDocument.h; sourceTree = "<group>"; };
 		AAC94DBC14C6EE0200407CF4 /* BMDDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDDocument.m; sourceTree = "<group>"; };
 		AAC94DBF14C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BMDDocument.xib; sourceTree = "<group>"; };
 		AAC94DC214C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
