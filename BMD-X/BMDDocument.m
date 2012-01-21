@@ -23,11 +23,37 @@
     return self;
 }
 
+- (IBAction)textFieldAction:(id)sender {
+    [self.windowForSheet selectKeyViewFollowingView:sender];
+}
 
+- (void)controlTextDidEndEditing:(NSNotification *)aNotification
+{
+    if ([[[aNotification userInfo] valueForKey:@"NSTextMovement"] intValue] == NSTabTextMovement)
+        NSLog( @"got the tab message" );
+    
+}
+- (void)textDidEndEditing:(NSNotification *)aNotification
+{
+    if ([[[aNotification userInfo] valueForKey:@"NSTextMovement"] intValue] == NSTabTextMovement)
+        NSLog( @"got the tab message" );
+    
+}
 
 - (NSAttributedString *) string { return [[mString retain] autorelease]; }
 
-
+- (IBAction)setSurNameLock:(id)sender {
+    if ( [msLockedBtn state] == NSOnState ) {
+        [msPageFld setNextKeyView:msFirstnameFld];
+        if ( [msSurnameFld currentEditor] )
+            [self.windowForSheet makeFirstResponder:msFirstnameFld];
+            
+    }
+    else
+        [msPageFld setNextKeyView:msSurnameFld];
+    
+    
+}
 
 - (void) setString: (NSAttributedString *) newValue {
     

@@ -9,7 +9,15 @@
 #import <Cocoa/Cocoa.h>
 
 @interface BMDDocument : NSDocument {
+
+    IBOutlet	NSTextField*            msSurnameFld;
+    IBOutlet	NSTextField*            msFirstnameFld;
+    IBOutlet	NSTextField*            msPageFld;
     
+    IBOutlet	NSButton*               msLockedBtn;
+
+    
+
     IBOutlet	NSTextField*            pageFieldSolo;
     IBOutlet	NSTextField*            yearField;
     IBOutlet	NSTextField*			pageField;
@@ -40,6 +48,8 @@
 
 - (void) setString: (NSAttributedString *) value;
 
+
+- (IBAction)setSurNameLock:(id)sender;
 
 - (IBAction)sendBreak:(id)sender;
 - (IBAction)startPage:(id)sender;
