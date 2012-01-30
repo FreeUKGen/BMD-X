@@ -1,0 +1,692 @@
+Aberayron,11b
+Abergavenny,11a
+Aberystwyth,11b
+Abingdon,2c
+Alcester,6d
+Alderbury,5a
+Alnwick,10b
+Alresford,2c
+Alston,10b
+Alton,2c
+Altrincham,8a
+Alverstoke,2b
+Amersham,3a
+Amesbury,5a
+Ampthill,3b
+Andover,2c
+Anglesey,11b
+Ashbourne,7b
+Ashby de la Zouch,7a
+Ashton under Lyne,8d
+Askrigg,9d
+Aston,6d
+Atcham,6a
+Atherstone,6d
+Auckland,10a
+Axbridge,5c
+Axminster,5b
+Aylesbury,3a
+Aylsham,4b
+Aysgarth,9d
+Bakewell,7b
+Bala,11b
+Banbury,3a
+Bangor,11b
+Barnet,3a
+Barnsley,9c
+Barnstaple,5b
+Barrow in Furness,8e
+Barrow upon Soar,7a
+Barton upon Irwell,8c
+Barton Regis,6a
+Basford,7b
+Basingstoke,2c
+Bath,5c
+Battle,2b
+Beaminster,5a
+Bedale,9d
+Bedford,3b
+Bedminster,5c
+Bedwelty,11a
+Belford,10b
+Bellingham,10b
+Belper,7b
+Berkhampstead,3a
+Bermondsey,1d
+Berwick,10b
+Bethnal Green,1c
+Beverley,9d
+Bicester,3a
+Bideford,5b
+Biggleswade,3b
+Billericay,4a
+Billesdon,7a
+Bingham,7b
+Birkenhead,8a
+Birmingham,6d
+Birmingham North,6d
+Birmingham South,6d
+Bishops Stortford,3a
+Blaby,7a
+Blackburn,8e
+Blandford,5a
+Blean,2a
+Blofield,4b
+Blything,4a
+Bodmin,5c
+Bolton,8c
+Bootle,10b
+Bosmere,4a
+Boston,7a
+Bourne,7a
+Brackley,3b
+Bradfield,2c
+Bradford upon Avon,5a
+Bradford,9b
+Braintree,4a
+Bramham,9c
+Bramley,9b
+Brampton,10b
+Brecknock,11b
+Brentford,3a
+Bridge,2a
+Bridgend,11a
+Bridgnorth,6a
+Bridgwater,5c
+Bridlington,9d
+Bridport,5a
+Brighton,2b
+Bristol,6a
+Brixworth,3b
+Bromley,2a
+Bromsgrove,6c
+Bromyard,6a
+Buckingham,3a
+Bucklow,8a
+Builth,11b
+Burnley,8e
+Burton upon Trent,6b
+Bury,8c
+Bury St Edmunds,4a
+Caistor,7a
+Calne,5a
+Camberwell,1d
+Cambridge,3b
+Camelford,5c
+Cannock,6b
+Canterbury,2a
+Cardiff,11a
+Cardigan,11b
+Carlisle,10b
+Carmarthen,11a
+Carnarvon,11b
+Castleford,9c
+Castle Ward,10b
+Catherington,2c
+Caxton,3b
+Chapel en le Frith,7b
+Chard,5c
+Cheadle,6b
+Chelmsford,4a
+Chelsea,1a
+Cheltenham,6a
+Chepstow,11a
+Chertsey,2a
+Chester,8a
+Chester le Street,10a
+Chesterfield,7b
+Chesterton,3b
+Chichester,2b
+Chippenham,5a
+Chipping Norton,3a
+Chipping Sodbury,6a
+Chorley,8e
+Chorlton,8c
+Christchurch,2b
+Church Stretton,6a
+Cirencester,6a
+City of London,1c
+City of Westminster,1a
+Cleobury Mortimer,6a
+Clerkenwell,1b
+Clifton,6a
+Clitheroe,8e
+Clun,6a
+Clutton,5c
+Cockermouth,10b
+Colchester,4a
+Congleton,8a
+Conway,11b
+Cookham,2c
+Corwen,11b
+Cosford,4a
+Coventry,6d
+Cranbrook,2a
+Crediton,5b
+Crickhowell,11b
+Cricklade,5a
+Croydon,2a
+Cuckfield,2b
+Darlington,10a
+Dartford,2a
+Daventry,3b
+Depwade,4b
+Derby,7b
+Devizes,5a
+Devonport,5b
+Dewsbury,9b
+Docking,4b
+Dolgelly,11b
+Doncaster,9c
+Dorchester,5a
+Dorking,2a
+Dover,2a
+Downham,4b
+Driffield,9d
+Droitwich,6c
+Droxford,2c
+Dudley,6c
+Dulverton,5c
+Dunmow,4a
+Durham,10a
+Dursley,6a
+Easington,10a
+Easingwold,9d
+East Ashford,2a
+Eastbourne,2b
+East Grinstead,2b
+Easthampstead,2c
+East London,1c
+East Preston,2b
+East Retford,7b
+Eastry,2a
+East Stonehouse,5b
+East Ward,10b
+Ecclesall Bierlow,9c
+Edmonton,3a
+Elham,2a
+Ellesmere,6a
+Ely,3b
+Epping,4a
+Epsom,2a
+Erpingham,4b
+Eton,3a
+Evesham,6c
+Exeter,5b
+Falmouth,5c
+Fareham,2b
+Faringdon,2c
+Farnborough,2a
+Farnham,2a
+Faversham,2a
+Ffestiniog,11b
+Flegg,4b
+Foleshill,6d
+Forden,11b
+Fordingbridge,2b
+Forehoe,4b
+Freebridge Lynn,4b
+Frome,5c
+Fulham,1a
+Fylde,8e
+Gainsborough,7a
+Garstang,8e
+Gateshead,10a
+Glanford Brigg,7a
+Glendale,10b
+Glossop,7b
+Gloucester,6a
+Godstone,2a
+Goole,9c
+Gower,11a
+Grantham,7a
+Gravesend,2a
+Great Boughton,8a
+Great Ouseburn,9a
+Greenwich,1d
+Grimsby,7a
+Guildford,2a
+Guiltcross,4b
+Guisborough,9d
+Hackney,1b
+Hailsham,2b
+Halifax,9a
+Halstead,4a
+Haltwhistle,10b
+Hambledon,2a
+Hammersmith,1a
+Hampstead,1a
+Hardingstone,3b
+Hartismere,4a
+Hartlepool,10a
+Hartley Wintney,2c
+Haslingden,8e
+Hastings,2b
+Hatfield,3a
+Havant,2b
+Haverfordwest,11a
+Hawarden,11b
+Hay,11b
+Hayfield,7b
+Headington,3a
+Helmsley,9d
+Helston,5c
+Hemel Hempstead,3a
+Hemsworth,9c
+Hendon,3a
+Henley,3a
+Henstead,4b
+Hereford,6a
+Hertford,3a
+Hexham,10b
+Highworth,5a
+Hinckley,7a
+Hitchin,3a
+Holbeach,7a
+Holbeck,9b
+Holborn,1b
+Hollingbourne,2a
+Holsworthy,5b
+Holyhead,11b
+Holywell,11b
+Honiton,5b
+Hoo,2a
+Horncastle,7a
+Horsham,2b
+Houghton le Spring,10a
+Howden,9d
+Hoxne,4a
+Huddersfield,9a
+Hull,9d
+Hungerford,2c
+Hunslet,9b
+Huntingdon,3b
+Ipswich,4a
+Isle of Wight,2b
+Islington,1b
+Keighley,9a
+Kendal,10b
+Kensington,1a
+Kettering,3b
+Keynsham,5c
+Kidderminster,6c
+Kingsbridge,5b
+Kingsclere,2c
+Kings Lynn,4b
+Kings Norton,6c
+Kingston,2a
+Kington,6a
+Kirk Deighton,9a
+Kirkstall,9b
+Knaresborough,9a
+Knighton,11b
+Lambeth,1d
+Lampeter,11b
+Lancaster,8e
+Lanchester,10a
+Langport,5c
+Launceston,5c
+Ledbury,6a
+Leeds,9b
+Leeds North,9b
+Leeds South,9b
+Leek,6b
+Leicester,7a
+Leigh,8c
+Leighton Buzzard,3b
+Leominster,6a
+Lewes,2b
+Lewisham,1d
+Lexden,4a
+Leyburn,9d
+Lichfield,6b
+Lincoln,7a
+Linton,3b
+Liskeard,5c
+Liverpool,8b
+Liverpool North,8b
+Liverpool South,8b
+Llandilofawr,11a
+Llandovery,11a
+Llanelly,11a
+Llanfyllin,11b
+Llanrwst,11b
+Loddon,4b
+London City,1c
+Long Ashton,5c
+Longtown,10b
+Loughborough,7a
+Louth,7a
+Ludlow,6a
+Lunesdale,8e
+Luton,3b
+Lutterworth,7a
+Lymington,2b
+Macclesfield,8a
+Machynlleth,11b
+Madeley,6a
+Maidenhead,2c
+Maidstone,2a
+Maldon,4a
+Malling,2a
+Malmesbury,5a
+Malton,9d
+Manchester,8d
+Manchester North,8d
+Manchester South,8d
+Mansfield,7b
+Market Bosworth,7a
+Market Drayton,6a
+Market Harborough,7a
+Marlborough,5a
+Martley,6c
+Marylebone,1a
+Medway,2a
+Melksham,5a
+Melton Mowbray,7a
+Mere,5a
+Meriden,6d
+Merthyr Tydfil,11a
+Middlesbrough,9d
+Midhurst,2b
+Mildenhall,4a
+Mile End Old Town,1c
+Milton,2a
+Mitford,4b
+Monmouth,11a
+Montgomery,11b
+Morpeth,10b
+Mutford,4a
+Nantwich,8a
+Narberth,11a
+Neath,11a
+Newark,7b
+Newbury,2c
+Newcastle in Emlyn,11b
+Newcastle under Lyme,6b
+Newcastle upon Tyne,10b
+Newent,6a
+New Forest,2b
+Newhaven,2b
+Newington,1d
+Newmarket,3b
+Newport M,11a
+Newport S,6a
+Newport Pagnell,3a
+Newton Abbot,5b
+Newtown,11b
+Northallerton,9d
+Northampton,3b
+North Aylesford,2a
+Northleach,6a
+Northwich,8a
+North Bierley,9b
+North Witchford,3b
+Norwich,4b
+Nottingham,7b
+Nuneaton,6d
+Oakham,7a
+Okehampton,5b
+Oldham,8d
+Ongar,4a
+Ormskirk,8b
+Orsett,4a
+Oswestry,6a
+Otley,9a
+Oundle,3b
+Oxford,3a
+Paddington,1a
+Pancras,1b
+Pateley Bridge,9a
+Patrington,9d
+Pembroke,11a
+Penkridge,6b
+Penrith,10b
+Penzance,5c
+Pershore,6c
+Peterborough,3b
+Petersfield,2c
+Petworth,2b
+Pewsey,5a
+Pickering,9d
+Plomesgate,4a
+Plymouth,5b
+Plympton St Mary,5b
+Pocklington,9d
+Pontardawe,11a
+Pontefract,9c
+Pontypool,11a
+Pontypridd,11a
+Poole,5a
+Poplar,1c
+Portsea Island,2b
+Portsmouth,2b
+Potterspury,3b
+Prescot,8b
+Presteigne,11b
+Preston,8e
+Prestwich,8d
+Pwllheli,11b
+Radford,7b
+Reading,2c
+Redruth,5c
+Reeth,9d
+Reigate,2a
+Rhayader,11b
+Richmond Sry,2a
+Richmond Yk,9d
+Ringwood,2b
+Ripon,9a
+Risbridge,4a
+Rochdale,8e
+Rochford,4a
+Romford,4a
+Romney Marsh,2a
+Romsey,2c
+Ross,6a
+Rothbury,10b
+Rotherham,9c
+Rotherhithe,1d
+Royston,3a
+Rugby,6d
+Runcorn,8a
+Ruthin,11b
+Rye,2b
+Saddleworth,9a
+Saffron Walden,4a
+Salford,8d
+Salisbury,5a
+Samford,4a
+Scarborough,9d
+Scilly Isles,5c
+Sculcoates,9d
+Sedburgh,9a
+Sedgefield,10a
+Selby,9c
+Settle,9a
+Sevenoaks,2a
+Shaftesbury,5a
+Shardlow,7b
+Sheffield,9c
+Sheppey,2a
+Shepton Mallet,5c
+Sherborne,5a
+Shifnal,6a
+Shipston on Stour,6d
+Shoreditch,1c
+Shrewsbury,6a
+Skipton,9a
+Skirlaugh,9d
+Sleaford,7a
+Smallburgh,4b
+Solihull,6d
+Southam,6d
+Southampton,2c
+South Molton,5b
+South Shields,10a
+South Stoneham,2c
+Southwark,1d
+Southwell,7b
+Spalding,7a
+Spilsby,7a
+St Albans,3a
+St Asaph,11b
+St Austell,5c
+St Columb,5c
+St Faiths,4b
+St George Hanover Square,1a
+St George in the East,1c
+St George Southwark,1d
+St Germans,5c
+St Giles,1b
+St Ives,3b
+St James Westminster,1a
+St Luke,1b
+St Martin,1a
+St Martin in the Fields,1a
+St Marylebone,1a
+St Neots,3b
+St Olave Southwark,1d
+St Olave Bermondsey,1d
+St Pancras,1b
+St Saviour Southwark,1d
+St Thomas,5b
+Stafford,6b
+Staines,3a
+Stamford,7a
+Stepney,1c
+Steyning,2b
+Stockbridge,2c
+Stockport,8a
+Stockton,10a
+Stoke Damerel,5b
+Stoke upon Trent,6b
+Stoke and Wolstanton,6b
+Stokesley,9d
+Stone,6b
+Stourbridge,6c
+Stow,4a
+Stow on the Wold,6a
+Strand,1b
+Stratford upon Avon,6d
+Stratton,5c
+Strood,2a
+Stroud,6a
+Sturminster,5a
+Sudbury,4a
+Sunderland,10a
+Swaffham,4b
+Swansea,11a
+Swindon,5a
+Tadcaster,9c
+Tamworth,6b
+Taunton,5c
+Tavistock,5b
+Teesdale,10a
+Tenbury,6c
+Tendring,4a
+Tenterden,2a
+Tetbury,6a
+Tewkesbury,6a
+Thakeham,2b
+Thame,3a
+Thanet,2a
+Thetford,4b
+Thingoe,4a
+Thirsk,9d
+Thornbury,6a
+Thorne,9c
+Thrapston,3b
+Ticehurst,2b
+Tisbury,5a
+Tiverton,5b
+Todmorden,9a
+Torrington,5b
+Totnes,5b
+Towcester,3b
+Toxteth Park,8b
+Tregaron,11b
+Truro,5c
+Tunbridge,2a
+Tunstead,4b
+Tynemouth,10b
+Uckfield,2b
+Ulverston,8e
+Uppingham,7a
+Upton upon Severn,6c
+Uttoxeter,6b
+Uxbridge,3a
+Wakefield,9c
+Wallingford,2c
+Walsall,6b
+Walsingham,4b
+Wandsworth,1d
+Wangford,4a
+Wantage,2c
+Ware,3a
+Wareham,5a
+Warminster,5a
+Warrington,8c
+Warwick,6d
+Watford,3a
+Wayland,4b
+Weardale,10a
+Wellingborough,3b
+Wellington Som,5c
+Wellington Sal,6a
+Wells,5c
+Wem,6a
+Weobley,6a
+West Ashford,2a
+Westbourne,2b
+West Bromwich,6b
+Westbury,5a
+Westbury on Severn,6a
+West Derby,8b
+West Ham,4a
+Westhampnett,2b
+West London,1c
+Westminster,1a
+Westminster St Margaret,1a
+West Ward,10b
+Wetherby,9a
+Weymouth,5a
+Wharfedale,9a
+Wheatenhurst,6a
+Whitby,9d
+Whitchurch H,2c
+Whitchurch S,6a
+Whitechapel,1c
+Whitehaven,10b
+Whittlesey,3b
+Wigan,8c
+Wigton,10b
+Willesden,3a
+Williton,5c
+Wilton,5a
+Wimborne,5a
+Wincanton,5c
+Winchcomb,6a
+Winchester,2c
+Windsor,2c
+Winslow,3a
+Wirral,8a
+Wisbeach,3b
+Witham,4a
+Witney,3a
+Woburn,3b
+Wokingham,2c
+Wolstanton,6b
+Wolverhampton,6b
+Woodbridge,4a
+Woodstock,3a
+Woolwich,1d
+Worcester,6c
+Worksop,7b
+Worthing,2b
+Wortley,9c
+Wrexham,11b
+Wycombe,3a
+Yarmouth,4b
+Yeovil,5c
+York,9d

@@ -7,16 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "LockableText.h"
 
 @interface BMDDocument : NSDocument {
 
     IBOutlet	NSTextField*            msSurnameFld;
     IBOutlet	NSTextField*            msFirstnameFld;
+    IBOutlet	NSTextField*            msDistrictFld;
+    IBOutlet	NSTextField*            msVolumeFld;
     IBOutlet	NSTextField*            msPageFld;
     
     IBOutlet	NSButton*               msLockedBtn;
-
-    
+    IBOutlet	NSButton*               msCapsBtn;
 
     IBOutlet	NSTextField*            pageFieldSolo;
     IBOutlet	NSTextField*            yearField;
@@ -39,7 +41,7 @@
     IBOutlet	NSPanel*				mCommentWindow;
     IBOutlet	NSPanel*				mEntryWindow;
     IBOutlet	NSPanel*				mSourceWindow;
-    IBOutlet    NSTextView *textView;
+    IBOutlet    NSTextView*             textView;
     
     NSAttributedString *mString;
 @private
@@ -47,6 +49,7 @@
 - (NSAttributedString *) string;
 
 - (void) setString: (NSAttributedString *) value;
+- (void)textFieldClosing:(id)fieldOb;
 
 
 - (IBAction)setSurNameLock:(id)sender;
