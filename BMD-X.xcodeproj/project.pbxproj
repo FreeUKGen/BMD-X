@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		AA2C7CE314EBE3CC00856729 /* Disk Image */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AA2C7CE414EBE3CD00856729 /* Build configuration list for PBXAggregateTarget "Disk Image" */;
+			buildPhases = (
+				AA2C7CE714EBE3D400856729 /* ShellScript */,
+			);
+			dependencies = (
+				AA2C7CE914EBE40000856729 /* PBXTargetDependency */,
+			);
+			name = "Disk Image";
+			productName = "Disk Image";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		AA2B1BE314D262FD00FB6ECB /* BMDDIST.TXT in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1BDA14D262FD00FB6ECB /* BMDDIST.TXT */; };
 		AA2B1BE414D262FD00FB6ECB /* BMDDIST2.TXT in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1BDB14D262FD00FB6ECB /* BMDDIST2.TXT */; };
@@ -13,6 +28,11 @@
 		AA2B1BE714D262FD00FB6ECB /* BMDDISTOLD.TXT in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1BDF14D262FD00FB6ECB /* BMDDISTOLD.TXT */; };
 		AA2B1BE814D262FD00FB6ECB /* BMDDIST2OLD.TXT in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1BE014D262FD00FB6ECB /* BMDDIST2OLD.TXT */; };
 		AA2B1BEA14D262FD00FB6ECB /* BMDNAMEOLD.TXT in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1BE214D262FD00FB6ECB /* BMDNAMEOLD.TXT */; };
+		AA2C7CDD14EBD3E600856729 /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = AA2C7CDC14EBD3E600856729 /* Rakefile */; };
+		AA2C7CE014EBD4CF00856729 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = AA2C7CDF14EBD4CF00856729 /* Gemfile */; };
+		AA2C7CE214EBE3B300856729 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2C7CE114EBE3B300856729 /* icon.png */; };
+		AA2C7CEB14EBE57800856729 /* iconPack.icns in Resources */ = {isa = PBXBuildFile; fileRef = AA2C7CEA14EBE57800856729 /* iconPack.icns */; };
+		AA8DE5F814EBE9CC00C46806 /* BMD-X.dmg in Resources */ = {isa = PBXBuildFile; fileRef = AA8DE5F714EBE9CC00C46806 /* BMD-X.dmg */; };
 		AAC94DAA14C6EE0200407CF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC94DA914C6EE0200407CF4 /* Cocoa.framework */; };
 		AAC94DB414C6EE0200407CF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DB214C6EE0200407CF4 /* InfoPlist.strings */; };
 		AAC94DB714C6EE0200407CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC94DB614C6EE0200407CF4 /* main.m */; };
@@ -24,6 +44,16 @@
 		AAF3D29814EB67F8001DB689 /* NoSpaceTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF3D29714EB67F8001DB689 /* NoSpaceTextField.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AA2C7CE814EBE40000856729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC94D9C14C6EE0200407CF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAC94DA414C6EE0200407CF4;
+			remoteInfo = "BMD-X";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AA2B1BDA14D262FD00FB6ECB /* BMDDIST.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BMDDIST.TXT; sourceTree = "<group>"; };
 		AA2B1BDB14D262FD00FB6ECB /* BMDDIST2.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BMDDIST2.TXT; sourceTree = "<group>"; };
@@ -31,6 +61,11 @@
 		AA2B1BDF14D262FD00FB6ECB /* BMDDISTOLD.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BMDDISTOLD.TXT; sourceTree = "<group>"; };
 		AA2B1BE014D262FD00FB6ECB /* BMDDIST2OLD.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BMDDIST2OLD.TXT; sourceTree = "<group>"; };
 		AA2B1BE214D262FD00FB6ECB /* BMDNAMEOLD.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BMDNAMEOLD.TXT; sourceTree = "<group>"; };
+		AA2C7CDC14EBD3E600856729 /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = SOURCE_ROOT; };
+		AA2C7CDF14EBD4CF00856729 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = SOURCE_ROOT; };
+		AA2C7CE114EBE3B300856729 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		AA2C7CEA14EBE57800856729 /* iconPack.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = iconPack.icns; sourceTree = "<group>"; };
+		AA8DE5F714EBE9CC00C46806 /* BMD-X.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BMD-X.dmg"; sourceTree = "<group>"; };
 		AAC94DA514C6EE0200407CF4 /* BMD-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMD-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC94DA914C6EE0200407CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAC94DAC14C6EE0200407CF4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -84,9 +119,27 @@
 			path = old;
 			sourceTree = "<group>";
 		};
+		AA8DE5F514EBE9CC00C46806 /* appcast */ = {
+			isa = PBXGroup;
+			children = (
+				AA8DE5F614EBE9CC00C46806 /* build */,
+			);
+			path = appcast;
+			sourceTree = SOURCE_ROOT;
+		};
+		AA8DE5F614EBE9CC00C46806 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				AA8DE5F714EBE9CC00C46806 /* BMD-X.dmg */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
 		AAC94D9A14C6EE0200407CF4 = {
 			isa = PBXGroup;
 			children = (
+				AA2C7CEA14EBE57800856729 /* iconPack.icns */,
+				AA2C7CE114EBE3B300856729 /* icon.png */,
 				AAC94DAF14C6EE0200407CF4 /* BMD-X */,
 				AAC94DA814C6EE0200407CF4 /* Frameworks */,
 				AAC94DA614C6EE0200407CF4 /* Products */,
@@ -135,6 +188,9 @@
 		AAC94DB014C6EE0200407CF4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA8DE5F514EBE9CC00C46806 /* appcast */,
+				AA2C7CDC14EBD3E600856729 /* Rakefile */,
+				AA2C7CDF14EBD4CF00856729 /* Gemfile */,
 				AA2B1BD914D262FD00FB6ECB /* MacBMD Data */,
 				AAC94DB114C6EE0200407CF4 /* BMD-X-Info.plist */,
 				AAC94DB214C6EE0200407CF4 /* InfoPlist.strings */,
@@ -187,6 +243,7 @@
 			projectRoot = "";
 			targets = (
 				AAC94DA414C6EE0200407CF4 /* BMD-X */,
+				AA2C7CE314EBE3CC00856729 /* Disk Image */,
 			);
 		};
 /* End PBXProject section */
@@ -206,10 +263,31 @@
 				AA2B1BE714D262FD00FB6ECB /* BMDDISTOLD.TXT in Resources */,
 				AA2B1BE814D262FD00FB6ECB /* BMDDIST2OLD.TXT in Resources */,
 				AA2B1BEA14D262FD00FB6ECB /* BMDNAMEOLD.TXT in Resources */,
+				AA2C7CDD14EBD3E600856729 /* Rakefile in Resources */,
+				AA2C7CE014EBD4CF00856729 /* Gemfile in Resources */,
+				AA2C7CE214EBE3B300856729 /* icon.png in Resources */,
+				AA2C7CEB14EBE57800856729 /* iconPack.icns in Resources */,
+				AA8DE5F814EBE9CC00C46806 /* BMD-X.dmg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA2C7CE714EBE3D400856729 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd {$SRC_ROOT}\nrake dmg";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AAC94DA114C6EE0200407CF4 /* Sources */ = {
@@ -224,6 +302,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA2C7CE914EBE40000856729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAC94DA414C6EE0200407CF4 /* BMD-X */;
+			targetProxy = AA2C7CE814EBE40000856729 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AAC94DB214C6EE0200407CF4 /* InfoPlist.strings */ = {
@@ -261,6 +347,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AA2C7CE514EBE3CD00856729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA2C7CE614EBE3CD00856729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		AAC94DC414C6EE0200407CF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -326,6 +426,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AA2C7CE414EBE3CD00856729 /* Build configuration list for PBXAggregateTarget "Disk Image" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA2C7CE514EBE3CD00856729 /* Debug */,
+				AA2C7CE614EBE3CD00856729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AAC94D9F14C6EE0200407CF4 /* Build configuration list for PBXProject "BMD-X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
