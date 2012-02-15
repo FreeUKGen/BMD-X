@@ -1,0 +1,18 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.3)
+    awesome_print (0.2.1)
+    builder (2.1.2)
+    choctop (0.14.1)
+      RedCloth (= 4.2.3)
+      awesome_print (= 0.2.1)
+      builder (= 2.1.2)
+      escape (= 0.0.4)
+    escape (0.0.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  choctop
