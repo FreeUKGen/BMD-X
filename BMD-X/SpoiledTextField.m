@@ -19,22 +19,7 @@
     }
     return self;
 }
--(void)awakeFromNib
-{
 
-}
-
-- (BOOL)validateMenuItem:(NSMenuItem *)item {
-        
-    if ([item action] == @selector(zoomImageToFit) ) {
-        
-        return YES;
-        
-    }
-    
-    return YES;
-    
-}
 - (void)dealloc
 {
     [super dealloc];

@@ -8,6 +8,7 @@
 
 #import "BMDDocument.h"
 #import "SpoiledTextField.h"
+#import "NoSpaceTextField.h"
 
 @interface BMDDocument (Internals)
 
@@ -47,23 +48,104 @@
     return self;
 }
 
-- (IBAction)textFieldAction:(id)sender {
-}
-
 - (void)spareFieldClosing:(id)fieldOb {
-    
+    if (fieldOb == msMiddleNameFld) {
+        mMiddleNameOn = false;
+        mSpare1On = false;
+        mSpare2On = false;
+        mSpare3On = false;
+        mSpare4On = false;
+        [msMiddleNameFld setStringValue:@""];
+        [msMiddleNameFld setEnabled:false];
+        [msSpareFld1 setStringValue:@""];
+        [msSpareFld1 setEnabled:false];
+        [msSpareFld2 setStringValue:@""];
+        [msSpareFld2 setEnabled:false];
+        [msSpareFld3 setStringValue:@""];
+        [msSpareFld3 setEnabled:false];
+        [msSpareFld4 setStringValue:@""];
+        [msSpareFld4 setEnabled:false];
+        [mWindow makeFirstResponder:msDistrictFld];
+    }
+    else if (fieldOb == msSpareFld1) {
+        mSpare1On = false;
+        mSpare2On = false;
+        mSpare3On = false;
+        mSpare4On = false;
+        [msSpareFld1 setStringValue:@""];
+        [msSpareFld1 setEnabled:false];
+        [msSpareFld2 setStringValue:@""];
+        [msSpareFld2 setEnabled:false];
+        [msSpareFld3 setStringValue:@""];
+        [msSpareFld3 setEnabled:false];
+        [msSpareFld4 setStringValue:@""];
+        [msSpareFld4 setEnabled:false];
+        [mWindow makeFirstResponder:msDistrictFld];
+    }
+    else if (fieldOb == msSpareFld2) {
+        mSpare2On = false;
+        mSpare3On = false;
+        mSpare4On = false;
+        [msSpareFld2 setStringValue:@""];
+        [msSpareFld2 setEnabled:false];
+        [msSpareFld3 setStringValue:@""];
+        [msSpareFld3 setEnabled:false];
+        [msSpareFld4 setStringValue:@""];
+        [msSpareFld4 setEnabled:false];
+        [mWindow makeFirstResponder:msDistrictFld];
+    }
+    else if (fieldOb == msSpareFld3) {
+        mSpare3On = false;
+        mSpare4On = false;
+        [msSpareFld3 setStringValue:@""];
+        [msSpareFld3 setEnabled:false];
+        [msSpareFld4 setStringValue:@""];
+        [msSpareFld4 setEnabled:false];
+        [mWindow makeFirstResponder:msDistrictFld];
+    }
+    else if (fieldOb == msSpareFld4) {
+        mSpare4On = false;
+        [msSpareFld4 setStringValue:@""];
+        [msSpareFld4 setEnabled:false];
+        [mWindow makeFirstResponder:msDistrictFld];
+    }
 }
 - (void)spareFieldOpening:(id)fieldOb {
-    
+    if (fieldOb == msFirstnameFld) {        
+        mMiddleNameOn = true;
+        [msMiddleNameFld setEnabled:true];
+        [self textFieldClosing:msFirstnameFld];
+    }
+    else if (fieldOb == msMiddleNameFld) {
+        mSpare1On = true;
+        [msSpareFld1 setEnabled:true];
+        [self textFieldClosing:msMiddleNameFld];
+    }
+    else if (fieldOb == msSpareFld1) {
+        mSpare2On = true;
+        [msSpareFld2 setEnabled:true];
+        [self textFieldClosing:msSpareFld1];
+    }
+    else if (fieldOb == msSpareFld2) {
+        mSpare3On = true;
+        [msSpareFld3 setEnabled:true];
+        [self textFieldClosing:msSpareFld2];
+    }
+    else if (fieldOb == msSpareFld3) {
+        mSpare4On = true;
+        [msSpareFld4 setEnabled:true];
+        [self textFieldClosing:msSpareFld3];
+    }
 }
+
 - (void)textFieldClosing:(id)fieldOb
-{
+{    
     NSArray *lines = [[[textView textStorage] mutableString] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];    
-    BOOL    emptyLine = false;
     
+    BOOL    emptyLine = false;
     if ( lines.count == 0 || [[lines objectAtIndex:(lines.count - 1)] isEqualToString:@""] )
         emptyLine = true;
-    
+
     if (fieldOb == msSurnameFld) {
         NSString*   surStr = [msSurnameFld stringValue];
         if ( [msCapsBtn state] == NSOnState )
@@ -172,23 +254,11 @@
 
 - (id)windowWillReturnFieldEditor:(NSWindow *)sender toObject:(id)client
 {
-    if ( msFirstnameFld == client ) {
+    if ( [client isKindOfClass:[CNoSpaceTextField class]] ) {
         [mFieldEditor setEditorParent:client];
         return mFieldEditor;
     }
     return nil;
-}
-
-- (BOOL)validateMenuItem:(NSMenuItem *)item {
-    
-    if ([item action] == @selector(zoomImageToFit) ) {
-        
-        return YES;
-        
-    }
-    
-    return YES;
-    
 }
 
 - (void)textFieldUnClosing:(id)fieldOb
@@ -206,42 +276,56 @@
         }
         else if (fieldOb == msFirstnameFld) {        
             srcStr = [NSString stringWithFormat:@"%@,", [msSurnameFld stringValue]];
+            [mWindow makeFirstResponder:msSurnameFld];
         }
         else if (fieldOb == msMiddleNameFld) {
             srcStr = [NSString stringWithFormat:@"%@,", [msFirstnameFld stringValue]];
+            [mWindow makeFirstResponder:msFirstnameFld];
         }
         else if (fieldOb == msSpareFld1) {
             srcStr = [NSString stringWithFormat:@"%@,", [msMiddleNameFld stringValue]];
+            [mWindow makeFirstResponder:msMiddleNameFld];
         }
         else if (fieldOb == msSpareFld2) {
             srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld1 stringValue]];
+            [mWindow makeFirstResponder:msSpareFld1];
         }
         else if (fieldOb == msSpareFld3) {
             srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld2 stringValue]];
+            [mWindow makeFirstResponder:msSpareFld2];
         }
         else if (fieldOb == msSpareFld4) {
             srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld3 stringValue]];
+            [mWindow makeFirstResponder:msSpareFld3];
         }
         else if (fieldOb == msDistrictFld) {
-            if ( mSpare4On )
+            if ( mSpare4On ) {
                 srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld4 stringValue]];
-            else if ( mSpare3On )
+                [mWindow makeFirstResponder:msSpareFld4];
+            } else if ( mSpare3On ) {
                 srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld3 stringValue]];
-            else if ( mSpare2On )
+                [mWindow makeFirstResponder:msSpareFld3];
+            } else if ( mSpare2On ) {
                 srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld2 stringValue]];
-            else if ( mSpare1On )
+                [mWindow makeFirstResponder:msSpareFld2];
+            } else if ( mSpare1On ) {
                 srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld1 stringValue]];
-            else if ( mMiddleNameOn )
+                [mWindow makeFirstResponder:msSpareFld1];
+            } else if ( mMiddleNameOn ) {
                 srcStr = [NSString stringWithFormat:@"%@,", [msMiddleNameFld stringValue]];
-            else
+                [mWindow makeFirstResponder:msMiddleNameFld];
+            } else {
                 srcStr = [NSString stringWithFormat:@"%@,", [msFirstnameFld stringValue]];
-            
+                [mWindow makeFirstResponder:msFirstnameFld];
+            }
         }
         else if (fieldOb == msVolumeFld) {        
             srcStr = [NSString stringWithFormat:@"%@,", [msDistrictFld stringValue]];
+            [mWindow makeFirstResponder:msDistrictFld];
         }
         else if (fieldOb == msPageFld){        
             srcStr = [NSString stringWithFormat:@"%@,", [msVolumeFld stringValue]];
+            [mWindow makeFirstResponder:msVolumeFld];
         }
         long        contLength = [[[textView textStorage] mutableString] length];
         NSRange     comSpot = [lastLine rangeOfString:srcStr options:NSBackwardsSearch];
@@ -411,44 +495,10 @@
     return data;    
 }
 
-//- (void) textDidChange: (NSNotification *) notification
-//{
-//    [self setString: [textView textStorage]];
-//    [mWindow setDocumentEdited:YES];
-//}
-
-//- (void)controlTextDidChange:(NSNotification *)aNotification
-//{
-//    [self setString: [textView textStorage]];
-//    [mWindow setDocumentEdited:YES];
-//    for (id key in [aNotification userInfo] ) {
-//        
-//        NSLog(@"key: %@, value: %@", key, [[aNotification userInfo] objectForKey:key]);
-//        
-//    }
-//    
-//
-//}
 - (void)sendText:(NSString*) aStr
 {
     [[[textView textStorage] mutableString] appendString: aStr];
 }
-
-//- (void)controlTextDidBeginEditing:(NSNotification *)aNotification
-//{
-//    if ( [aNotification object] == msSurnameFld ) {
-//        if ( [msLockedBtn state] == NSOnState )
-//        {
-//            [self textFieldClosing:msSurnameFld];
-//            [msFirstnameFld becomeFirstResponder];
-//        }
-//    }
-//}
-
-//- (void)controlTextDidEndEditing:(NSNotification *)aNotification
-//{
-//    [self getMessage:aNotification];    
-//}
 
 -(NSArray*)keyValuesForString:(NSString*)stStr
 {
