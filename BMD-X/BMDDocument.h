@@ -60,6 +60,7 @@
     NSMutableDictionary *mNameBook;
     NSString*     lastTypedString;
     CSpoiledTextField*  mFieldEditor;
+    BOOL mMarkedFlag;
     
 @private
 }

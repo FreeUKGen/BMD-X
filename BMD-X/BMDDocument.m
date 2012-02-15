@@ -31,6 +31,7 @@
             mSpare2On = false;
             mSpare3On = false;
             mSpare4On = false;
+            mMarkedFlag = false;
             mFieldEditor = [[CSpoiledTextField alloc] init];
             [mFieldEditor setParentDoc:self];
 
@@ -361,6 +362,8 @@
         if (mString) [mString release];
         mString = [newValue copy];
     }
+    mMarkedFlag = false;
+    [mWindow setDocumentEdited:false];
 }
 
 - (IBAction)sendBreak:(id)sender
@@ -495,9 +498,15 @@
     return data;    
 }
 
+- (BOOL)isDocumentEdited
+{
+    return mMarkedFlag;
+}
 - (void)sendText:(NSString*) aStr
 {
     [[[textView textStorage] mutableString] appendString: aStr];
+    mMarkedFlag = true;
+    [mWindow setDocumentEdited:true];
 }
 
 -(NSArray*)keyValuesForString:(NSString*)stStr
