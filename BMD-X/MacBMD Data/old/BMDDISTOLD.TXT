@@ -1,0 +1,694 @@
+Aberayron,XXVII
+Abergavenny,XXVI
+Aberystwyth,XXVII
+Abingdon,VI
+Alcester,XVI
+Alderbury,VIII
+Alnwick,XXV
+Alresford,VII
+Alston,XXV
+Alton,VII
+Altrincham,XIX
+Alverstoke,VII
+Amersham,VI
+Amesbury,VIII
+Ampthill,VI
+Andover,VII
+Anglesey,XXVII
+Ashbourne,XIX
+Ashby de la Z,XV
+Ashby de la Zouch,XV
+Ashton under Lyne,XX
+Askrigg,XXIV
+Aston,XVI
+Atcham,XVIII
+Atherstone,XVI
+Auckland,XXIV
+Axbridge,X
+Axminster,X
+Aylesbury,VI
+Aylsham,XIII
+Bakewell,XIX
+Bala,XXVII
+Banbury,XVI
+Bangor,XXVII
+Barnet,VI
+Barnsley,XXII
+Barnstaple,X
+Barrow upon Soar,XV
+Basford,XV
+Basingstoke,VII
+Bath,XI
+Battle,VII
+Beaminster,VIII
+Bedale,XXIV
+Bedford,VI
+Bedminster,XI
+Bedwelty,XXVI
+Belford,XXV
+Bellingham,XXV
+Belper,XIX
+Berkhampstead,VI
+Bermondsey,IV
+Berwick,XXV
+Bethnal Green,II
+Beverley,XXIII
+Bicester,XVI
+Bideford,X
+Biggleswade,VI
+Billericay,XII
+Billesdon,XV
+Bingham,XV
+Birmingham,XVI
+Bishop Stortford,VI
+Blaby,XV
+Blackburn,XXI
+Blandford,VIII
+Blean,V
+Blofield,XIII
+Blything,XIII
+Bodmin,IX
+Bolton,XXI
+Bootle,XXV
+Bosmere,XII
+Boston,XIV
+Bourne,XIV
+Bps Stortford,VI
+Brackley,XV
+Bradfield,VI
+Bradford on Avon,VIII
+Bradford Y,XXIII
+Bradford Yks,XXIII
+Braintree,XII
+Brampton,XXV
+Brecknock,XXVI
+Brentford,III
+Bridge,V
+Bridgend,XXVI
+Bridgnorth,XVIII
+Bridgwater,X
+Bridlington,XXIII
+Bridport,VIII
+Brighton,VII
+Bristol,XI
+Brixworth,XV
+Bromley,V
+Bromsgrove,XVIII
+Bromyard,XXVI
+Buckingham,VI
+Builth,XXVI
+Burnley,XXI
+Burton upon Trent,XVII
+Bury,XXI
+Bury St Edmonds,XIII
+Caernarvon,XXVII
+Caistor,XIV
+Calne,VIII
+Camberwell,IV
+Cambridge,XIV
+Camelford,IX
+Canterbury,V
+Cardiff,XXVI
+Cardigan,XXVII
+Carlisle,XXV
+Carmarthen,XXVI
+Castle Ward,XXV
+Catherington,VII
+Caxton,XIV
+Cerne,VIII
+Chapel en le Frith,XIX
+Chard,X
+Cheadle,XVII
+Chelmsford,XII
+Chelsea,III
+Cheltenham,XI
+Chepstow,XXVI
+Chertsey,IV
+Chester le Street,XXIV
+Chesterfield,XIX
+Chesterton,XIV
+Chichester,VII
+Chippenham,VIII
+Chipping Norton,XVI
+Chipping Sodbury,XI
+Chorley,XXI
+Chorlton,XX
+Christchurch,VIII
+Church Streetton,XVIII
+Cirencester,XI
+City of London,I
+City of Westminster,I
+Cleobury Mortimer,XVIII
+Clerkenwell,III
+Clifton,XI
+Clitheroe,XXI
+Clun,XVIII
+Clutton,XI
+Cockermouth,XXV
+Colchester,XII
+Congleton,XIX
+Conway,XXVII
+Cookham,VI
+Corwen,XXVII
+Cosford,XII
+Coventry,XVI
+Cranbrook,V
+Crediton,X
+Crickhowell,XXVI
+Cricklade,VIII
+Croydon,IV
+Cuckfield,VII
+Darlington,XXIV
+Dartford,V
+Daventry,XV
+Depwade,XIII
+Derby,XIX
+Devizes,VIII
+Dewsbury,XXII
+Docking,XIII
+Dolgelly,XXVII
+Doncaster,XXII
+Dorchester,VIII
+Dorking,IV
+Dover,V
+Downham,XIII
+Driffield,XXIII
+Droitwich,XVIII
+Droxford,VII
+Dudley,XVIII
+Dulverton,X
+Dunmow,XII
+Durham,XXIV
+Dursley,XI
+Easington,XXIV
+Easingwold,XXIV
+East Ashford,V
+East Grinstead,VII
+East London,II
+East Retford,XV
+East Stonehouse,IX
+East Ward,XXV
+Eastbourne,VII
+Easthampstead,VI
+Eastry,V
+Ecclesall Bierlow,XXII
+Ecclesfield,XXII
+Edmonton,III
+Elham,V
+Ellesmere,XVIII
+Ely,XIV
+Epping,XII
+Epsom,IV
+Erpingham,XIII
+Eton,VI
+Evesham,XVIII
+Exeter,X
+Falmouth,IX
+Fareham,VII
+Faringdon,VI
+Farnboro,IV
+Farnborough,IV
+Farnham,IV
+Faversham,V
+Ffestiniog,XXVII
+Flegg,XIII
+Foleshill,XVI
+Fordingbridge,VIII
+Forehoe,XIII
+Freebridge Lynn,XIII
+Frome,X
+Fylde,XXI
+Gainsboro,XIV
+Gainsborough,XIV
+Garstang,XXI
+Gateshead,XXIV
+Glanford Brigg,XIV
+Glendale,XXV
+Gloster,XI
+Gloucester,XI
+Godstone,IV
+Goole,XXIII
+Gower,XXVI
+Grantham,XIV
+Gravesend,V
+Great Boughton,XIX
+Greenwich,V
+Guildford,IV
+Guiltcross,XIII
+Guisboro,XXIV
+Guisborough,XXIV
+Hackney,III
+Hailsham,VII
+Halifax,XXII
+Halstead,XII
+Haltwhistle,XXV
+Hambledon,IV
+Hampstead,III
+Hardingstone,XV
+Hartismere,XIII
+Hartley Wintney,VII
+Haslingden,XXI
+Hastings,VII
+Hatfield,VI
+Havant,VII
+Haverfordwest,XXVI
+Hay,XXVI
+Hayfield,XIX
+Headington,XVI
+Helmsley,XXIV
+Helston,IX
+Hemel Hempstead,VI
+Hemsworth,XXII
+Hendon,III
+Henley,XVI
+Henstead,XIII
+Hereford,XXVI
+Hertford,VI
+Hexham,XXV
+Highworth,VIII
+Hinckley,XV
+Hingsdon,VII
+Hitchen,VI
+Holbeach,XIV
+Holborn,II
+Hollingbourne,V
+Holsworthy,IX
+Holywell,XXVII
+Honiton,X
+Hoo,V
+Horncastle,XIV
+Horsham,VII
+Houghton le Spr,XXIV
+Houghton le Spring,XXIV
+Howden,XXIII
+Hoxne,XIII
+Huddersfield,XXII
+Hull,XXII
+Hungerford,VI
+Hunslet,XXIII
+Huntingdon,XIV
+I of Wight,VIII
+Ipswich,XII
+Isle of Wight,VIII
+Islington,III
+Keighley,XXIII
+Kendal,XXV
+Kensington,III
+Kettering,XV
+Keynsham,XI
+Kidderminster,XVIII
+Kings Lynn,XIII
+Kings Norton,XVIII
+Kingsbridge,IX
+Kingsclere,VII
+Kingston,IV
+Knaresboro,XXIII
+Knaresborough,XXIII
+Knighton,XXVI
+Lambeth,IV
+Lampeter,XXVII
+Lancaster,XXI
+Langport,X
+Launceston,IX
+Ledbury,XXVI
+Leeds,XXIII
+Leek,XVII
+Leicester,XV
+Leigh,XXI
+Leighton B,VI
+Leighton Buzzard,VI
+Leominster,XXVI
+Lewes,VII
+Lewisham,V
+Lexden,XII
+Leyburn,XXIV
+Lichfield,XVII
+Lincoln,XIV
+Linton,XIV
+Liskeard,IX
+Liverpool,XX
+Llandilofawr,XXVI
+Llandovery,XXVI
+Llanelly,XXVI
+Llanfyllin,XXVII
+Llanrwst,XXVII
+Loddon,XIII
+London,II
+Longtown,XXV
+Loughboro,XV
+Loughborough,XV
+Louth,XIV
+Ludlow,XVIII
+Lunesdale,XXI
+Luton,VI
+Lutterworth,XV
+Lymington,VIII
+Macclesfield,XIX
+Machynlleth,XXVII
+Madeley,XVIII
+Maidstone,V
+Maldon,XII
+Malling,V
+Malmesbury,VIII
+Malton,XXIV
+Manchester,XX
+Mansfield,XV
+Market Bosworth,XV
+Market Drayton,XVIII
+Market Harborough,XV
+Marlboro,VIII
+Marlborough,VIII
+Martley,XVIII
+Marylebone,I
+Medway,V
+Melksham,VIII
+Melton Mowbray,XV
+Mere,VIII
+Meriden,XVI
+Merthyr Tydfil,XXVI
+Midhurst,VII
+Mildenhall,XIII
+Milton,V
+Mitford,XIII
+Mkt Bosworth,XV
+Mkt Drayton,XVIII
+Mkt Harborough,XV
+Monmouth,XXVI
+Montgomery,XXVII
+Morpeth,XXV
+Mutford,XIII
+N Aylesford,V
+N Witchford,XIV
+Nantwich,XIX
+Narberth,XXVI
+Neath,XXVI
+New Forest,VIII
+Newark,XV
+Newbury,VI
+Newcastle in Emlyn,XXVI
+Newcastle under Lyme,XVII
+Newcastle upon Tyne,XXV
+Newent,XI
+Newington St Mary,IV
+Newmarket,XIV
+Newport,XVIII
+Newport Mon,XXVI
+Newport Pagnell,VI
+Newton Abbott,X
+Newtown,XXVII
+North Aylesford,V
+North Witchford,XIV
+Northallerton,XXIV
+Northampton,XV
+Northleach,XI
+Northwich,XIX
+Norwich,XIII
+Nottingham,XV
+Nuneaton,XVI
+Oakham,XV
+Okehampton,X
+Oldham,XX
+Ongar,XII
+Ormskirk,XXI
+Orsett,XII
+Oswestry,XVIII
+Otley,XXIII
+Oundle,XV
+Oxford,XVI
+Pancras,I
+Pateley Bridge,XXIII
+Patrington,XXIII
+Pembroke,XXVI
+Penkridge,XVII
+Penrith,XXV
+Penzance,IX
+Pershore,XVIII
+Peterboro,XV
+Peterborough,XV
+Petersfield,VII
+Petworth,VII
+Pewsey,VIII
+Pickering,XXIV
+Plomesgate,XII
+Plymouth,IX
+Plympton St Mary,IX
+Pocklington,XXIII
+Pontefract,XXII
+Pontypool,XXVI
+Pontypridd,XXVI
+Poole,VIII
+Poplar,II
+Portsea Is,VII
+Portsea Island,VII
+Potterspury,XV
+Prescot,XX
+Presteigne,XXVI
+Preston,XXI
+Pwllheli,XXVII
+Radford,XV
+Reading,VI
+Redruth,IX
+Reeth,XXIV
+Reigate,IV
+Rhayder,XXVI
+Richmond,IV
+Richmond Y,XXIV
+Ringwood,VIII
+Ripon,XXIII
+Risbridge,XII
+Rochdale,XXI
+Rochford,XII
+Romford,XII
+Romney Marsh,V
+Romsey,VII
+Ross,XXVI
+Rothbury,XXV
+Rotherham,XXII
+Rotherhithe,IV
+Royston,VI
+Rugby,XVI
+Runcorn,XIX
+Ruthin,XXVII
+Rye,VII
+S Albans,VI
+S Asaph,XXVII
+S Austell,IX
+S Columb,IX
+S Faith,XIII
+S Geo East,II
+S Geo Han Sq,I
+S Geo Sthwk,IV
+S Germans,IX
+S Giles,I
+S Ives,XIV
+S James,I
+S Lukes,II
+S Martin,I
+S Marylebone,I
+S Neots,XIV
+S Olaves,IV
+S Pancras,I
+S Saviour,IV
+S Stoneham,VII
+S Thomas,X
+Saddleworth,XXIII
+Saffn Walden,XII
+Saffron Walden,XII
+Salford,XX
+Salisbury,VIII
+Samford,XII
+Scarboro,XXIV
+Scarborough,XXIV
+Scilly Islands,IX
+Sculcoates,XXII
+Sedbergh,XXIII
+Selby,XXIII
+Settle,XXIII
+Sevenoaks,V
+Shaftesbury,VIII
+Shardlow,XIX
+Sheffield,XXII
+Sheppey,V
+Shepton Mallet,X
+Sherborne,VIII
+Shifnal,XVIII
+Shipston on Stour,XI
+Shoreditch,II
+Shrewsbury,XVIII
+Skipton,XXIII
+Skirlaugh,XXII
+Sleaford,XIV
+Solihull,XVI
+South Molton,X
+South Shields,XXIV
+South Stoneham,VII
+Southam,XVI
+Southampton,VII
+Southwark,II
+Southwell,XV
+Spalding,XIV
+Spilsby,XIV
+St Albans,VI
+St Asaph,XXVII
+St Austell,IX
+St Columb,IX
+St Faith,XIII
+St Geo East,II
+St Geo Han Sq,I
+St Geo Sthwk,IV
+St Germans,IX
+St Giles,I
+St Ives,XIV
+St James,I
+St Lukes,II
+St Martin,I
+St Marylebone,I
+St Neots,XIV
+St Olaves,IV
+St Pancras,I
+St Saviour,IV
+St Thomas,X
+Stafford,XVII
+Staines,III
+Stamford,XIV
+Stepney,II
+Steyning,VII
+Stockbridge,VII
+Stockport,XIX
+Stockton,XXIV
+Stoke and Wolstanton,XVII
+Stoke Damerel,IX
+Stoke on Tt,XVII
+Stoke upon Trent,XVII
+Stokesley,XXIV
+Stone,XVII
+Stourbridge,XVIII
+Stow,XII
+Stow on Wold,XI
+Strand,I
+Stratford on A,XVI
+Stratford on Avon,XVI
+Stratton,IX
+Stroud,XI
+Sturminster,VIII
+Sudbury,XII
+Sunderland,XXIV
+Swaffham,XIII
+Swansea,XXVI
+Swindon,VIII
+Tadcaster,XXIII
+Tamworth,XVI
+Taunton,X
+Tavistock,IX
+Teesdale,XXIV
+Tenbury,XVIII
+Tendring,XII
+Tenterden,V
+Tetbury,XI
+Tewkesbury,XI
+Thakeham,VII
+Thame,XVI
+Thanet,V
+Thanet I of,V
+Thanet Isle of,V
+Thetford,XIII
+Thingoe,XIII
+Thirsk,XXIV
+Thornbury,XI
+Thorne,XXIII
+Thrapston,XV
+Ticehurst,VII
+Tisbury,VIII
+Tiverton,X
+Todmorden,XXI
+Torrington,X
+Totnes,IX
+Towcester,XV
+Tregaron,XXVII
+Truro,IX
+Tunbridge,V
+Tunstead,XIII
+Tynemouth,XXV
+Uckfield,VII
+Ulverston,XXV
+Uppingham,XV
+Upton on Severn,XVIII
+Uttoxeter,XVII
+Uxbridge,III
+W Ashford,V
+W Bromwich,XVIII
+W Derby,XX
+W Ham,XII
+W London,II
+W Ward,XXV
+Wakefield,XXII
+Wallingford,VI
+Walsall,XVII
+Walsingham,XIII
+Wandsworth,IV
+Wangford,XIII
+Wantage,VI
+Ware,VI
+Wareham,VIII
+Warminster,VIII
+Warrington,XX
+Warwick,XVI
+Watford,VI
+Wayland,XIII
+Weardale,XXIV
+Wellingboro,XV
+Wellingborough,XV
+Wellington,X
+Wellington,XVIII
+Wells,X
+Wem,XVIII
+Weobly,XXVI
+West Ashford,V
+West Bromwich,XVIII
+West Derby,XX
+West Ham,XII
+West London,II
+West Ward,XXV
+Westbourne,VII
+Westbury,VIII
+Westbury on Severn,XI
+Westhampnett,VII
+Westminster,I
+Weymouth,VIII
+Wheatenhurst,XI
+Whitby,XXIV
+Whitchurch,VII
+Whitchurch,XVIII
+Whitechapel,II
+Whitehaven,XXV
+Whittlesey,XIV
+Wigan,XXI
+Wigton,XXV
+Williton,X
+Wilton,VIII
+Wimborne,VIII
+Wincanton,X
+Winchcombe,XI
+Winchester,VII
+Windsor,VI
+Winslow,VI
+Wirrall,XIX
+Wisbech,XIV
+Witham,XII
+Witney,XVI
+Woburn,VI
+Wokingham,VI
+Wolstanton,XVII
+Wolverhampton,XVII
+Woodbridge,XII
+Woodstock,XVI
+Worcester,XVIII
+Worksop,XV
+Worsley,XX
+Worthing,VII
+Wortley,XXII
+Wrexham,XXVII
+Wycombe,VI
+Yarmouth,XIII
+Yeovil,X
+York,XXIII
