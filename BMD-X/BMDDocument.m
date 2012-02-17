@@ -9,6 +9,7 @@
 #import "BMDDocument.h"
 #import "SpoiledTextField.h"
 #import "NoSpaceTextField.h"
+#import "FormatType.h"
 
 @interface BMDDocument (Internals)
 
@@ -160,46 +161,55 @@
         [mWindow makeFirstResponder:msFirstnameFld];
     }
     else if (fieldOb == msFirstnameFld) {        
-        [self sendText:[NSString stringWithFormat:@"%@,", [msFirstnameFld stringValue]]];
+        [self sendText:[NSString stringWithFormat:@"%@ ", [msFirstnameFld stringValue]]];
         if ( mMiddleNameOn )
             [mWindow makeFirstResponder:msMiddleNameFld];
         else
             [mWindow makeFirstResponder:msDistrictFld];
     }
     else if (fieldOb == msMiddleNameFld) {
-        [self sendText:[NSString stringWithFormat:@"%@,", [msMiddleNameFld stringValue]]];
+        [self sendText:[NSString stringWithFormat:@"%@ ", [msMiddleNameFld stringValue]]];
         if ( mSpare1On )
             [mWindow makeFirstResponder:msSpareFld1];
         else
             [mWindow makeFirstResponder:msDistrictFld];
     }
     else if (fieldOb == msSpareFld1) {
-        [self sendText:[NSString stringWithFormat:@"%@,", [msSpareFld1 stringValue]]];
+        [self sendText:[NSString stringWithFormat:@"%@ ", [msSpareFld1 stringValue]]];
         if ( mSpare2On )
             [mWindow makeFirstResponder:msSpareFld2];
         else
             [mWindow makeFirstResponder:msDistrictFld];
     }
     else if (fieldOb == msSpareFld2) {
-        [self sendText:[NSString stringWithFormat:@"%@,", [msSpareFld2 stringValue]]];
+        [self sendText:[NSString stringWithFormat:@"%@ ", [msSpareFld2 stringValue]]];
         if ( mSpare3On )
             [mWindow makeFirstResponder:msSpareFld3];
         else
             [mWindow makeFirstResponder:msDistrictFld];
     }
     else if (fieldOb == msSpareFld3) {
-        [self sendText:[NSString stringWithFormat:@"%@,", [msSpareFld3 stringValue]]];
+        [self sendText:[NSString stringWithFormat:@"%@ ", [msSpareFld3 stringValue]]];
         if ( mSpare4On )
             [mWindow makeFirstResponder:msSpareFld4];
         else
             [mWindow makeFirstResponder:msDistrictFld];
     }
     else if (fieldOb == msSpareFld4) {
-        [self sendText:[NSString stringWithFormat:@"%@,", [msSpareFld4 stringValue]]];
+        [self sendText:[NSString stringWithFormat:@"%@ ", [msSpareFld4 stringValue]]];
         [mWindow makeFirstResponder:msDistrictFld];
     }
-    else if (fieldOb == msDistrictFld) {        
-        [self sendText:[NSString stringWithFormat:@"%@,", [msDistrictFld stringValue]]];
+    else if (fieldOb == msDistrictFld) {
+        NSString* srcStr;
+        long leng = [[[textView textStorage] mutableString] length];
+
+        if ( [[[textView textStorage] mutableString] characterAtIndex:leng - 1] != ',' )
+            srcStr = [NSString stringWithFormat:@",%@,", [msDistrictFld stringValue]];
+        else
+            srcStr = [NSString stringWithFormat:@"%@,", [msDistrictFld stringValue]];
+
+        [self sendText:[NSString stringWithFormat:@"%@", srcStr]];
+
         id val;
         if ( ( val = [mNameBook valueForKey:[msDistrictFld stringValue]] ) != NULL ) {
             [msVolumeFld setStringValue:val];
@@ -280,43 +290,44 @@
             [mWindow makeFirstResponder:msSurnameFld];
         }
         else if (fieldOb == msMiddleNameFld) {
-            srcStr = [NSString stringWithFormat:@"%@,", [msFirstnameFld stringValue]];
+            srcStr = [NSString stringWithFormat:@"%@ ", [msFirstnameFld stringValue]];
             [mWindow makeFirstResponder:msFirstnameFld];
         }
         else if (fieldOb == msSpareFld1) {
-            srcStr = [NSString stringWithFormat:@"%@,", [msMiddleNameFld stringValue]];
+            srcStr = [NSString stringWithFormat:@"%@ ", [msMiddleNameFld stringValue]];
             [mWindow makeFirstResponder:msMiddleNameFld];
         }
         else if (fieldOb == msSpareFld2) {
-            srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld1 stringValue]];
+            srcStr = [NSString stringWithFormat:@"%@ ", [msSpareFld1 stringValue]];
             [mWindow makeFirstResponder:msSpareFld1];
         }
         else if (fieldOb == msSpareFld3) {
-            srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld2 stringValue]];
+            srcStr = [NSString stringWithFormat:@"%@ ", [msSpareFld2 stringValue]];
             [mWindow makeFirstResponder:msSpareFld2];
         }
         else if (fieldOb == msSpareFld4) {
-            srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld3 stringValue]];
+            srcStr = [NSString stringWithFormat:@"%@ ", [msSpareFld3 stringValue]];
             [mWindow makeFirstResponder:msSpareFld3];
         }
         else if (fieldOb == msDistrictFld) {
-            if ( mSpare4On ) {
+            long leng = [[[textView textStorage] mutableString] length];
+            if ( [[[textView textStorage] mutableString] characterAtIndex:leng - 1] != ',' )
+                srcStr = [NSString stringWithFormat:@",%@,", [msSpareFld4 stringValue]];
+            else
                 srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld4 stringValue]];
+
+            
+            if ( mSpare4On ) {
                 [mWindow makeFirstResponder:msSpareFld4];
             } else if ( mSpare3On ) {
-                srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld3 stringValue]];
                 [mWindow makeFirstResponder:msSpareFld3];
             } else if ( mSpare2On ) {
-                srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld2 stringValue]];
                 [mWindow makeFirstResponder:msSpareFld2];
             } else if ( mSpare1On ) {
-                srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld1 stringValue]];
                 [mWindow makeFirstResponder:msSpareFld1];
             } else if ( mMiddleNameOn ) {
-                srcStr = [NSString stringWithFormat:@"%@,", [msMiddleNameFld stringValue]];
                 [mWindow makeFirstResponder:msMiddleNameFld];
             } else {
-                srcStr = [NSString stringWithFormat:@"%@,", [msFirstnameFld stringValue]];
                 [mWindow makeFirstResponder:msFirstnameFld];
             }
         }
@@ -404,7 +415,8 @@
     [dateFormatter setDateFormat:@"dd MMMM yyyy"];
     NSString* aStr = [dateFormatter stringFromDate:[dateField dateValue]];
 
-    NSMutableString* string = [NSMutableString stringWithFormat:@"+%@,%@,%@", [[[formatMenu selectedItem] title] substringToIndex:1], [yearField stringValue], [[quarterMenu selectedItem] title]];
+    NSString* formatCode = [CFormatType codeForTitle:[[formatMenu selectedItem] title]];
+    NSMutableString* string = [NSMutableString stringWithFormat:@"+%@,%@,%@", formatCode, [yearField stringValue], [[quarterMenu selectedItem] title]];
 
     if ( ! [[rangeField stringValue] isEqualToString:@""] )
         [string appendString:[NSString stringWithFormat:@",%@", [rangeField stringValue]]];
