@@ -234,6 +234,9 @@
 /* Begin PBXProject section */
 		AAC94D9C14C6EE0200407CF4 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = AAC94D9F14C6EE0200407CF4 /* Build configuration list for PBXProject "BMD-X" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
