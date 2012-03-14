@@ -3,3 +3,4 @@ source "http://rubygems.org"
 
 # gem "rails"
 gem 'choctop'
+gem 'hpricot'

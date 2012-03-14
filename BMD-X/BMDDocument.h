@@ -10,12 +10,14 @@
 #import "LockableText.h"
 
 @class CSpoiledTextField;
+@class AppDelegate;
+@class CLineItem;
 
 @interface BMDDocument : NSDocument {
 
     IBOutlet	NSTextField*            msSurnameFld;
     IBOutlet	NSTextField*            msFirstnameFld;
-    IBOutlet	NSComboBox*            msDistrictFld;
+    IBOutlet	NSTextField*            msDistrictFld;
     IBOutlet	NSTextField*            msVolumeFld;
     IBOutlet	NSTextField*            msPageFld;
     IBOutlet	NSTextField*            msMiddleNameFld;
@@ -29,6 +31,7 @@
     Boolean mSpare3On;
     Boolean mSpare4On;
     
+    IBOutlet	AppDelegate*               mAppDelegate;
     IBOutlet	NSButton*               msLockedBtn;
     IBOutlet	NSButton*               msCapsBtn;
 
@@ -58,9 +61,15 @@
     
     NSAttributedString *mString;
     NSMutableDictionary *mNameBook;
+    NSMutableArray* mFirstNameBook;
     NSString*     lastTypedString;
+    NSString*       mEnteredYear;
+    NSString*       mEnteredMonth;
+    
     CSpoiledTextField*  mFieldEditor;
     BOOL mMarkedFlag;
+    BOOL mAmDoingAutoComplete;
+    CLineItem *mLineItem;
     
 @private
 }
