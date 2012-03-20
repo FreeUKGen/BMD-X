@@ -173,7 +173,7 @@
 											<string key="NSFrameSize">{566, 14}</string>
 											<reference key="NSSuperview" ref="474589840"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="642554143"/>
+											<reference key="NSNextKeyView" ref="692576923"/>
 											<object class="NSTextContainer" key="NSTextContainer" id="415960298">
 												<object class="NSLayoutManager" key="NSLayoutManager">
 													<object class="NSTextStorage" key="NSTextStorage">
@@ -323,7 +323,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string key="NSFrame">{{-1, 184}, {583, 279}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="692576923"/>
+							<reference key="NSNextKeyView" ref="474589840"/>
 							<int key="NSsFlags">18</int>
 							<reference key="NSVScroller" ref="642554143"/>
 							<reference key="NSHScroller" ref="692576923"/>
@@ -357,7 +357,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string key="NSFrame">{{493, 10}, {68, 25}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="173228679">
 								<int key="NSCellFlags">-2080244224</int>
@@ -2258,70 +2257,6 @@ ci4KA</string>
 					<int key="connectionID">100314</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="338751817"/>
-					</object>
-					<int key="connectionID">100315</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="190586118"/>
-					</object>
-					<int key="connectionID">100316</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="75283762"/>
-					</object>
-					<int key="connectionID">100317</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="194165868"/>
-					</object>
-					<int key="connectionID">100320</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="883148857"/>
-					</object>
-					<int key="connectionID">100321</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="448238430"/>
-					</object>
-					<int key="connectionID">100322</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="18663994"/>
-					</object>
-					<int key="connectionID">100324</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="708256818"/>
-					</object>
-					<int key="connectionID">100330</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">msCapsBtn</string>
 						<reference key="source" ref="512844837"/>
@@ -2392,14 +2327,6 @@ ci4KA</string>
 						<reference key="destination" ref="186545392"/>
 					</object>
 					<int key="connectionID">100377</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">textFieldAction:</string>
-						<reference key="source" ref="512844837"/>
-						<reference key="destination" ref="601089720"/>
-					</object>
-					<int key="connectionID">100381</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">

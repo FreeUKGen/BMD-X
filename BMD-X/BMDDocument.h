@@ -12,9 +12,12 @@
 @class CSpoiledTextField;
 @class AppDelegate;
 @class CLineItem;
+@class CFieldJumper;
+
 
 @interface BMDDocument : NSDocument {
 
+@public
     IBOutlet	NSTextField*            msSurnameFld;
     IBOutlet	NSTextField*            msFirstnameFld;
     IBOutlet	NSTextField*            msDistrictFld;
@@ -25,12 +28,11 @@
     IBOutlet	NSTextField*            msSpareFld2;
     IBOutlet	NSTextField*            msSpareFld3;
     IBOutlet	NSTextField*            msSpareFld4;
-    Boolean mMiddleNameOn;
-    Boolean mSpare1On;
-    Boolean mSpare2On;
-    Boolean mSpare3On;
-    Boolean mSpare4On;
+    IBOutlet    NSWindow*               mWindow;
+
     
+@protected
+
     IBOutlet	AppDelegate*               mAppDelegate;
     IBOutlet	NSButton*               msLockedBtn;
     IBOutlet	NSButton*               msCapsBtn;
@@ -57,7 +59,6 @@
     IBOutlet	NSPanel*				mEntryWindow;
     IBOutlet	NSPanel*				mSourceWindow;
     IBOutlet    NSTextView*             textView;
-    IBOutlet    NSWindow*             mWindow;
     
     NSAttributedString *mString;
     NSMutableDictionary *mNameBook;
@@ -70,6 +71,7 @@
     BOOL mMarkedFlag;
     BOOL mAmDoingAutoComplete;
     CLineItem *mLineItem;
+    CFieldJumper*   mJumper;
     
 @private
 }

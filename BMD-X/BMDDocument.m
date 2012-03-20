@@ -12,6 +12,7 @@
 #import "FormatType.h"
 #import "CQuaterMonth.h"
 #import "CLineItem.h"
+#import "CFieldJumper.h"
 
 @interface BMDDocument (Internals)
 
@@ -29,19 +30,14 @@
         if (mString == nil) {
             mEnteredYear    = nil;
             mEnteredMonth   = nil;
-            mLineItem = [[CLineItem alloc] init];
             mString     = [[NSAttributedString alloc] initWithString:@""];
             mNameBook   = [[NSMutableDictionary alloc] init];
             mFirstNameBook   = [[NSMutableArray alloc] init];
-            mMiddleNameOn = false;
-            mSpare1On = false;
-            mSpare2On = false;
-            mSpare3On = false;
-            mSpare4On = false;
             mMarkedFlag = false;
             mFieldEditor = [[CSpoiledTextField alloc] init];
             [mFieldEditor setParentDoc:self];
 
+        
             NSString* filPath = [[NSBundle mainBundle] pathForResource:@"BMDNAME" ofType:@"TXT"];
             NSString *filesContent = [[NSString alloc] initWithContentsOfFile:filPath];
             NSArray *lines = [filesContent componentsSeparatedByString:@"\n"];
@@ -57,6 +53,13 @@
     }
     return self;
 }
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    mLineItem = [[CLineItem alloc] init];
+    mJumper = [[CFieldJumper alloc] init:self];
+}
 
 //- (void)controlTextDidChange:(NSNotification *)note {
 //    if ( [note object] == msFirstnameFld ) {
@@ -70,102 +73,47 @@
 //    }
 //}
 //
-- (void)spareFieldClosing:(id)fieldOb {
-    if (fieldOb == msMiddleNameFld) {
-        mMiddleNameOn = false;
-        mSpare1On = false;
-        mSpare2On = false;
-        mSpare3On = false;
-        mSpare4On = false;
-        [msMiddleNameFld setStringValue:@""];
-        [msMiddleNameFld setEnabled:false];
-        [msSpareFld1 setStringValue:@""];
-        [msSpareFld1 setEnabled:false];
-        [msSpareFld2 setStringValue:@""];
-        [msSpareFld2 setEnabled:false];
-        [msSpareFld3 setStringValue:@""];
-        [msSpareFld3 setEnabled:false];
-        [msSpareFld4 setStringValue:@""];
-        [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
-    }
-    else if (fieldOb == msSpareFld1) {
-        mSpare1On = false;
-        mSpare2On = false;
-        mSpare3On = false;
-        mSpare4On = false;
-        [msSpareFld1 setStringValue:@""];
-        [msSpareFld1 setEnabled:false];
-        [msSpareFld2 setStringValue:@""];
-        [msSpareFld2 setEnabled:false];
-        [msSpareFld3 setStringValue:@""];
-        [msSpareFld3 setEnabled:false];
-        [msSpareFld4 setStringValue:@""];
-        [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
-    }
-    else if (fieldOb == msSpareFld2) {
-        mSpare2On = false;
-        mSpare3On = false;
-        mSpare4On = false;
-        [msSpareFld2 setStringValue:@""];
-        [msSpareFld2 setEnabled:false];
-        [msSpareFld3 setStringValue:@""];
-        [msSpareFld3 setEnabled:false];
-        [msSpareFld4 setStringValue:@""];
-        [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
-    }
-    else if (fieldOb == msSpareFld3) {
-        mSpare3On = false;
-        mSpare4On = false;
-        [msSpareFld3 setStringValue:@""];
-        [msSpareFld3 setEnabled:false];
-        [msSpareFld4 setStringValue:@""];
-        [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
-    }
-    else if (fieldOb == msSpareFld4) {
-        mSpare4On = false;
-        [msSpareFld4 setStringValue:@""];
-        [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
+- (void)spareFieldClosing:(id)fieldOb
+{
+    switch ( [mJumper spareFieldClosing:fieldOb] )
+    {
+        case ( TEXT_EVENT_MIDDLENAME ):
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_2 ):
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_3 ):
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_4 ):
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_5 ):
+            break;
     }
 }
-- (void)spareFieldOpening:(id)fieldOb {
-    if (fieldOb == msFirstnameFld) {        
-        mMiddleNameOn = true;
-        [msMiddleNameFld setEnabled:true];
-        [self textFieldClosing:msFirstnameFld];
-    }
-    else if (fieldOb == msMiddleNameFld) {
-        mSpare1On = true;
-        [msSpareFld1 setEnabled:true];
-        [self textFieldClosing:msMiddleNameFld];
-    }
-    else if (fieldOb == msSpareFld1) {
-        mSpare2On = true;
-        [msSpareFld2 setEnabled:true];
-        [self textFieldClosing:msSpareFld1];
-    }
-    else if (fieldOb == msSpareFld2) {
-        mSpare3On = true;
-        [msSpareFld3 setEnabled:true];
-        [self textFieldClosing:msSpareFld2];
-    }
-    else if (fieldOb == msSpareFld3) {
-        mSpare4On = true;
-        [msSpareFld4 setEnabled:true];
-        [self textFieldClosing:msSpareFld3];
+    
+- (void)spareFieldOpening:(id)fieldOb
+{
+    switch ( [mJumper spareFieldOpening:fieldOb] )
+    {
+        case ( TEXT_EVENT_FIRSTNAME ):
+            [self textFieldClosing:msFirstnameFld];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME ):
+            [self textFieldClosing:msMiddleNameFld];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_2 ):
+            [self textFieldClosing:msSpareFld1];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_3 ):
+            [self textFieldClosing:msSpareFld2];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_4 ):
+            [self textFieldClosing:msSpareFld3];
+            break;
     }
 }
 
 - (void)updateLine
 {
-//    [[[textView textStorage] mutableString] deletLastLine];
-    
-//    [[[textView textStorage] mutableString] appendString: [mLineItem lineString]];
- //   [[[textView textStorage] mutableString] appendString: [mLineItem lineString]];
     mMarkedFlag = true;
     [mWindow setDocumentEdited:true];
 
@@ -192,93 +140,56 @@
     NSArray *lines = [[[textView textStorage] mutableString] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];    
     
     BOOL    emptyLine = false;
+    id val;
+
     if ( lines.count == 0 || [[lines objectAtIndex:(lines.count - 1)] isEqualToString:@""] )
         emptyLine = true;
 
-    if (fieldOb == msSurnameFld) {
-//        NSString*   surStr = [msSurnameFld stringValue];
-//        if ( [msCapsBtn state] == NSOnState )
-//            surStr = [surStr uppercaseString];
-//        if ( !emptyLine )
-//            surStr = [NSString stringWithFormat:@"\r%@", surStr];
-//        
-//        surStr = [NSString stringWithFormat:@"%@,", surStr];
-//        
-//        [self sendText:surStr];
+    switch ( [mJumper actionForTextEvent:fieldOb] ) {
+        case ( TEXT_EVENT_SURNAME ):
+            mLineItem.lastName = ( [msCapsBtn state] == NSOnState ) ? [[msSurnameFld stringValue] uppercaseString] : [msSurnameFld stringValue];
+            break;
+        case ( TEXT_EVENT_FIRSTNAME ):
+            mLineItem.firstName = [msFirstnameFld stringValue];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME ):
+            mLineItem.middleName1 = [msMiddleNameFld stringValue];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_2 ):
+            mLineItem.middleName2 = [msSpareFld1 stringValue];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_3 ):
+            mLineItem.middleName3 = [msSpareFld2 stringValue];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_4 ):
+            mLineItem.middleName4 = [msSpareFld3 stringValue];
+            break;
+        case ( TEXT_EVENT_MIDDLENAME_5 ):
+            mLineItem.middleName5 = [msSpareFld4 stringValue];
+            break;
+        case ( TEXT_EVENT_DISTRICT ):
+            mLineItem.districtName = [msDistrictFld stringValue];
+            if ( ( val = [mNameBook valueForKey:[msDistrictFld stringValue]] ) != NULL ) {
+                [msVolumeFld setStringValue:val];
+            }        
+            break;
+        case ( TEXT_EVENT_VOLUME ):
+            mLineItem.volumeName = [msVolumeFld stringValue];
+            break;
+        case ( TEXT_EVENT_PAGE ):
+            if ( [msLockedBtn state] == NSOnState )
+                [self textFieldClosing:msSurnameFld];
+            else
+                [mWindow makeFirstResponder:msSurnameFld];
 
-        mLineItem.lastName = ( [msCapsBtn state] == NSOnState ) ? [[msSurnameFld stringValue] uppercaseString] : [msSurnameFld stringValue];
-        [mWindow makeFirstResponder:msFirstnameFld];
-    }
-    else if (fieldOb == msFirstnameFld) {        
- //       [self sendText:[NSString stringWithFormat:@"%@ ", [msFirstnameFld stringValue]]];
+            mLineItem.pageName = [msPageFld stringValue];
+            [mLineItem finalizeLine:true];
 
-        mLineItem.firstName = [msFirstnameFld stringValue];
-        [mWindow makeFirstResponder:mMiddleNameOn ? msMiddleNameFld: msDistrictFld];
-    }
-    else if (fieldOb == msMiddleNameFld) {
- //       [self sendText:[NSString stringWithFormat:@"%@ ", [msMiddleNameFld stringValue]]];
+            break;
 
-        mLineItem.middleName1 = [msMiddleNameFld stringValue];
-        [mWindow makeFirstResponder:mSpare1On ? msSpareFld1 : msDistrictFld];
+        default:
+            break;
     }
-    else if (fieldOb == msSpareFld1) {
-   //     [self sendText:[NSString stringWithFormat:@"%@ ", [msSpareFld1 stringValue]]];
-
-        mLineItem.middleName2 = [msSpareFld1 stringValue];
-        [mWindow makeFirstResponder:mSpare2On ? msSpareFld2 : msDistrictFld];
-    }
-    else if (fieldOb == msSpareFld2) {
-//        [self sendText:[NSString stringWithFormat:@"%@ ", [msSpareFld2 stringValue]]];
-
-        mLineItem.middleName3 = [msSpareFld2 stringValue];
-        [mWindow makeFirstResponder:mSpare3On ? msSpareFld3 : msDistrictFld];
-    }
-    else if (fieldOb == msSpareFld3) {
-  //      [self sendText:[NSString stringWithFormat:@"%@ ", [msSpareFld3 stringValue]]];
-
-        mLineItem.middleName4 = [msSpareFld3 stringValue];
-        [mWindow makeFirstResponder: mSpare4On ? msSpareFld4 : msDistrictFld];
-    }
-    else if (fieldOb == msSpareFld4) {
-    //    [self sendText:[NSString stringWithFormat:@"%@ ", [msSpareFld4 stringValue]]];
-        mLineItem.middleName5 = [msSpareFld4 stringValue];
-        [mWindow makeFirstResponder:msDistrictFld];
-    }
-    else if (fieldOb == msDistrictFld) {
-//        NSString* srcStr;
-//        long leng = [[[textView textStorage] mutableString] length];
-//
-//        if ( [[[textView textStorage] mutableString] characterAtIndex:leng - 1] != ',' )
-//            srcStr = [NSString stringWithFormat:@",%@,", [msDistrictFld stringValue]];
-//        else
-//            srcStr = [NSString stringWithFormat:@"%@,", [msDistrictFld stringValue]];
-//
-//        [self sendText:[NSString stringWithFormat:@"%@", srcStr]];
-
-        id val;
-
-        mLineItem.districtName = [msDistrictFld stringValue];
-        if ( ( val = [mNameBook valueForKey:[msDistrictFld stringValue]] ) != NULL ) {
-            [msVolumeFld setStringValue:val];
-        }        
-        [mWindow makeFirstResponder:msVolumeFld];
-    }
-    else if (fieldOb == msVolumeFld) {        
- //       [self sendText:[NSString stringWithFormat:@"%@,", [msVolumeFld stringValue]]];
-        mLineItem.volumeName = [msVolumeFld stringValue];
-        [mWindow makeFirstResponder:msPageFld];
-    }
-    else if (fieldOb == msPageFld){        
-//        [self sendText:[NSString stringWithFormat:@"%@\r", [msPageFld stringValue]]];
-        mLineItem.pageName = [msPageFld stringValue];
-        if ( [msLockedBtn state] == NSOnState )
-            [self textFieldClosing:msSurnameFld];
-        else
-            [mWindow makeFirstResponder:msSurnameFld];
-        [mLineItem finalizeLine:true];
-    }
-    else
-        return;
 
     [self updateLine];
 }
@@ -333,70 +244,35 @@
     if ( lines.count == 0 || [[lines objectAtIndex:(lines.count - 1)] isEqualToString:@""] ) {
         
     } else {
-        NSString*   lastLine = [lines objectAtIndex:(lines.count - 1)];
-
-        NSString* srcStr = @",";
         
-        if (fieldOb == msSurnameFld) {
-        }
-        else if (fieldOb == msFirstnameFld) {        
-            srcStr = [NSString stringWithFormat:@"%@,", [msSurnameFld stringValue]];
-            [mWindow makeFirstResponder:msSurnameFld];
-        }
-        else if (fieldOb == msMiddleNameFld) {
-            srcStr = [NSString stringWithFormat:@"%@ ", [msFirstnameFld stringValue]];
-            [mWindow makeFirstResponder:msFirstnameFld];
-        }
-        else if (fieldOb == msSpareFld1) {
-            srcStr = [NSString stringWithFormat:@"%@ ", [msMiddleNameFld stringValue]];
-            [mWindow makeFirstResponder:msMiddleNameFld];
-        }
-        else if (fieldOb == msSpareFld2) {
-            srcStr = [NSString stringWithFormat:@"%@ ", [msSpareFld1 stringValue]];
-            [mWindow makeFirstResponder:msSpareFld1];
-        }
-        else if (fieldOb == msSpareFld3) {
-            srcStr = [NSString stringWithFormat:@"%@ ", [msSpareFld2 stringValue]];
-            [mWindow makeFirstResponder:msSpareFld2];
-        }
-        else if (fieldOb == msSpareFld4) {
-            srcStr = [NSString stringWithFormat:@"%@ ", [msSpareFld3 stringValue]];
-            [mWindow makeFirstResponder:msSpareFld3];
-        }
-        else if (fieldOb == msDistrictFld) {
-            long leng = [[[textView textStorage] mutableString] length];
-            if ( [[[textView textStorage] mutableString] characterAtIndex:leng - 1] != ',' )
-                srcStr = [NSString stringWithFormat:@",%@,", [msSpareFld4 stringValue]];
-            else
-                srcStr = [NSString stringWithFormat:@"%@,", [msSpareFld4 stringValue]];
-
-            
-            if ( mSpare4On ) {
-                [mWindow makeFirstResponder:msSpareFld4];
-            } else if ( mSpare3On ) {
-                [mWindow makeFirstResponder:msSpareFld3];
-            } else if ( mSpare2On ) {
-                [mWindow makeFirstResponder:msSpareFld2];
-            } else if ( mSpare1On ) {
-                [mWindow makeFirstResponder:msSpareFld1];
-            } else if ( mMiddleNameOn ) {
-                [mWindow makeFirstResponder:msMiddleNameFld];
-            } else {
-                [mWindow makeFirstResponder:msFirstnameFld];
-            }
-        }
-        else if (fieldOb == msVolumeFld) {        
-            srcStr = [NSString stringWithFormat:@"%@,", [msDistrictFld stringValue]];
-            [mWindow makeFirstResponder:msDistrictFld];
-        }
-        else if (fieldOb == msPageFld){        
-            srcStr = [NSString stringWithFormat:@"%@,", [msVolumeFld stringValue]];
-            [mWindow makeFirstResponder:msVolumeFld];
-        }
-        long        contLength = [[[textView textStorage] mutableString] length];
-        NSRange     comSpot = [lastLine rangeOfString:srcStr options:NSBackwardsSearch];
-        if ( comSpot.location != NSNotFound ) {
-            [[[textView textStorage] mutableString] replaceCharactersInRange:NSMakeRange( contLength - comSpot.length, comSpot.length ) withString:@""];
+        switch ( [mJumper actionForTextCloseEvent:fieldOb] ) {
+            case ( TEXT_EVENT_FIRSTNAME ):
+                mLineItem.firstName = nil;
+                break;
+            case ( TEXT_EVENT_MIDDLENAME ):
+                mLineItem.middleName1 = nil;
+                break;
+            case ( TEXT_EVENT_MIDDLENAME_2 ):
+                mLineItem.middleName2 = nil;
+                break;
+            case ( TEXT_EVENT_MIDDLENAME_3 ):
+                mLineItem.middleName3 = nil;
+                break;
+            case ( TEXT_EVENT_MIDDLENAME_4 ):
+                mLineItem.middleName4 = nil;
+                break;
+            case ( TEXT_EVENT_MIDDLENAME_5 ):
+                mLineItem.middleName5 = nil;
+                break;
+            case ( TEXT_EVENT_DISTRICT ):
+                mLineItem.districtName = nil;
+                break;
+            case ( TEXT_EVENT_VOLUME ):
+                mLineItem.volumeName = nil;
+                break;
+            case ( TEXT_EVENT_PAGE ):
+                mLineItem.pageName = nil;
+                break;
         }
     }
 }
@@ -493,6 +369,7 @@
     mEnteredMonth           = [[NSString stringWithString:[CQuaterMonth monthForQuarter:[[quarterMenu selectedItem] title]]] retain];
     mEnteredYear           = [[NSString stringWithString:[yearField stringValue]] retain];
 
+    [mJumper setQtr:[mEnteredMonth intValue] andYear:[mEnteredMonth intValue]];
     [mNameBook release];
     mNameBook   = [[NSMutableDictionary alloc] init];
 
