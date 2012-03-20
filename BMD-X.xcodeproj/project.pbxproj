@@ -50,6 +50,7 @@
 		AA541B4F150C45D700073D47 /* CQuaterMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = AA541B4E150C45D600073D47 /* CQuaterMonth.m */; };
 		AA541B56150D9CD300073D47 /* CNoSpaceAutoTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AA541B55150D9CD100073D47 /* CNoSpaceAutoTextField.m */; };
 		AA632DD3150EEC4900E05721 /* CLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA632DD2150EEC4900E05721 /* CLineItem.m */; };
+		AAABB11915169B34006CA4E4 /* CFieldJumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAABB11815169B34006CA4E4 /* CFieldJumper.m */; };
 		AAC94DAA14C6EE0200407CF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC94DA914C6EE0200407CF4 /* Cocoa.framework */; };
 		AAC94DB414C6EE0200407CF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DB214C6EE0200407CF4 /* InfoPlist.strings */; };
 		AAC94DB714C6EE0200407CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC94DB614C6EE0200407CF4 /* main.m */; };
@@ -97,6 +98,8 @@
 		AA632DD1150EEC4900E05721 /* CLineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLineItem.h; sourceTree = "<group>"; };
 		AA632DD2150EEC4900E05721 /* CLineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLineItem.m; sourceTree = "<group>"; };
 		AA8DE5F714EBE9CC00C46806 /* BMD-X.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BMD-X.dmg"; sourceTree = "<group>"; };
+		AAABB11715169B34006CA4E4 /* CFieldJumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFieldJumper.h; sourceTree = "<group>"; };
+		AAABB11815169B34006CA4E4 /* CFieldJumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFieldJumper.m; sourceTree = "<group>"; };
 		AAC94DA514C6EE0200407CF4 /* BMD-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMD-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC94DA914C6EE0200407CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAC94DAC14C6EE0200407CF4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -211,8 +214,8 @@
 				AA541B46150C3FC800073D47 /* AppDelegate.h */,
 				AA541B47150C3FC800073D47 /* AppDelegate.m */,
 				AA541B22150C0DA500073D47 /* Gemfile */,
-				AAC94DBB14C6EE0200407CF4 /* BMDDocument.h */,
 				AA541B20150BEC6500073D47 /* do_seed_database.rb */,
+				AAC94DBB14C6EE0200407CF4 /* BMDDocument.h */,
 				AAC94DBC14C6EE0200407CF4 /* BMDDocument.m */,
 				AAC94DBE14C6EE0200407CF4 /* BMDDocument.xib */,
 				AAC94DC114C6EE0200407CF4 /* MainMenu.xib */,
@@ -239,6 +242,8 @@
 				AAC94DB614C6EE0200407CF4 /* main.m */,
 				AAF3D28014EACB5E001DB689 /* SpoiledTextField.h */,
 				AAF3D29614EB67F8001DB689 /* NoSpaceTextField.h */,
+				AAABB11715169B34006CA4E4 /* CFieldJumper.h */,
+				AAABB11815169B34006CA4E4 /* CFieldJumper.m */,
 				AA632DD1150EEC4900E05721 /* CLineItem.h */,
 				AA632DD2150EEC4900E05721 /* CLineItem.m */,
 				AA541B54150D9CD000073D47 /* CNoSpaceAutoTextField.h */,
@@ -367,6 +372,7 @@
 				AA541B4F150C45D700073D47 /* CQuaterMonth.m in Sources */,
 				AA541B56150D9CD300073D47 /* CNoSpaceAutoTextField.m in Sources */,
 				AA632DD3150EEC4900E05721 /* CLineItem.m in Sources */,
+				AAABB11915169B34006CA4E4 /* CFieldJumper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
