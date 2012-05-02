@@ -7,26 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RecordType.h"
 
 @class BMDDocument;
 
+typedef enum TYPE_EVENT
+{
+    TEXT_EVENT_NONE = 0,
+    TEXT_EVENT_SURNAME = 1,
+    TEXT_EVENT_FIRSTNAME = 2,
+    TEXT_EVENT_MIDDLENAME = 3,
+    TEXT_EVENT_MIDDLENAME_2 = 4,
+    TEXT_EVENT_MIDDLENAME_3 = 5,
+    TEXT_EVENT_MIDDLENAME_4 = 6,
+    TEXT_EVENT_MIDDLENAME_5 = 7,
+    TEXT_EVENT_DISTRICT = 8,
+    TEXT_EVENT_MOTHER = 9,
+    TEXT_EVENT_VOLUME = 10,
+    TEXT_EVENT_PAGE = 11,
+}EventTypes;
+
 @interface CFieldJumper : NSObject
 {
-    enum TYPE_EVENT
-    {
-        TEXT_EVENT_NONE = 0,
-        TEXT_EVENT_SURNAME = 1,
-        TEXT_EVENT_FIRSTNAME = 2,
-        TEXT_EVENT_MIDDLENAME = 3,
-        TEXT_EVENT_MIDDLENAME_2 = 4,
-        TEXT_EVENT_MIDDLENAME_3 = 5,
-        TEXT_EVENT_MIDDLENAME_4 = 6,
-        TEXT_EVENT_MIDDLENAME_5 = 7,
-        TEXT_EVENT_DISTRICT = 8,
-        TEXT_EVENT_VOLUME = 9,
-        TEXT_EVENT_PAGE = 10,
-    };
-    
     
 
     
@@ -42,14 +44,18 @@
     NSTextField*            msSpareFld2;
     NSTextField*            msSpareFld3;
     NSTextField*            msSpareFld4;
-    
+    NSTextField*            msMotherSpouse;
+    NSTextField*            msMotherSpouseLabel;
+    NSTextField*            msDistrictLabel;
+
     
     NSWindow*            mWindow;
 
     
     
-    
-    
+    int mYear;
+    int mMonth;
+    RecordValues mRecordType;
     
     Boolean mMiddleNameOn;
     Boolean mSpare1On;
@@ -59,10 +65,11 @@
 
 }
 - (id)init:(BMDDocument*) parDoc;
--(int) actionForTextEvent:(id)fieldOb;
--(int) actionForTextCloseEvent:(id)fieldOb;
+-(EventTypes) actionForTextEvent:(id)fieldOb;
+-(EventTypes) actionForTextCloseEvent:(id)fieldOb;
 - (int)spareFieldClosing:(id)fieldOb;
 - (int)spareFieldOpening:(id)fieldOb;
 -(void)setQtr:(int)quarter andYear:(int)year;
+-(void)setType:(RecordValues)type;
 
 @end

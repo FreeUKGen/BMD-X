@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RecordType.h"
 
 @interface CLineItem : NSObject
 {
@@ -20,14 +21,23 @@
 	NSString*					_districtName;
 	NSString*					_volumeName;
 	NSString*					_pageName;
+	NSString*					_spouseName;
     BOOL                        mDoFinal;
+    
+    int mYear;
+    int mMonth;
+    RecordValues mRecordType;
+
 }
 
 
 
 - (NSString*)lineString;
 -(void)finalizeLine:(BOOL)aFin;
+-(BOOL)isModern;
 
+-(void)setQtr:(int)quarter andYear:(int)year;
+-(void)setType:(RecordValues)type;
 
 
 
@@ -43,5 +53,6 @@
 @property	(copy) NSString*	districtName;
 @property	(copy) NSString*	volumeName;
 @property	(copy) NSString*	pageName;
+@property	(copy) NSString*	spouseName;
 
 @end

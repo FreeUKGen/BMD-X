@@ -13,6 +13,7 @@
 #import "CQuaterMonth.h"
 #import "CLineItem.h"
 #import "CFieldJumper.h"
+#import "RecordType.h"
 
 @interface BMDDocument (Internals)
 
@@ -37,15 +38,17 @@
             mFieldEditor = [[CSpoiledTextField alloc] init];
             [mFieldEditor setParentDoc:self];
 
+            [textView setUsesFontPanel:YES];
+            NSStringEncoding theEnc;
+            NSError *error;
         
             NSString* filPath = [[NSBundle mainBundle] pathForResource:@"BMDNAME" ofType:@"TXT"];
-            NSString *filesContent = [[NSString alloc] initWithContentsOfFile:filPath];
+            NSString *filesContent = [[NSString alloc] initWithContentsOfFile:filPath usedEncoding:&theEnc error:&error];
             NSArray *lines = [filesContent componentsSeparatedByString:@"\n"];
             for(NSString *line in lines)
             {
                 if (  ( ! [line isEqualToString:@""] ) && ( [line characterAtIndex:0] != ' ' ) )
                 {
-                    NSLog( @"added a given name:%@", line );
                     [mFirstNameBook addObject:[NSString stringWithString:line]];
                 }
             }
@@ -61,18 +64,6 @@
     mJumper = [[CFieldJumper alloc] init:self];
 }
 
-//- (void)controlTextDidChange:(NSNotification *)note {
-//    if ( [note object] == msFirstnameFld ) {
-//        if( mAmDoingAutoComplete ){
-//            return;
-//        } else {
-//            mAmDoingAutoComplete = YES;
-//            [[[note userInfo] objectForKey:@"NSFieldEditor"] complete:nil];
-//            mAmDoingAutoComplete = NO;
-//        }
-//    }
-//}
-//
 - (void)spareFieldClosing:(id)fieldOb
 {
     switch ( [mJumper spareFieldClosing:fieldOb] )
@@ -95,19 +86,19 @@
     switch ( [mJumper spareFieldOpening:fieldOb] )
     {
         case ( TEXT_EVENT_FIRSTNAME ):
-            [self textFieldClosing:msFirstnameFld];
+            mLineItem.firstName = [msFirstnameFld stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME ):
-            [self textFieldClosing:msMiddleNameFld];
+            mLineItem.middleName1 = [msMiddleNameFld stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME_2 ):
-            [self textFieldClosing:msSpareFld1];
+            mLineItem.middleName2 = [msSpareFld1 stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME_3 ):
-            [self textFieldClosing:msSpareFld2];
+            mLineItem.middleName3 = [msSpareFld2 stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME_4 ):
-            [self textFieldClosing:msSpareFld3];
+            mLineItem.middleName4 = [msSpareFld3 stringValue];
             break;
     }
 }
@@ -153,20 +144,40 @@
             mLineItem.firstName = [msFirstnameFld stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME ):
-            mLineItem.middleName1 = [msMiddleNameFld stringValue];
+            if ( [[msMiddleNameFld stringValue] isEqualToString:@""] )
+                [self spareFieldClosing:fieldOb];
+            else
+                mLineItem.middleName1 = [msMiddleNameFld stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME_2 ):
-            mLineItem.middleName2 = [msSpareFld1 stringValue];
+            if ( [[msSpareFld1 stringValue] isEqualToString:@""] )
+                [self spareFieldClosing:fieldOb];
+            else
+                mLineItem.middleName2 = [msSpareFld1 stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME_3 ):
-            mLineItem.middleName3 = [msSpareFld2 stringValue];
+            if ( [[msSpareFld2 stringValue] isEqualToString:@""] )
+                [self spareFieldClosing:fieldOb];
+            else
+                mLineItem.middleName3 = [msSpareFld2 stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME_4 ):
-            mLineItem.middleName4 = [msSpareFld3 stringValue];
+            if ( [[msSpareFld3 stringValue] isEqualToString:@""] )
+                [self spareFieldClosing:fieldOb];
+            else
+                mLineItem.middleName4 = [msSpareFld3 stringValue];
             break;
         case ( TEXT_EVENT_MIDDLENAME_5 ):
-            mLineItem.middleName5 = [msSpareFld4 stringValue];
+            if ( [[msSpareFld4 stringValue] isEqualToString:@""] )
+                [self spareFieldClosing:fieldOb];
+            else
+                mLineItem.middleName5 = [msSpareFld4 stringValue];
             break;
+
+        case ( TEXT_EVENT_MOTHER ):
+            mLineItem.spouseName = [msMotherSpouse stringValue];
+            break;
+
         case ( TEXT_EVENT_DISTRICT ):
             mLineItem.districtName = [msDistrictFld stringValue];
             if ( ( val = [mNameBook valueForKey:[msDistrictFld stringValue]] ) != NULL ) {
@@ -197,6 +208,9 @@
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)atextView doCommandBySelector:(SEL)command
 {
     NSString* cmdStr = NSStringFromSelector(command);
+    
+//    NSLog( @"just got command:%@", cmdStr);
+
     if ([cmdStr isEqualToString:@"insertNewline:"]) {
         [self textFieldClosing:control];
         return YES;
@@ -264,6 +278,9 @@
             case ( TEXT_EVENT_MIDDLENAME_5 ):
                 mLineItem.middleName5 = nil;
                 break;
+            case ( TEXT_EVENT_MOTHER ):
+                mLineItem.spouseName = nil;
+                break;
             case ( TEXT_EVENT_DISTRICT ):
                 mLineItem.districtName = nil;
                 break;
@@ -272,6 +289,9 @@
                 break;
             case ( TEXT_EVENT_PAGE ):
                 mLineItem.pageName = nil;
+                break;
+            case ( TEXT_EVENT_SURNAME ):
+            case ( TEXT_EVENT_NONE ):
                 break;
         }
     }
@@ -369,7 +389,13 @@
     mEnteredMonth           = [[NSString stringWithString:[CQuaterMonth monthForQuarter:[[quarterMenu selectedItem] title]]] retain];
     mEnteredYear           = [[NSString stringWithString:[yearField stringValue]] retain];
 
-    [mJumper setQtr:[mEnteredMonth intValue] andYear:[mEnteredMonth intValue]];
+    [mJumper setQtr:[mEnteredMonth intValue] andYear:[mEnteredYear intValue]];
+    [mLineItem setQtr:[mEnteredMonth intValue] andYear:[mEnteredYear intValue]];
+    
+    
+    
+    
+    
     [mNameBook release];
     mNameBook   = [[NSMutableDictionary alloc] init];
 
@@ -377,7 +403,6 @@
     
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(((start=nil) OR (start <= %@)) AND ((end=nil) OR (end >= %@)))", setDate, setDate];
-    NSLog(@"(((start=%@) OR (start <= %@)) AND ((end=%@) OR (end => %@)))", NULL, setDate, NULL, setDate);
 
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"District" inManagedObjectContext:[mAppDelegate managedObjectContext]];
@@ -386,7 +411,6 @@
     
     NSArray *fetchedObjects = [[mAppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:nil];
     for (NSManagedObject *info in fetchedObjects) {
-        NSLog(@"Name: %@", [info valueForKey:@"name"]);
         NSString* volHldr = @"";
         
         long    thisYear = [mEnteredYear intValue];
@@ -418,6 +442,8 @@
     [self sendText:[NSString stringWithFormat:@"+INFO,%@,%@,%@,%@,macintosh\r", [emailField stringValue], [passwordField stringValue], 
                     [[orderMenu selectedItem] title], [[typeMenu selectedItem] title]]];
     
+    [mJumper setType:[CRecordType recordTypeForTitle:[[typeMenu selectedItem] title]]];
+    [mLineItem setType:[CRecordType recordTypeForTitle:[[typeMenu selectedItem] title]]];
     [NSApp endSheet:mEntryWindow returnCode:[sender tag]];
 }
 - (IBAction)cancelSource:(id)sender
@@ -488,35 +514,36 @@
     return data;    
 }
 
-- (NSArray *)control:(NSControl *)control
-            textView:(NSTextView *)textView
-         completions:(NSArray *)words
- forPartialWordRange:(NSRange)charRange
- indexOfSelectedItem:(NSInteger *)index
+- (NSString *)getCompletionOf:(NSControl *)control
+                        with:(NSString *)starter
+                        indexOfSelectedItem:(NSUInteger)index
 {
-    NSMutableArray*    answer = [NSMutableArray array];
+    NSMutableArray*    answerList = [NSMutableArray array];
     if ( control == msFirstnameFld ) {
-        {
-            NSString* stStr = [[control stringValue] substringWithRange:charRange]; 
-            for (NSString* key in mFirstNameBook)    {
-                if ( [key rangeOfString:stStr options:NSCaseInsensitiveSearch].location == 0 )
-                    [answer addObject:key];
-            }
+        for (NSString* key in mFirstNameBook)    {
+            if ( [key rangeOfString:starter options:NSCaseInsensitiveSearch].location == 0 )
+                [answerList addObject:key];
         }
-        *index = -1;
     }
     else if ( control == msDistrictFld ) {
-        {
-            NSString* stStr = [[control stringValue] substringWithRange:charRange]; 
-            for (NSString* key in mNameBook)    {
-                if ( [key rangeOfString:stStr options:NSCaseInsensitiveSearch].location == 0 )
-                    [answer addObject:key];
-            }
+        for (NSString* key in mNameBook)    {
+            if ( [key rangeOfString:starter options:NSCaseInsensitiveSearch].location == 0 )
+                [answerList addObject:key];
         }
-        *index = -1;
     }
-        
-    return answer;    
+
+    if ( index < [answerList count] ) {
+        NSString* answer = [answerList objectAtIndex:index];
+        if ( control == msDistrictFld ) {
+            NSString* val;
+            if ( ( val = [mNameBook valueForKey:answer] ) != NULL ) {
+                [msVolumeFld setStringValue:val];
+            }        
+        }
+        return answer;
+    }
+
+    return NULL;
 }
 
 

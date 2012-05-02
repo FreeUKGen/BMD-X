@@ -8,9 +8,18 @@
 
 #import "CFieldJumper.h"
 #import "BMDDocument.h"
+#import "RecordType.h"
+
+@interface CFieldJumper (internals)
+    - (BOOL) isModern;
+    - (void) adjustFields;
+
+@end
+
 
 @implementation CFieldJumper
 
+#define ADJ_SIZE 200
 
 
 - (id)init:(BMDDocument*) parDoc
@@ -22,6 +31,9 @@
         mSpare2On = false;
         mSpare3On = false;
         mSpare4On = false;
+        mRecordType = BIRTH_TYPE;
+        mYear = 1900;
+        mMonth = 1;
         
         if ( parDoc ) {
             
@@ -35,21 +47,92 @@
             msSpareFld2 = parDoc->msSpareFld2;
             msSpareFld3 = parDoc->msSpareFld3;
             msSpareFld4 = parDoc->msSpareFld4;
+            msMotherSpouse = parDoc->msMotherSpouse;
+            msMotherSpouseLabel = parDoc->msMotherSpouseLabel;
+            msDistrictLabel = parDoc->msDistrictLabel;
             mWindow = parDoc->mWindow;
+            
+            [self adjustFields];
             
         }
     }
     return self;
 }
+-(void)adjustFields
+{
+    NSRect distBounds = [msDistrictFld frame];
+    NSRect labelBnds = [msDistrictLabel frame];
+    if ( [self isModern] ) {
+        if ( mRecordType == BIRTH_TYPE )
+            [msMotherSpouseLabel setStringValue:@"Mother"];
+        else if ( mRecordType == MARRAIGE_TYPE )
+            [msMotherSpouseLabel setStringValue:@"Spouse"];
+        else if ( mRecordType == DEATH_TYPE )
+        {
+            if ( ( mYear >= 1970 ) || ( ( mYear == 1969 ) && ( mMonth >= 6 ) ) )
+                [msMotherSpouseLabel setStringValue:@"Date of Birth"];
+            else
+                [msMotherSpouseLabel setStringValue:@"Age"];
+        }
+        [msMotherSpouse setHidden:false];
+        [msMotherSpouseLabel setHidden:false];
+
+        if ( distBounds.size.width > ADJ_SIZE )
+        {
+            distBounds.origin.x += ADJ_SIZE;
+            labelBnds.origin.x += ADJ_SIZE;
+            distBounds.size.width -= ADJ_SIZE;
+            [msDistrictFld setFrame:distBounds];
+            [msDistrictLabel setFrame:labelBnds];
+        }
+    }
+    else
+    {
+        [msMotherSpouse setHidden:true];
+        [msMotherSpouseLabel setHidden:true];
+        if ( distBounds.size.width < ADJ_SIZE )
+        {
+            distBounds.origin.x -= ADJ_SIZE;
+            labelBnds.origin.x -= ADJ_SIZE;
+            distBounds.size.width += ADJ_SIZE;
+            [msDistrictFld setFrame:distBounds];
+            [msDistrictLabel setFrame:labelBnds];
+        }
+    }
+}
 
 -(void)setQtr:(int)quarter andYear:(int)year
 {
+    mYear = year;
+    mMonth = quarter;
     
+    [self adjustFields];
 }
 
--(int) actionForTextCloseEvent:(id)fieldOb
+-(void)setType:(RecordValues)type
 {
-    int answer = TEXT_EVENT_NONE;
+    mRecordType = type;
+
+    [self adjustFields];
+}
+
+-(BOOL)isModern
+{
+    BOOL answer = false;
+    if ( mRecordType == BIRTH_TYPE )
+        answer =( ( mYear >= 1912 ) || ( ( mYear == 1911 ) && ( mMonth >= 9 ) ) );
+    else if ( mRecordType == MARRAIGE_TYPE )
+        answer =( ( mYear >= 1913 ) || ( ( mYear == 1912 ) && ( mMonth >= 3 ) ) );
+    else if ( mRecordType == DEATH_TYPE )
+        answer =( mYear >= 1866 );
+    
+    return answer;
+}
+
+
+-(EventTypes) actionForTextCloseEvent:(id)fieldOb
+{
+    EventTypes answer = TEXT_EVENT_NONE;
 
     if (fieldOb == msFirstnameFld) {        
         answer = TEXT_EVENT_FIRSTNAME;
@@ -75,21 +158,47 @@
         answer = TEXT_EVENT_MIDDLENAME_5;
         [mWindow makeFirstResponder:msSpareFld3];
     }
+    else if (fieldOb == msMotherSpouse) {
+        if ( [self isModern] )
+        {
+            answer = TEXT_EVENT_MOTHER;
+            
+            if ( mSpare4On ) {
+                [mWindow makeFirstResponder:msSpareFld4];
+            } else if ( mSpare3On ) {
+                [mWindow makeFirstResponder:msSpareFld3];
+            } else if ( mSpare2On ) {
+                [mWindow makeFirstResponder:msSpareFld2];
+            } else if ( mSpare1On ) {
+                [mWindow makeFirstResponder:msSpareFld1];
+            } else if ( mMiddleNameOn ) {
+                [mWindow makeFirstResponder:msMiddleNameFld];
+            } else {
+                [mWindow makeFirstResponder:msFirstnameFld];
+            }
+        }
+    }
     else if (fieldOb == msDistrictFld) {        
         answer = TEXT_EVENT_DISTRICT;
-        
-        if ( mSpare4On ) {
-            [mWindow makeFirstResponder:msSpareFld4];
-        } else if ( mSpare3On ) {
-            [mWindow makeFirstResponder:msSpareFld3];
-        } else if ( mSpare2On ) {
-            [mWindow makeFirstResponder:msSpareFld2];
-        } else if ( mSpare1On ) {
-            [mWindow makeFirstResponder:msSpareFld1];
-        } else if ( mMiddleNameOn ) {
-            [mWindow makeFirstResponder:msMiddleNameFld];
-        } else {
-            [mWindow makeFirstResponder:msFirstnameFld];
+        if ( [self isModern] )
+        {
+            [mWindow makeFirstResponder:msMotherSpouse];
+        }
+        else
+        {
+            if ( mSpare4On ) {
+                [mWindow makeFirstResponder:msSpareFld4];
+            } else if ( mSpare3On ) {
+                [mWindow makeFirstResponder:msSpareFld3];
+            } else if ( mSpare2On ) {
+                [mWindow makeFirstResponder:msSpareFld2];
+            } else if ( mSpare1On ) {
+                [mWindow makeFirstResponder:msSpareFld1];
+            } else if ( mMiddleNameOn ) {
+                [mWindow makeFirstResponder:msMiddleNameFld];
+            } else {
+                [mWindow makeFirstResponder:msFirstnameFld];
+            }
         }
     }
     else if (fieldOb == msVolumeFld) {        
@@ -104,9 +213,9 @@
    return answer;
 }
 
--(int) actionForTextEvent:(id)fieldOb
+-(EventTypes) actionForTextEvent:(id)fieldOb
 {
-    int answer = TEXT_EVENT_NONE;
+    EventTypes answer = TEXT_EVENT_NONE;
     
     if (fieldOb == msSurnameFld) {
         answer = TEXT_EVENT_SURNAME;
@@ -114,33 +223,38 @@
     }
     else if (fieldOb == msFirstnameFld) {        
         answer = TEXT_EVENT_FIRSTNAME;
-        [mWindow makeFirstResponder:mMiddleNameOn ? msMiddleNameFld: msDistrictFld];
+        [mWindow makeFirstResponder:mMiddleNameOn ? msMiddleNameFld: ( [self isModern] ? msMotherSpouse : msDistrictFld )];
     }
     else if (fieldOb == msMiddleNameFld) {
         answer = TEXT_EVENT_MIDDLENAME;
-        [mWindow makeFirstResponder:mSpare1On ? msSpareFld1 : msDistrictFld];
+        [mWindow makeFirstResponder:mSpare1On ? msSpareFld1 : ( [self isModern] ? msMotherSpouse : msDistrictFld )];
     }
     else if (fieldOb == msSpareFld1) {
         answer = TEXT_EVENT_MIDDLENAME_2;
-        [mWindow makeFirstResponder:mSpare2On ? msSpareFld2 : msDistrictFld];
+        [mWindow makeFirstResponder:mSpare2On ? msSpareFld2 : ( [self isModern] ? msMotherSpouse : msDistrictFld )];
     }
     else if (fieldOb == msSpareFld2) {
         answer = TEXT_EVENT_MIDDLENAME_3;
-        [mWindow makeFirstResponder:mSpare3On ? msSpareFld3 : msDistrictFld];
+        [mWindow makeFirstResponder:mSpare3On ? msSpareFld3 : ( [self isModern] ? msMotherSpouse : msDistrictFld )];
     }
     else if (fieldOb == msSpareFld3) {
         answer = TEXT_EVENT_MIDDLENAME_4;
-        [mWindow makeFirstResponder: mSpare4On ? msSpareFld4 : msDistrictFld];
+        [mWindow makeFirstResponder: mSpare4On ? msSpareFld4 : ( [self isModern] ? msMotherSpouse : msDistrictFld )];
     }
     else if (fieldOb == msSpareFld4) {
         answer = TEXT_EVENT_MIDDLENAME_5;
-        [mWindow makeFirstResponder:msDistrictFld];
+        [mWindow makeFirstResponder:( [self isModern] ? msMotherSpouse : msDistrictFld )];
     }
-    else if (fieldOb == msDistrictFld) {        
-        answer = TEXT_EVENT_DISTRICT;
-
-        [mWindow makeFirstResponder:msVolumeFld];
-    }
+     else if (fieldOb == msMotherSpouse) {        
+         answer = TEXT_EVENT_MOTHER;
+         
+         [mWindow makeFirstResponder:msDistrictFld];
+     }
+     else if (fieldOb == msDistrictFld) {        
+         answer = TEXT_EVENT_DISTRICT;
+         
+         [mWindow makeFirstResponder:msVolumeFld];
+     }
     else if (fieldOb == msVolumeFld) {        
         answer = TEXT_EVENT_VOLUME;
         [mWindow makeFirstResponder:msPageFld];
@@ -171,7 +285,7 @@
         [msSpareFld3 setEnabled:false];
         [msSpareFld4 setStringValue:@""];
         [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
+        [mWindow makeFirstResponder:([self isModern] ? msMotherSpouse : msDistrictFld)];
     }
     else if (fieldOb == msSpareFld1) {
         answer = TEXT_EVENT_MIDDLENAME_2;
@@ -187,7 +301,7 @@
         [msSpareFld3 setEnabled:false];
         [msSpareFld4 setStringValue:@""];
         [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
+        [mWindow makeFirstResponder:([self isModern] ? msMotherSpouse : msDistrictFld)];
     }
     else if (fieldOb == msSpareFld2) {
         answer = TEXT_EVENT_MIDDLENAME_3;
@@ -200,7 +314,7 @@
         [msSpareFld3 setEnabled:false];
         [msSpareFld4 setStringValue:@""];
         [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
+        [mWindow makeFirstResponder:([self isModern] ? msMotherSpouse : msDistrictFld)];
     }
     else if (fieldOb == msSpareFld3) {
         answer = TEXT_EVENT_MIDDLENAME_4;
@@ -210,14 +324,14 @@
         [msSpareFld3 setEnabled:false];
         [msSpareFld4 setStringValue:@""];
         [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
+        [mWindow makeFirstResponder:([self isModern] ? msMotherSpouse : msDistrictFld)];
     }
     else if (fieldOb == msSpareFld4) {
         answer = TEXT_EVENT_MIDDLENAME_5;
         mSpare4On = false;
         [msSpareFld4 setStringValue:@""];
         [msSpareFld4 setEnabled:false];
-        [mWindow makeFirstResponder:msDistrictFld];
+        [mWindow makeFirstResponder:([self isModern] ? msMotherSpouse : msDistrictFld)];
     }
     return answer;
 }

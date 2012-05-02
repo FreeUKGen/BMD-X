@@ -37,6 +37,8 @@
 {
     if ( [[theEvent characters] isEqualToString:@" "] )
         [mParentDoc spareFieldOpening:mFieldEditorsParent];
+    else if ( [[theEvent characters] isEqualToString:@" "] )
+        [mParentDoc spareFieldOpening:mFieldEditorsParent];
     else
         [super keyDown:theEvent];
 }

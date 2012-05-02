@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "CNoSpaceAutoTextField.h"
+#import "CAutoTextField.h"
 #import "BMDDocument.h"
 
-@implementation CNoSpaceAutoTextField
+@implementation CAutoTextField
 
 - (BOOL)textView:(NSTextView *)atextView doCommandBySelector:(SEL)command
 {

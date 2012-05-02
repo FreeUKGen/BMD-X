@@ -28,6 +28,9 @@
     IBOutlet	NSTextField*            msSpareFld2;
     IBOutlet	NSTextField*            msSpareFld3;
     IBOutlet	NSTextField*            msSpareFld4;
+    IBOutlet	NSTextField*            msMotherSpouse;
+    IBOutlet	NSTextField*            msMotherSpouseLabel;
+    IBOutlet	NSTextField*            msDistrictLabel;
     IBOutlet    NSWindow*               mWindow;
 
     
@@ -70,6 +73,10 @@
     CSpoiledTextField*  mFieldEditor;
     BOOL mMarkedFlag;
     BOOL mAmDoingAutoComplete;
+    
+    BOOL mModernMarraige;
+    BOOL mModernBirth;
+    
     CLineItem *mLineItem;
     CFieldJumper*   mJumper;
     
@@ -81,6 +88,7 @@
 - (void) setString: (NSAttributedString *) value;
 - (void)textFieldClosing:(id)fieldOb;
 - (void)textFieldUnClosing:(id)fieldOb;
+- (NSString *)getCompletionOf:(NSControl *)control with:(NSString *)starter  indexOfSelectedItem:(NSUInteger)index;
 
 
 - (IBAction)setSurNameLock:(id)sender;
@@ -93,7 +101,6 @@
 - (IBAction)startComment:(id)sender;
 - (IBAction)okCommentDLOG:(id)sender;
 - (IBAction)cancelComment:(id)sender;
-
 
     - (IBAction)startEntry:(id)sender;
     - (IBAction)okEntryDLOG:(id)sender;

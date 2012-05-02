@@ -10,6 +10,7 @@
 
 @implementation AppDelegate
 
+@synthesize window = __window;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize managedObjectContext = __managedObjectContext;

@@ -20,8 +20,6 @@
         return @"7";
     else if ( [qtrStr isEqualToString:@"Dec"] )
         return @"10";
-    else
-        NSLog( "This is the quarter %@", qtrStr );
 
     return @"1";
 }
