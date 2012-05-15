@@ -66,10 +66,10 @@
     if ([self notEmpty] )
     {
         [answer appendFormat:@"%@,", self.lastName == nil ? @"" : self.lastName ];
-        if ( self.firstName )
-            [answer appendFormat:@"%@,", [self.firstName capitalizedString], nil ];
-        if ( self.middleName1 ) {
-            NSMutableArray* middles = [NSMutableArray arrayWithObject:self.middleName1];
+        if ( self.firstName ) {
+            NSMutableArray* middles = [NSMutableArray arrayWithObject:[self.firstName capitalizedString]];
+            if ( self.middleName1 )
+                [middles addObject:[self.middleName1 capitalizedString] ];
             if ( self.middleName2 )
                 [middles addObject:[self.middleName2 capitalizedString] ];
             if ( self.middleName3 )
