@@ -71,5 +71,6 @@ typedef enum TYPE_EVENT
 - (int)spareFieldOpening:(id)fieldOb;
 -(void)setQtr:(int)quarter andYear:(int)year;
 -(void)setType:(RecordValues)type;
+-(EventTypes) actionForTextField:(id)fieldOb;
 
 @end

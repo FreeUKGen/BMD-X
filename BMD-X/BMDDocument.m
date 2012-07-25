@@ -1,4 +1,4 @@
-//
+    //
 //  BMDDocument.m
 //  BMD-X
 //
@@ -19,6 +19,7 @@
 
 - (void)sendText:(NSString*) aStr;
 - (void)getMessage:(NSNotification *)aNotification;
+-(void)setDocYear:(NSString*)yrStr andMonth:(NSString*)mnStr;
 
 @end
 
@@ -64,6 +65,7 @@
     mJumper = [[CFieldJumper alloc] init:self];
 }
 
+
 - (void)spareFieldClosing:(id)fieldOb
 {
     switch ( [mJumper spareFieldClosing:fieldOb] )
@@ -102,29 +104,94 @@
             break;
     }
 }
+- (void)fieldText:(id)fieldOb
+{
+    NSString* val;
+    if ( ! [mLineItem lineFinalized] ) {
+        switch ( [mJumper actionForTextField:fieldOb] ) {
+            case ( TEXT_EVENT_SURNAME ):
+                mLineItem.lastName = ( [msCapsBtn state] == NSOnState ) ? [[msSurnameFld stringValue] uppercaseString] : [msSurnameFld stringValue];
+                break;
+            case ( TEXT_EVENT_FIRSTNAME ):
+                mLineItem.firstName = [msFirstnameFld stringValue];
+                break;
+            case ( TEXT_EVENT_MIDDLENAME ):
+                if ( [[msMiddleNameFld stringValue] isEqualToString:@""] )
+                    [self spareFieldClosing:fieldOb];
+                else
+                    mLineItem.middleName1 = [msMiddleNameFld stringValue];
+                break;
+            case ( TEXT_EVENT_MIDDLENAME_2 ):
+                if ( [[msSpareFld1 stringValue] isEqualToString:@""] )
+                    mLineItem.middleName2 = nil;
+                else
+                    mLineItem.middleName2 = [msSpareFld1 stringValue];
+                break;
+            case ( TEXT_EVENT_MIDDLENAME_3 ):
+                if ( [[msSpareFld2 stringValue] isEqualToString:@""] )
+                    mLineItem.middleName3 = nil;
+                else
+                    mLineItem.middleName3 = [msSpareFld2 stringValue];
+                break;
+            case ( TEXT_EVENT_MIDDLENAME_4 ):
+                if ( [[msSpareFld3 stringValue] isEqualToString:@""] )
+                    mLineItem.middleName4 = nil;
+                else
+                    mLineItem.middleName4 = [msSpareFld3 stringValue];
+                break;
+            case ( TEXT_EVENT_MIDDLENAME_5 ):
+                if ( [[msSpareFld4 stringValue] isEqualToString:@""] )
+                    mLineItem.middleName5 = nil;
+                else
+                    mLineItem.middleName5 = [msSpareFld4 stringValue];
+                break;
+                
+            case ( TEXT_EVENT_MOTHER ):
+                mLineItem.spouseName = [msMotherSpouse stringValue];
+                break;
+                
+            case ( TEXT_EVENT_DISTRICT ):
+                mLineItem.districtName = [msDistrictFld stringValue];
+                if ( ( val = [mNameBook valueForKey:[msDistrictFld stringValue]] ) != NULL ) {
+                    [msVolumeFld setStringValue:val];
+                    mLineItem.volumeName = [msVolumeFld stringValue];
+                }        
+                break;
+            case ( TEXT_EVENT_VOLUME ):
+                mLineItem.volumeName = [msVolumeFld stringValue];
+                break;
+            case ( TEXT_EVENT_PAGE ):            
+                mLineItem.pageName = [msPageFld stringValue];            
+                break;
+                
+            default:
+                break;
+        }
+        [fieldsQueue setStringValue:[mLineItem lineString]];
+    }
+}
 
 - (void)updateLine
 {
     mMarkedFlag = true;
     [mWindow setDocumentEdited:true];
 
-    NSRange aRange = [[[textView textStorage] mutableString] rangeOfString:@"\r" options:NSBackwardsSearch];
-    aRange.length = [[[textView textStorage] mutableString] length] - aRange.location;
-    
-    if ( aRange.location == NSNotFound )
+    if ( [mLineItem lineFinalized] )
     {
-        aRange.location = 0;
-        aRange.length = [[textView textStorage] length];
+        [fieldsQueue setStringValue:@""];
+        [textView insertText:[mLineItem lineString]];
+        [self scrollToTop:self];
     }
     else
-    {
-        aRange.location += 1;
-        aRange.length -= 1;
-    }
-
-    [[[textView textStorage] mutableString]replaceCharactersInRange:aRange withString:[mLineItem lineString]];
+        [fieldsQueue setStringValue:[mLineItem lineString]];
+    
 }
 
+- (void)scrollToTop:(id)sender;
+{
+    NSRange insertAtEnd=NSMakeRange([[textView textStorage] length],0);
+    [textView scrollRangeToVisible:insertAtEnd];
+}
 
 - (void)textFieldClosing:(id)fieldOb
 {    
@@ -205,6 +272,13 @@
     [self updateLine];
 }
 
+- (BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor
+{
+    [self updateLine];
+    return YES;
+    
+}
+
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)atextView doCommandBySelector:(SEL)command
 {
     NSString* cmdStr = NSStringFromSelector(command);
@@ -255,7 +329,7 @@
 {
     NSArray *lines = [[[textView textStorage] mutableString] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];    
     
-    if ( lines.count == 0 || [[lines objectAtIndex:(lines.count - 1)] isEqualToString:@""] ) {
+    if ( lines.count == 0 ) {
         
     } else {
         
@@ -380,30 +454,30 @@
     if ( ! [[pageField stringValue] isEqualToString:@""] )
         [string appendString:[NSString stringWithFormat:@"+PAGE,%@\r", [pageField stringValue]]];
     
+    NSString* mnt = [[quarterMenu selectedItem] title];
     
     [self sendText:string];
+    [self setDocYear:[NSString stringWithString:[yearField stringValue]] 
+             andMonth:[NSString stringWithString:[CQuaterMonth monthForQuarter:mnt]]];
     
-    
+    [NSApp endSheet:mSourceWindow returnCode:[sender tag]];
+}
+
+-(void)setDocYear:(NSString*)yrStr andMonth:(NSString*)mnStr
+{
     [mEnteredMonth release];
     [mEnteredYear release];
-    mEnteredMonth           = [[NSString stringWithString:[CQuaterMonth monthForQuarter:[[quarterMenu selectedItem] title]]] retain];
-    mEnteredYear           = [[NSString stringWithString:[yearField stringValue]] retain];
+    mEnteredMonth           = [mnStr retain];
+    mEnteredYear           = [yrStr retain];
 
-    [mJumper setQtr:[mEnteredMonth intValue] andYear:[mEnteredYear intValue]];
-    [mLineItem setQtr:[mEnteredMonth intValue] andYear:[mEnteredYear intValue]];
-    
-    
-    
-    
-    
     [mNameBook release];
     mNameBook   = [[NSMutableDictionary alloc] init];
-
+    
     NSDate*     setDate = [NSDate dateWithString:[NSString localizedStringWithFormat:@"%@-%@-01 12:00:00 +0000", mEnteredYear, mEnteredMonth]];
     
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(((start=nil) OR (start <= %@)) AND ((end=nil) OR (end >= %@)))", setDate, setDate];
-
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"District" inManagedObjectContext:[mAppDelegate managedObjectContext]];
     [fetchRequest setEntity:entity];
@@ -431,10 +505,10 @@
         else
             NSLog(@"missing volume number: %@", [info valueForKey:@"name"]);
     }
-
-    [fetchRequest release];
     
-    [NSApp endSheet:mSourceWindow returnCode:[sender tag]];
+    [fetchRequest release];
+    [mJumper setQtr:[mEnteredMonth intValue] andYear:[mEnteredYear intValue]];
+    [mLineItem setQtr:[mEnteredMonth intValue] andYear:[mEnteredYear intValue]];
 }
 
 - (IBAction)okEntryDLOG:(id)sender
@@ -480,7 +554,30 @@
 {
     [super windowControllerDidLoadNib:aController];
     if ([self string] != nil) {
+        NSArray *lines = [[[self string] string] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];    
+        for (NSString *aLine in lines) {
+            if ( [aLine rangeOfString:@"+S," options:NSCaseInsensitiveSearch].location == 0 ) {
+                NSLog(@"did ger source line: %@", aLine);
+                NSArray *lineItems = [aLine componentsSeparatedByString:@","];    
+
+                [self setDocYear:[NSString stringWithString:[lineItems objectAtIndex:1]] 
+                        andMonth:[NSString stringWithString:[CQuaterMonth monthForQuarter:[lineItems objectAtIndex:2]]]];
+            
+            }
+            if ( [aLine rangeOfString:@"+INFO," options:NSCaseInsensitiveSearch].location == 0 ) {
+                NSLog(@"did get info line: %@", aLine);
+                NSArray *lineItems = [aLine componentsSeparatedByString:@","];    
+
+                [mJumper setType:[CRecordType recordTypeForTitle:[lineItems objectAtIndex:4]]];
+                [mLineItem setType:[CRecordType recordTypeForTitle:[lineItems objectAtIndex:4]]];
+            }
+
+        }
+        
         [[textView textStorage] setAttributedString: [self string]];
+        [self scrollToTop:self];
+        
+
     }
 }
 
@@ -496,7 +593,7 @@
         [self setString:fileContents];
         [fileContents release];
     }
-    
+    [self scrollToTop:self];
     return readSuccess;
 }
 

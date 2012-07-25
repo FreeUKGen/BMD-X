@@ -39,7 +39,12 @@
         [mParentDoc spareFieldOpening:mFieldEditorsParent];
     else if ( [[theEvent characters] isEqualToString:@" "] )
         [mParentDoc spareFieldOpening:mFieldEditorsParent];
-    else
+    else {
         [super keyDown:theEvent];
+        int keyCode = [theEvent.characters characterAtIndex:0];
+        
+        if (keyCode != 13 && keyCode != 9 && keyCode != 127 && keyCode != NSUpArrowFunctionKey && keyCode != NSDownArrowFunctionKey)
+            [mParentDoc fieldText:mFieldEditorsParent];
+    }
 }
 @end

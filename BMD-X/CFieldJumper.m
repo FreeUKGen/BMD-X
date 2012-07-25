@@ -130,10 +130,50 @@
 }
 
 
+-(EventTypes) actionForTextField:(id)fieldOb
+{
+    EventTypes answer = TEXT_EVENT_NONE;
+    
+    if (fieldOb == msFirstnameFld) {        
+        answer = TEXT_EVENT_FIRSTNAME;
+    }
+    else if (fieldOb == msMiddleNameFld) {
+        answer = TEXT_EVENT_MIDDLENAME;
+    }
+    else if (fieldOb == msSpareFld1) {
+        answer = TEXT_EVENT_MIDDLENAME_2;
+    }
+    else if (fieldOb == msSpareFld2) {
+        answer = TEXT_EVENT_MIDDLENAME_3;
+    }
+    else if (fieldOb == msSpareFld3) {
+        answer = TEXT_EVENT_MIDDLENAME_4;
+    }
+    else if (fieldOb == msSpareFld4) {
+        answer = TEXT_EVENT_MIDDLENAME_5;
+    }
+    else if (fieldOb == msMotherSpouse) {
+        if ( [self isModern] )
+        {
+            answer = TEXT_EVENT_MOTHER;
+        }
+    }
+    else if (fieldOb == msDistrictFld) {        
+        answer = TEXT_EVENT_DISTRICT;
+    }
+    else if (fieldOb == msVolumeFld) {        
+        answer = TEXT_EVENT_VOLUME;
+    }
+    else if (fieldOb == msPageFld){        
+        answer = TEXT_EVENT_PAGE;
+    }
+    
+    return answer;
+}
 -(EventTypes) actionForTextCloseEvent:(id)fieldOb
 {
     EventTypes answer = TEXT_EVENT_NONE;
-
+    
     if (fieldOb == msFirstnameFld) {        
         answer = TEXT_EVENT_FIRSTNAME;
         [mWindow makeFirstResponder:msSurnameFld];
@@ -209,8 +249,8 @@
         answer = TEXT_EVENT_PAGE;
         [mWindow makeFirstResponder:msVolumeFld];
     }
-
-   return answer;
+    
+    return answer;
 }
 
 -(EventTypes) actionForTextEvent:(id)fieldOb

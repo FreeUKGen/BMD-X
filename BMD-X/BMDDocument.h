@@ -49,6 +49,7 @@
     IBOutlet	NSTextField*            rangeField;
     IBOutlet	NSTextField*			freeBMDRefField;
     IBOutlet	NSTextField*			locationField;
+    IBOutlet	NSTextField*			fieldsQueue;
     IBOutlet	NSDatePicker*			dateField;
     
     
@@ -62,6 +63,7 @@
     IBOutlet	NSPanel*				mEntryWindow;
     IBOutlet	NSPanel*				mSourceWindow;
     IBOutlet    NSTextView*             textView;
+    IBOutlet    NSScrollView*           scrollView;
     
     NSAttributedString *mString;
     NSMutableDictionary *mNameBook;
@@ -90,8 +92,10 @@
 - (void)textFieldUnClosing:(id)fieldOb;
 - (NSString *)getCompletionOf:(NSControl *)control with:(NSString *)starter  indexOfSelectedItem:(NSUInteger)index;
 
+- (void)fieldText:(id)fieldOb;
 
 - (IBAction)setSurNameLock:(id)sender;
+- (void)scrollToTop:(id)sender;
 
 - (IBAction)sendBreak:(id)sender;
 - (IBAction)startPage:(id)sender;

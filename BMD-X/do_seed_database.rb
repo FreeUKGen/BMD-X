@@ -8,48 +8,15 @@
 require 'rubygems'
 require 'osx/cocoa'
 
-OSX.require_framework 'CoreData'
 
-class CoreDataStore
-    def create_entity name, props={}, relationships={}
-        entity = OSX::NSEntityDescription.insertNewObjectForEntityForName_inManagedObjectContext(name, context)
-        props.each do |k,v|
-            entity.setValue_forKey v, k
-        end
-        relationships.each do |k, objects|
-            collection = entity.mutableSetValueForKey(k)
-            objects.each {|o| collection.addObject o}
-        end
-
-        entity
-    end
-
-    def initialize(data_store_path, mom_path)
-        @data_store_path = data_store_path
-        @mom_path = mom_path
-    end
-
-    def context
-        @context ||= OSX::NSManagedObjectContext.alloc.init.tap do |context|
-            model = OSX::NSManagedObjectModel.alloc.initWithContentsOfURL(OSX::NSURL.fileURLWithPath(@mom_path))
-            coordinator = OSX::NSPersistentStoreCoordinator.alloc.initWithManagedObjectModel(model)
-
-            result, error = coordinator.addPersistentStoreWithType_configuration_URL_options_error(OSX::NSSQLiteStoreType, nil, OSX::NSURL.fileURLWithPath(@data_store_path), nil)
-            if !result
-                raise "Add persistent store failed: #{error.description}"
-            end
-            context.setPersistentStoreCoordinator coordinator
-        end
-    end
-
-    def save
-        res, error = context.save_
-        if !res
-            raise "Save failed: #{error.description}"
-        end
-        res
-    end
+def safe_or_space( db_val )
+    (db_val.match( /\w/ ).nil? ) ? '' : db_val.to_s
 end
+def safe_or_nbsp( db_val )
+    puts db_val
+    (db_val.to_s == '&nbsp' ) ? '' : db_val.to_s
+end
+
     
     def month_from_quarter( qrtr )
         ans = "01"
@@ -66,62 +33,62 @@ end
 
     require 'hpricot'
     require 'open-uri'
-    store = CoreDataStore.new('BMDData.sqlite', 'BMDData.momd/BMDData.mom')
 
-    doc = open("http://www.freebmd.org.uk/district-list.html") { |f| Hpricot(f) }
-    doc.search("tr").each do | a_row|
-        row_array = a_row.search("td")
-        if ( row_array.count == 7 )
-            town_name = ""
-            start_date = nil
-            end_date = nil
-            vol_1 = nil
-            vol_2 = nil
-            vol_3 = nil
-            vol_4 = nil
-            vol_5 = nil
+    File.open('bmd_town_dump.txt', 'w') do |f2|
+        doc = open("http://www.freebmd.org.uk/district-list.html") { |f| Hpricot(f) }
+        doc.search("tr").each do | a_row|
+            row_array = a_row.search("td")
+            if ( row_array.count == 7 )
+                town_name = ""
+                start_date = nil
+                end_date = nil
+                vol_1 = nil
+                vol_2 = nil
+                vol_3 = nil
+                vol_4 = nil
+                vol_5 = nil
 
-            unless row_array[0].at('a').nil?
-                town_name   = row_array[0].at('a').inner_text
-            else
-                town_name   = row_array[0].inner_text
-            end
-            
-            
-            date_arr = row_array[1].inner_text.strip.split("-")
+                unless row_array[0].at('a').nil?
+                    town_name   = row_array[0].at('a').inner_text
+                else
+                    town_name   = row_array[0].inner_text
+                end
+                
+                
+                date_arr = row_array[1].inner_text.strip.split("-")
+                start_year = ""
+                start_qtr = ""
+                end_year = ""
+                end_qtr = ""
 
-            if ( date_arr.count != 0 )
-                if ( (!date_arr[0].nil?) && (date_arr[0].strip != "") )
-                    date_parse = date_arr[0].strip.split("Q")
-                    yr_str = "%s-%s-01 12:00:00 +0000" % [ date_parse[0], month_from_quarter(date_parse[1]) ] 
-                    start_date = OSX::NSDate.alloc.initWithString( yr_str )
+                if ( date_arr.count != 0 )
+                    if ( (!date_arr[0].nil?) && (date_arr[0].strip != "") )
+                        date_parse = date_arr[0].strip.split("Q")
+                        yr_str = "%s-%s-01 12:00:00 +0000" % [ date_parse[0], month_from_quarter(date_parse[1]) ] 
+                        start_date = OSX::NSDate.alloc.initWithString( yr_str )
+                        start_qtr = date_parse[1]
+                        start_year = date_parse[0]
+                    end
+
+                    if ( (!date_arr[1].nil?) && (date_arr[1].strip != "") )
+                        date_parse = date_arr[1].strip.split("Q")
+                        yr_str = "%s-%s-01 12:00:00 +0000" % [ date_parse[0], month_from_quarter(date_parse[1]) ] 
+                        end_date = OSX::NSDate.alloc.initWithString( yr_str )
+                        end_qtr = date_parse[1]
+                        end_year = date_parse[0]
+                   end
                 end
 
-                if ( (!date_arr[1].nil?) && (date_arr[1].strip != "") )
-                    date_parse = date_arr[1].strip.split("Q")
-                    yr_str = "%s-%s-01 12:00:00 +0000" % [ date_parse[0], month_from_quarter(date_parse[1]) ] 
-                    end_date = OSX::NSDate.alloc.initWithString( yr_str )
-                end
+                vol_1 = row_array[2].inner_text.strip
+                vol_2 = row_array[3].inner_text.strip
+                vol_3 = row_array[4].inner_text.strip
+                vol_4 = row_array[5].inner_text.strip
+                vol_5 = row_array[6].inner_text.strip
+                
+                f2.puts %(#{town_name},#{safe_or_nbsp(start_qtr)},#{safe_or_nbsp(start_year)},#{safe_or_nbsp(end_qtr)},#{safe_or_nbsp(end_year)},#{safe_or_space(vol_1)},#{safe_or_space(vol_2)},#{safe_or_space(vol_3)},#{safe_or_space(vol_4)},#{safe_or_space(vol_5)} )
             end
-
-            vol_1 = row_array[2].inner_text.strip
-            vol_2 = row_array[3].inner_text.strip
-            vol_3 = row_array[4].inner_text.strip
-            vol_4 = row_array[5].inner_text.strip
-            vol_5 = row_array[6].inner_text.strip
-
-puts vol_1.inspect
-puts row_array[2].inner_text.inspect
-
-ans_hash = {'name' => town_name, 'start' => start_date, 'end' => end_date, 'volume_1' => vol_1, 'volume_2' => vol_2, 'volume_3' => vol_3, 'volume_4' => vol_4, 'volume_5' => vol_5}
-
-            puts ans_hash.inspect
-            dist = store.create_entity 'District', ans_hash
         end
     end
-
-    store.save
-
 
 
 

@@ -58,6 +58,10 @@
 {
     mDoFinal = aFin;
 }
+-(BOOL)lineFinalized
+{
+    return mDoFinal;
+}
 
 - (NSString*)lineString
 {
@@ -82,7 +86,7 @@
             [answer appendFormat:@"%@,", [middles componentsJoinedByString:@" "], nil];
         }
         if ( self.spouseName && ( ( mRecordType == DEATH_TYPE ) || [self isModern] ) )
-            [answer appendFormat:@"%@,", self.spouseName, nil ];
+            [answer appendFormat:@"%@,", [self.spouseName capitalizedString], nil ];
         if ( self.districtName )
             [answer appendFormat:@"%@,", self.districtName, nil ];
         if ( self.volumeName )

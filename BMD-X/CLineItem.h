@@ -31,6 +31,7 @@
 }
 
 
+-(BOOL)lineFinalized;
 
 - (NSString*)lineString;
 -(void)finalizeLine:(BOOL)aFin;

@@ -43,7 +43,8 @@
 
 -(void)keyUp:(NSEvent *)event{
     int keyCode = [event.characters characterAtIndex:0];
-    
+    BMDDocument* theDoc = (BMDDocument*)[self delegate];
+
     if (keyCode != 13 && keyCode != 9 && keyCode != 127 && keyCode != NSUpArrowFunctionKey && keyCode != NSDownArrowFunctionKey) {
         mSearchGuesses = 0;
         [mTypedText autorelease];
@@ -53,6 +54,7 @@
     else
     {
     }
+    [theDoc fieldText:self];
     [super keyUp:event];
 }
 @end

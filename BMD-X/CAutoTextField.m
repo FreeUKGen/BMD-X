@@ -37,12 +37,12 @@
         NSText* textEditor = [self currentEditor];
         NSRange range = {[strtPt length], [theAns length]};
         [textEditor setSelectedRange:range];
-        
     }
 }
 
 -(void)keyUp:(NSEvent *)event{
     int keyCode = [event.characters characterAtIndex:0];
+    BMDDocument* theDoc = (BMDDocument*)[self delegate];
     
     if (keyCode != 13 && keyCode != 9 && keyCode != 127 && keyCode != NSUpArrowFunctionKey && keyCode != NSDownArrowFunctionKey) {
         mSearchGuesses = 0;
@@ -53,6 +53,7 @@
     else
     {
     }
+    [theDoc fieldText:self];
     [super keyUp:event];
 }
 @end
