@@ -465,6 +465,9 @@
 
 -(void)setDocYear:(NSString*)yrStr andMonth:(NSString*)mnStr
 {
+    NSStringEncoding theEnc;
+    NSError *error;
+
     [mEnteredMonth release];
     [mEnteredYear release];
     mEnteredMonth           = [mnStr retain];
@@ -473,40 +476,47 @@
     [mNameBook release];
     mNameBook   = [[NSMutableDictionary alloc] init];
     
-    NSDate*     setDate = [NSDate dateWithString:[NSString localizedStringWithFormat:@"%@-%@-01 12:00:00 +0000", mEnteredYear, mEnteredMonth]];
+    NSString* filPath = [[NSBundle mainBundle] pathForResource:@"bmd_town_dump" ofType:@"txt"];
+    NSString *filesContent = [[NSString alloc] initWithContentsOfFile:filPath usedEncoding:&theEnc error:&error];
+    NSArray *lines = [filesContent componentsSeparatedByString:@"\n"];
+
+    long    yrInt = [mEnteredYear intValue];
+    long    qtrInt = [mEnteredMonth intValue];
     
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(((start=nil) OR (start <= %@)) AND ((end=nil) OR (end >= %@)))", setDate, setDate];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"District" inManagedObjectContext:[mAppDelegate managedObjectContext]];
-    [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:predicate];
-    
-    NSArray *fetchedObjects = [[mAppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:nil];
-    for (NSManagedObject *info in fetchedObjects) {
+    for(NSString *line in lines)
+    {
+        NSArray *items = [line componentsSeparatedByString:@","];
         NSString* volHldr = @"";
         
-        long    thisYear = [mEnteredYear intValue];
-        
-        if ( thisYear <= 1851 )
-            volHldr = [info valueForKey:@"volume_1"];
-        else if ( thisYear <= 1945 )
-            volHldr = [info valueForKey:@"volume_2"];
-        else if ( thisYear <= 1965 )
-            volHldr = [info valueForKey:@"volume_3"];
-        else if ( thisYear <= 1973 )
-            volHldr = [info valueForKey:@"volume_4"];
-        else
-            volHldr = [info valueForKey:@"volume_5"];
-        
-        if ( volHldr != nil )
-            [mNameBook setObject:[NSString stringWithString:volHldr] forKey:[NSString stringWithString:[info valueForKey:@"name"]]];
-        else
-            NSLog(@"missing volume number: %@", [info valueForKey:@"name"]);
+        if ( [items count] == 10 )
+        {
+            bool passesLow = [[items objectAtIndex:1] isEqualToString:@""] || ( ( [[items objectAtIndex:1] intValue] <= qtrInt ) && ( [[items objectAtIndex:2] intValue] <= yrInt ) );
+            bool passesHigh = [[items objectAtIndex:3] isEqualToString:@""] || ( ( [[items objectAtIndex:3] intValue] >= qtrInt ) && ( [[items objectAtIndex:4] intValue] > yrInt ) );
+            
+            
+            if ( passesLow && passesHigh )
+            {
+            
+                if ( yrInt <= 1851 )
+                    volHldr = [items objectAtIndex:5];
+                else if ( yrInt <= 1945 )
+                    volHldr = [items objectAtIndex:6];
+                else if ( yrInt <= 1965 )
+                    volHldr = [items objectAtIndex:7];
+                else if ( yrInt <= 1973 )
+                    volHldr = [items objectAtIndex:8];
+                else
+                    volHldr = [items objectAtIndex:9];
+                
+                if ( volHldr != nil )
+                    [mNameBook setObject:[NSString stringWithString:volHldr] forKey:[NSString stringWithString:[items objectAtIndex:0]]];
+                else
+                    NSLog(@"missing volume number: %@", [items objectAtIndex:0]);
+            }
+        }
     }
     
-    [fetchRequest release];
     [mJumper setQtr:[mEnteredMonth intValue] andYear:[mEnteredYear intValue]];
     [mLineItem setQtr:[mEnteredMonth intValue] andYear:[mEnteredYear intValue]];
 }
