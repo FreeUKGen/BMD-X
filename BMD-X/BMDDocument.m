@@ -180,6 +180,7 @@
     {
         [fieldsQueue setStringValue:@""];
         [textView insertText:[mLineItem lineString]];
+        [mJumper clearFields];
         [self scrollToTop:self];
     }
     else
@@ -497,7 +498,6 @@
             
             if ( passesLow && passesHigh )
             {
-            
                 if ( yrInt <= 1851 )
                     volHldr = [items objectAtIndex:5];
                 else if ( yrInt <= 1945 )
@@ -626,7 +626,7 @@
                         indexOfSelectedItem:(NSUInteger)index
 {
     NSMutableArray*    answerList = [NSMutableArray array];
-    if ( control == msFirstnameFld ) {
+    if (( control == msFirstnameFld )||( control == msMiddleNameFld )||( control == msSpareFld1 )||( control == msSpareFld2 )||( control == msSpareFld3 )||( control == msSpareFld4 )) {
         for (NSString* key in mFirstNameBook)    {
             if ( [key rangeOfString:starter options:NSCaseInsensitiveSearch].location == 0 )
                 [answerList addObject:key];

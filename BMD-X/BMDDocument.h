@@ -13,21 +13,21 @@
 @class AppDelegate;
 @class CLineItem;
 @class CFieldJumper;
-
+@class CNoSpaceAutoTextField;
 
 @interface BMDDocument : NSDocument {
 
 @public
     IBOutlet	NSTextField*            msSurnameFld;
-    IBOutlet	NSTextField*            msFirstnameFld;
+    IBOutlet	CNoSpaceAutoTextField*            msFirstnameFld;
     IBOutlet	NSTextField*            msDistrictFld;
     IBOutlet	NSTextField*            msVolumeFld;
     IBOutlet	NSTextField*            msPageFld;
-    IBOutlet	NSTextField*            msMiddleNameFld;
-    IBOutlet	NSTextField*            msSpareFld1;
-    IBOutlet	NSTextField*            msSpareFld2;
-    IBOutlet	NSTextField*            msSpareFld3;
-    IBOutlet	NSTextField*            msSpareFld4;
+    IBOutlet	CNoSpaceAutoTextField*            msMiddleNameFld;
+    IBOutlet	CNoSpaceAutoTextField*            msSpareFld1;
+    IBOutlet	CNoSpaceAutoTextField*            msSpareFld2;
+    IBOutlet	CNoSpaceAutoTextField*            msSpareFld3;
+    IBOutlet	CNoSpaceAutoTextField*            msSpareFld4;
     IBOutlet	NSTextField*            msMotherSpouse;
     IBOutlet	NSTextField*            msMotherSpouseLabel;
     IBOutlet	NSTextField*            msDistrictLabel;

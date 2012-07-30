@@ -12,8 +12,10 @@
 {
     NSUInteger     mSearchGuesses;
     NSString* mTypedText;
+    Boolean  mIgnoreKeyUp;
 }
 
 -(void) matchDocs:(NSString*)strtTx;
+-(void) setIgnoreKeyUp:(Boolean)doIgnore;
 
 @end

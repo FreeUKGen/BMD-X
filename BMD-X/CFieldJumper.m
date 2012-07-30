@@ -58,6 +58,21 @@
     }
     return self;
 }
+
+-(void)clearFields
+{
+    [msFirstnameFld setStringValue:@""];
+    [msMiddleNameFld setStringValue:@""];
+    [msSpareFld1 setStringValue:@""];
+    [msSpareFld2 setStringValue:@""];
+    [msSpareFld3 setStringValue:@""];
+    [msSpareFld4 setStringValue:@""];
+    [msMotherSpouse setStringValue:@""];
+    [msDistrictFld setStringValue:@""];
+    [msVolumeFld setStringValue:@""];
+    [msPageFld setStringValue:@""];
+}
+
 -(void)adjustFields
 {
     NSRect distBounds = [msDistrictFld frame];
@@ -382,6 +397,7 @@
         mMiddleNameOn = true;
         [msMiddleNameFld setEnabled:true];
         [mWindow makeFirstResponder:msMiddleNameFld];
+        [msMiddleNameFld setIgnoreKeyUp:true];
     }
     else if (fieldOb == msMiddleNameFld) {
         answer = TEXT_EVENT_MIDDLENAME;

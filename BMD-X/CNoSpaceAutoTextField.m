@@ -11,6 +11,21 @@
 
 @implementation CNoSpaceAutoTextField
 
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        mIgnoreKeyUp = false;
+    }
+    return self;
+}
+
+-(void) setIgnoreKeyUp:(Boolean)doIgnore
+{
+    mIgnoreKeyUp = doIgnore;
+}
+
 - (BOOL)textView:(NSTextView *)atextView doCommandBySelector:(SEL)command
 {
     NSString* cmdStr = NSStringFromSelector(command);
@@ -54,7 +69,11 @@
     else
     {
     }
-    [theDoc fieldText:self];
+    if ( mIgnoreKeyUp ) {
+        mIgnoreKeyUp = false;
+    } else {
+        [theDoc fieldText:self];
+    }
     [super keyUp:event];
 }
 @end

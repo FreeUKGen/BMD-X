@@ -10,6 +10,7 @@
 #import "RecordType.h"
 
 @class BMDDocument;
+@class CNoSpaceAutoTextField;
 
 typedef enum TYPE_EVENT
 {
@@ -35,15 +36,15 @@ typedef enum TYPE_EVENT
     
     
     NSTextField*            msSurnameFld;
-    NSTextField*            msFirstnameFld;
+    CNoSpaceAutoTextField*            msFirstnameFld;
     NSTextField*            msDistrictFld;
     NSTextField*            msVolumeFld;
     NSTextField*            msPageFld;
-    NSTextField*            msMiddleNameFld;
-    NSTextField*            msSpareFld1;
-    NSTextField*            msSpareFld2;
-    NSTextField*            msSpareFld3;
-    NSTextField*            msSpareFld4;
+    CNoSpaceAutoTextField*            msMiddleNameFld;
+    CNoSpaceAutoTextField*            msSpareFld1;
+    CNoSpaceAutoTextField*            msSpareFld2;
+    CNoSpaceAutoTextField*            msSpareFld3;
+    CNoSpaceAutoTextField*            msSpareFld4;
     NSTextField*            msMotherSpouse;
     NSTextField*            msMotherSpouseLabel;
     NSTextField*            msDistrictLabel;
@@ -72,5 +73,6 @@ typedef enum TYPE_EVENT
 -(void)setQtr:(int)quarter andYear:(int)year;
 -(void)setType:(RecordValues)type;
 -(EventTypes) actionForTextField:(id)fieldOb;
+-(void)clearFields;
 
 @end
