@@ -15,11 +15,11 @@
     if ( [qtrStr isEqualToString:@"Mar"] )
         return @"1";
     else if ( [qtrStr isEqualToString:@"Jun"] )
-        return @"4";
+        return @"2";
     else if ( [qtrStr isEqualToString:@"Sep"] )
-        return @"7";
+        return @"3";
     else if ( [qtrStr isEqualToString:@"Dec"] )
-        return @"10";
+        return @"4";
 
     return @"1";
 }
