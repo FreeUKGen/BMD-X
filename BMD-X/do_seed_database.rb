@@ -16,6 +16,11 @@ def safe_or_nbsp( db_val )
     puts db_val
     (db_val.to_s == '&nbsp' ) ? '' : db_val.to_s
 end
+def process_town_name( db_val )
+    puts db_val
+    (db_val.to_s == '&nbsp' ) ? '' : db_val.to_s
+    db_val.gsub(",", "").gsub( /\(.*\)/, '' ).strip
+end
 
     
     def month_from_quarter( qrtr )
@@ -85,7 +90,7 @@ end
                 vol_4 = row_array[5].inner_text.strip
                 vol_5 = row_array[6].inner_text.strip
                 
-                f2.puts %(#{town_name},#{safe_or_nbsp(start_qtr)},#{safe_or_nbsp(start_year)},#{safe_or_nbsp(end_qtr)},#{safe_or_nbsp(end_year)},#{safe_or_space(vol_1)},#{safe_or_space(vol_2)},#{safe_or_space(vol_3)},#{safe_or_space(vol_4)},#{safe_or_space(vol_5)} )
+                f2.puts %(#{process_town_name(town_name)},#{safe_or_nbsp(start_qtr)},#{safe_or_nbsp(start_year)},#{safe_or_nbsp(end_qtr)},#{safe_or_nbsp(end_year)},#{safe_or_space(vol_1)},#{safe_or_space(vol_2)},#{safe_or_space(vol_3)},#{safe_or_space(vol_4)},#{safe_or_space(vol_5)} )
             end
         end
     end

@@ -148,6 +148,7 @@
                 
             case ( TEXT_EVENT_MOTHER ):
                 mLineItem.spouseName = [msMotherSpouse stringValue];
+                [msMotherSpouse setStringValue:[mLineItem.spouseName capitalizedString]];
                 break;
                 
             case ( TEXT_EVENT_DISTRICT ):
