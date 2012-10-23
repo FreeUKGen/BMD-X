@@ -383,10 +383,10 @@
 - (IBAction)setSurNameLock:(id)sender {
 
     if ( [msLockedBtn state] == NSOnState ) {
-        [msPageFld setNextKeyView:msFirstnameFld];
+        [msPageFld setNextKeyView:(NSView*)msFirstnameFld];
         if ( [msSurnameFld currentEditor] ) {
             [self textFieldClosing:msSurnameFld];
-            [self.windowForSheet makeFirstResponder:msFirstnameFld];
+            [self.windowForSheet makeFirstResponder:(NSView*)msFirstnameFld];
         }
     }
     else
@@ -465,6 +465,19 @@
     [NSApp endSheet:mSourceWindow returnCode:[sender tag]];
 }
 
+-(Boolean)testDistrictTime:(NSArray*)theTown forQuarter:(long)reportQtr andYear:(long)reportYear
+{
+    Boolean passesLow = ([[theTown objectAtIndex:1] isEqualToString:@""]
+                      || ( [[theTown objectAtIndex:2] intValue] < reportYear )
+                      ||  ( ( [[theTown objectAtIndex:2] intValue] == reportYear ) && ( [[theTown objectAtIndex:1] intValue] <= reportQtr ) ));
+    
+    Boolean passesHigh = ([[theTown objectAtIndex:3] isEqualToString:@""]
+                      || ( [[theTown objectAtIndex:4] intValue] > reportYear )
+                      ||  ( ( [[theTown objectAtIndex:4] intValue] == reportYear ) && ( [[theTown objectAtIndex:3] intValue] >= reportQtr ) ));
+    
+    return ( passesLow && passesHigh );
+}
+
 -(void)setDocYear:(NSString*)yrStr andMonth:(NSString*)mnStr
 {
     NSStringEncoding theEnc;
@@ -484,20 +497,17 @@
 
     long    yrInt = [mEnteredYear intValue];
     long    qtrInt = [mEnteredMonth intValue];
-    
+    NSLog(@"comparing:with end year '%d' and '%d'", yrInt, qtrInt);
     
     for(NSString *line in lines)
     {
         NSArray *items = [line componentsSeparatedByString:@","];
         NSString* volHldr = @"";
         
-        if ( [items count] == 10 )
+        if ( [items count] == 10 && ( [[items objectAtIndex:0] rangeOfString:@"//"].location != 0 ) )
         {
-            bool passesLow = [[items objectAtIndex:1] isEqualToString:@""] || ( ( [[items objectAtIndex:1] intValue] <= qtrInt ) && ( [[items objectAtIndex:2] intValue] <= yrInt ) );
-            bool passesHigh = [[items objectAtIndex:3] isEqualToString:@""] || ( ( [[items objectAtIndex:3] intValue] >= qtrInt ) && ( [[items objectAtIndex:4] intValue] > yrInt ) );
-            
-            
-            if ( passesLow && passesHigh )
+
+            if ( [self testDistrictTime:items forQuarter:qtrInt andYear:yrInt] )
             {
                 if ( yrInt <= 1851 )
                     volHldr = [items objectAtIndex:5];
@@ -511,7 +521,10 @@
                     volHldr = [items objectAtIndex:9];
                 
                 if ( volHldr != nil )
+                {
+                    NSLog(@"adding to list: %@", [items objectAtIndex:0]);
                     [mNameBook setObject:[NSString stringWithString:volHldr] forKey:[NSString stringWithString:[items objectAtIndex:0]]];
+                }
                 else
                     NSLog(@"missing volume number: %@", [items objectAtIndex:0]);
             }
@@ -650,6 +663,9 @@
         }
         return answer;
     }
+    else {
+        [msVolumeFld setStringValue:@""];
+    }
 
     return NULL;
 }
@@ -664,6 +680,35 @@
     [[[textView textStorage] mutableString] appendString: aStr];
     mMarkedFlag = true;
     [mWindow setDocumentEdited:true];
+}
+
+- (void)printShowingPrintPanel:(BOOL)flag
+{    
+    // set printing properties
+    NSPrintInfo *printInfo = [self printInfo];
+    [printInfo setHorizontalPagination:NSFitPagination];
+    [printInfo setHorizontallyCentered:NO];
+    [printInfo setVerticallyCentered:NO];
+    [printInfo setLeftMargin:72.0];
+    [printInfo setRightMargin:72.0];
+    [printInfo setTopMargin:72.0];
+    [printInfo setBottomMargin:90.0];
+    
+    // create new view just for printing
+    NSTextView* printView = [[NSTextView alloc]initWithFrame:[printInfo imageablePageBounds]];
+    NSPrintOperation* op;
+    
+    // copy the textview into the printview
+    NSRange textViewRange = NSMakeRange(0, [[textView textStorage] length]);
+    NSRange printViewRange = NSMakeRange(0, [[printView textStorage] length]);
+    
+    [printView replaceCharactersInRange: printViewRange withRTF:[textView RTFFromRange: textViewRange]];
+    
+    op = [NSPrintOperation printOperationWithView: printView printInfo: printInfo];
+    [op setShowPanels: flag];
+    [self runModalPrintOperation: op delegate: nil didRunSelector: NULL contextInfo: NULL];
+    
+    [printView release];
 }
 
 @end

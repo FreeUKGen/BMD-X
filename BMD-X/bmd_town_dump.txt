@@ -1,4 +1,7 @@
-Aberayron,,,2,1936,27,11b,,, 
+// format for text file is as follows:
+// district name,start quarter(1-4), start year, end quarter(1-4), end year, volume(1837-1851), volume(1852-1945), volume(1966-1973), volume(1974-?)
+
+Aberayron,,,2,1936,27,11b,,,
 Aberconwy,3,1975,,,,,,,25 
 Abergavenny,,,4,1958,26,11a,8c,, 
 Aberystwyth,,,2,1936,27,11b,,, 

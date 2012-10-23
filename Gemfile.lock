@@ -10,9 +10,11 @@ GEM
       builder (= 2.1.2)
       escape (= 0.0.4)
     escape (0.0.4)
+    hpricot (0.8.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   choctop
+  hpricot

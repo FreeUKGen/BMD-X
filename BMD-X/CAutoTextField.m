@@ -17,18 +17,20 @@
 
     if ([cmdStr isEqualToString:@"moveDown:"]) {
         mSearchGuesses = mSearchGuesses + 1;
-        [self matchDocs:mTypedText];
+        if ( ![self matchDocs:mTypedText] )
+            mSearchGuesses = mSearchGuesses - 1;
         return YES;
     }
     if ([cmdStr isEqualToString:@"moveUp:"]) {
         mSearchGuesses = MAX( mSearchGuesses - 1, 0 );
-        [self matchDocs:mTypedText];
+        if ( ![self matchDocs:mTypedText] )
+            mSearchGuesses = mSearchGuesses + 1;
         return YES;
     }
     return [super textView:atextView doCommandBySelector:command];
 }
 
--(void) matchDocs:(NSString*) strtPt
+-(Boolean) matchDocs:(NSString*) strtPt
 {
     BMDDocument* theDoc = (BMDDocument*)[self delegate];
     NSString*  theAns = [theDoc getCompletionOf:self with:strtPt indexOfSelectedItem:mSearchGuesses];
@@ -37,14 +39,19 @@
         NSText* textEditor = [self currentEditor];
         NSRange range = {[strtPt length], [theAns length]};
         [textEditor setSelectedRange:range];
+        return true;
     }
+    return false;
 }
 
 -(void)keyUp:(NSEvent *)event{
     int keyCode = [event.characters characterAtIndex:0];
     BMDDocument* theDoc = (BMDDocument*)[self delegate];
     
-    if (keyCode != 13 && keyCode != 9 && keyCode != 127 && keyCode != NSUpArrowFunctionKey && keyCode != NSDownArrowFunctionKey) {
+    if (keyCode != 13 && keyCode != 9
+        && keyCode != 127 && keyCode != NSUpArrowFunctionKey
+        && keyCode != NSDownArrowFunctionKey && keyCode != NSLeftArrowFunctionKey
+         && keyCode != NSRightArrowFunctionKey ) {
         mSearchGuesses = 0;
         [mTypedText autorelease];
         mTypedText = [[self stringValue] retain];

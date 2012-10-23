@@ -12,6 +12,6 @@
     NSString* mTypedText;
 }
 
--(void) matchDocs:(NSString*)strtTx;
+-(Boolean) matchDocs:(NSString*)strtTx;
 
 @end
