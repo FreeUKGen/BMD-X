@@ -33,6 +33,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		AA266FF016F815EE004D6E5D /* Newicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = AA266FEF16F815EE004D6E5D /* Newicon.icns */; };
 		AA27117A14EDF67A00653874 /* FormatType.m in Sources */ = {isa = PBXBuildFile; fileRef = AA27117914EDF67A00653874 /* FormatType.m */; };
 		AA2B1BE514D262FD00FB6ECB /* BMDNAME.TXT in Resources */ = {isa = PBXBuildFile; fileRef = AA2B1BDC14D262FD00FB6ECB /* BMDNAME.TXT */; };
 		AA2C7CEB14EBE57800856729 /* iconPack.icns in Resources */ = {isa = PBXBuildFile; fileRef = AA2C7CEA14EBE57800856729 /* iconPack.icns */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA266FEF16F815EE004D6E5D /* Newicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Newicon.icns; sourceTree = "<group>"; };
 		AA27117814EDF67A00653874 /* FormatType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatType.h; sourceTree = "<group>"; };
 		AA27117914EDF67A00653874 /* FormatType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatType.m; sourceTree = "<group>"; };
 		AA2B1BDA14D262FD00FB6ECB /* BMDDIST.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BMDDIST.TXT; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		AAC94D9A14C6EE0200407CF4 = {
 			isa = PBXGroup;
 			children = (
+				AA266FEF16F815EE004D6E5D /* Newicon.icns */,
 				AAC94DAF14C6EE0200407CF4 /* BMD-X */,
 				AAC94DA814C6EE0200407CF4 /* Frameworks */,
 				AAC94DA614C6EE0200407CF4 /* Products */,
@@ -315,6 +318,7 @@
 				AADEB3A015C023A500AC9ACD /* bmd_town_dump.txt in Resources */,
 				AA2C7CEB14EBE57800856729 /* iconPack.icns in Resources */,
 				AADCAB1816304B8600179490 /* town_data_seed.txt in Resources */,
+				AA266FF016F815EE004D6E5D /* Newicon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +335,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
+			shellPath = /usr/bin/ruby;
 			shellScript = "rake dmg";
 		};
 		AA541B1F150BE51900073D47 /* scrape district page */ = {
