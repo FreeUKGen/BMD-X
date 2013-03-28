@@ -262,9 +262,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AAC94DA414C6EE0200407CF4 /* BMD-X */ = {
+		AAC94DA414C6EE0200407CF4 /* MacBMD-X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AAC94DC614C6EE0200407CF4 /* Build configuration list for PBXNativeTarget "BMD-X" */;
+			buildConfigurationList = AAC94DC614C6EE0200407CF4 /* Build configuration list for PBXNativeTarget "MacBMD-X" */;
 			buildPhases = (
 				AAC94DA114C6EE0200407CF4 /* Sources */,
 				AAC94DA214C6EE0200407CF4 /* Frameworks */,
@@ -274,7 +274,7 @@
 			);
 			dependencies = (
 			);
-			name = "BMD-X";
+			name = "MacBMD-X";
 			productName = "BMD-X";
 			productReference = AAC94DA514C6EE0200407CF4 /* BMD-X.app */;
 			productType = "com.apple.product-type.application";
@@ -285,7 +285,7 @@
 		AAC94D9C14C6EE0200407CF4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = AAC94D9F14C6EE0200407CF4 /* Build configuration list for PBXProject "BMD-X" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -299,7 +299,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AAC94DA414C6EE0200407CF4 /* BMD-X */,
+				AAC94DA414C6EE0200407CF4 /* MacBMD-X */,
 				AA2C7CE314EBE3CC00856729 /* Disk Image */,
 				AA541B1B150BE51500073D47 /* Database Seed */,
 			);
@@ -379,7 +379,7 @@
 /* Begin PBXTargetDependency section */
 		AAABB155151C27BA006CA4E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AAC94DA414C6EE0200407CF4 /* BMD-X */;
+			target = AAC94DA414C6EE0200407CF4 /* MacBMD-X */;
 			targetProxy = AAABB154151C27BA006CA4E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -456,6 +456,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -463,6 +467,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -474,10 +479,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
@@ -546,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AAC94DC614C6EE0200407CF4 /* Build configuration list for PBXNativeTarget "BMD-X" */ = {
+		AAC94DC614C6EE0200407CF4 /* Build configuration list for PBXNativeTarget "MacBMD-X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AAC94DC714C6EE0200407CF4 /* Debug */,

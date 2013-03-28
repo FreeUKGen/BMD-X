@@ -31,7 +31,8 @@ Anglesey West,2,1937,1,1969,,11b,8a,8a,
 Appleby,2,1974,2,1984,,,,,1 
 Ardudwy,2,1974,,,,,,,25 
 Ashbourne,,,,,19,7b,3a,3a,6 
-Ashby de la Zouch,,,3,1949,15,7a,3a,, 
+Ashby Z.,,,3,1949,15,7a,3a,, 
+Ashby de la Zouch,,,3,1949,15,7a,3a,,
 Ashford,2,1941,1,1998,,2a,5b,5f,16 
 Ashton & Oldham,,,1,1848,20,,,, 
 Ashton,2,1937,1,1974,,8d,10b,10b, 
@@ -55,8 +56,10 @@ Barkston Ash,1,1947,1,1974,,,2d,2d,
 Barnet,,,,,6,3a,5a,5a,11 
 Barnsley,2,1850,,,22,9c,2b,2b,3 
 Barnstaple,,,1,1998,10,5b,7a,7a,21 
-Barrow in Furness,3,1876,,,,8e,10b,10b,1 
-Barrow upon Soar,,,3,1949,15,7a,3a,, 
+Barrow in Furness,3,1876,,,,8e,10b,10b,1
+Barrow F.,3,1876,,,,8e,10b,10b,1 
+Barrow S.,,,3,1949,15,7a,3a,,
+Barrow upon Soar,,,3,1949,15,7a,3a,,  
 Barton,4,1934,1,1980,,8c,10b,10b,39 
 Barton Regis,2,1877,4,1904,,6a,,, 
 Barton upon Irwell,1,1850,3,1934,20,8c,,, 
@@ -82,6 +85,7 @@ Bermondsey,,,4,1869,4,1d,,,
 Bermondsey,2,1934,1,1965,,1d,5c,, 
 Berwick,,,4,1936,25,10b,,, 
 Bethnal Green,,,4,1965,2,1c,5c,5d, 
+Bethnal G.,,,4,1965,2,1c,5c,5d,
 Beverley,,,1,1937,23,9d,,, 
 Beverley,2,1974,2,2002,,,,,7 
 Bexley,2,1965,,,,,,5a,11 
@@ -112,7 +116,8 @@ Blything,,,1,1935,13,4a,,,
 Bodmin,,,2,2007,9,5c,7a,7a,21 
 Bolton,,,,,21,8c,10b,10b,38 
 Bootle Cul,,,1,1939,25,10b,,, 
-Bootle Lan,4,1934,1,1980,,8b,10b,10b,37 
+Bootle Lan,4,1934,1,1980,,8b,10b,10b,37
+Bootle Lancs.,4,1934,1,1980,,8b,10b,10b,37 
 Border,4,1937,1,1974,,10b,1a,1a, 
 Bosmere,,,1,1935,12,4a,,, 
 Boston,,,1,2003,14,7a,3b,3b,7 
@@ -161,7 +166,8 @@ Burnley,,,1,1974,21,8e,10b,10b,
 Burnley & Pendle,2,1974,2,2005,,,,,40 
 Burton upon Trent,,,1,1974,17,6b,9b,9b, 
 Bury,,,,,21,8c,10b,10b,38 
-Bury St Edmunds,,,4,2010,13,4a,4b,4b,10 
+Bury St Edmunds,,,4,2010,13,4a,4b,4b,10
+Bury St. E.,,,4,2010,13,4a,4b,4b,10 
 Caerleon,3,1936,1,1974,,11a,8c,8c, 
 Caernarfon,2,1974,,,,,,,25 
 Caernarvon,3,1937,1,1974,,11b,8a,8a, 
@@ -194,6 +200,7 @@ Central Cleveland,2,1974,1,1996,,,,,3
 Cerne,,,4,1837,8,,,, 
 Chailey,,,4,1837,7,,,, 
 Chanctonbury,2,1935,1,1974,,2b,5h,5h, 
+Chapel-le-F.,1,1838,1,1974,19,7b,10a,10a,
 Chapel en le Frith,1,1838,1,1974,19,7b,10a,10a, 
 Chard,,,1,1974,10,5c,7c,7c, 
 Chatham,2,1941,1,1998,,2a,5b,5f,16 
@@ -212,6 +219,7 @@ Chesterton,,,1,1935,14,3b,,,
 Chichester,,,1,2010,7,2b,5h,5h,18 
 Chiltern & Beaconsfield,2,1974,2,1988,,,,,19 
 Chippenham,,,1,2008,8,5a,7c,7c,23 
+Chipping N.,,,1,1982,16,3a,6b,6b,20
 Chipping Norton,,,1,1982,16,3a,6b,6b,20 
 Chipping Sodbury,,,1,1937,11,6a,,, 
 Chorley,,,2,2005,21,8e,10c,10c,40 
@@ -288,26 +296,38 @@ Dunstable,2,1964,2,1999,,,4a,4a,9
 Durham,,,2,1938,24,10a,,, 
 Durham Central & South Eastern,4,1971,1,1974,,,,1a, 
 Durham Central,3,1938,3,1971,,10a,1a,1a, 
-Durham Central,2,1974,1,2004,,,,,1 
+Durham Central,2,1974,1,2004,,,,,1
+Durham C.,2,1974,1,2004,,,,,1 
+Durham E.,3,1938,2,2006,,10a,1a,1a,1
 Durham Eastern,3,1938,2,2006,,10a,1a,1a,1 
+Durham N. E.,1,1938,1,1974,,10a,1a,1a,
 Durham North Eastern,1,1938,1,1974,,10a,1a,1a, 
+Durham N. W.,3,1938,1,1974,,10a,1a,1a,
 Durham North Western,3,1938,1,1974,,10a,1a,1a, 
-Durham Northern,3,1938,1,2004,,10a,1a,1a,1 
+Durham Northern,3,1938,1,2004,,10a,1a,1a,1
+Durham N.,3,1938,1,2004,,10a,1a,1a,1 
+Durham S. E.,3,1938,3,1971,,10a,1a,1a,
 Durham South Eastern,3,1938,3,1971,,10a,1a,1a, 
-Durham South Western,3,1938,1,2000,,10a,1a,1a,1 
-Durham Western,3,1938,2,2006,,10a,1a,1a,1 
+Durham South Western,3,1938,1,2000,,10a,1a,1a,1
+Durham S. W.,3,1938,1,2000,,10a,1a,1a,1 
+Durham Western,3,1938,2,2006,,10a,1a,1a,1
+Durham W.,3,1938,2,2006,,10a,1a,1a,1 
 Dursley,,,1,1937,11,6a,,, 
 Dyffryn Conwy,2,1974,2,1975,,,,,25 
 Ealing,4,1947,,,,,5e,5b,12 
 Easington,,,2,1938,24,10a,,, 
 Easingwold,,,3,1936,24,9d,,, 
-East Ashford,,,1,1941,5,2a,,, 
+East Ashford,,,1,1941,5,2a,,,
+E. Ashford,,,1,1941,5,2a,,, 
 East Cleveland,2,1974,1,1996,,,,,3 
-East Dereham,1,1939,,,,4b,4b,4b,10 
+East Dereham,1,1939,,,,4b,4b,4b,10
+E. Dereham,1,1939,,,,4b,4b,4b,10 
 East Elloe,1,1936,1,2003,,7a,3b,3b,7 
-East Glamorgan,1,1935,1,1974,,11a,8b,8b, 
+East Glamorgan,1,1935,1,1974,,11a,8b,8b,
+E. Glamorgan,1,1935,1,1974,,11a,8b,8b,
 East Grinstead,,,1,1935,7,2b,,, 
 East Ham,4,1935,4,1967,,4a,5a,5b, 
+E. Ham,4,1935,4,1967,,4a,5a,5b,
 East London,2,1838,4,1869,2,1c,,, 
 East Preston,1,1870,1,1935,,2b,,, 
 East Retford,,,2,2005,15,7b,3c,3c,8 
@@ -331,7 +351,8 @@ Epping,,,1,1974,12,4a,5a,4a,
 Epping Forest,2,1974,1,2010,,,,,9 
 Epsom,,,1,1934,4,2a,,, 
 Erpingham,,,4,1938,13,4b,,, 
-Essex South Western,4,1935,1,1965,,4a,5a,, 
+Essex South Western,4,1935,1,1965,,4a,5a,,
+Essex S. W.,4,1935,1,1965,,4a,5a,, 
 Eton,,,1,1974,6,3a,6a,6a, 
 Evesham,,,1,2006,18,6c,9d,9d,29 
 Ewecross,1,1947,3,1998,,,2c,2c,2 
@@ -356,12 +377,16 @@ Folkestone,2,1941,1,1974,,2a,5b,5f,
 Forden,3,1870,4,1935,,11b,,, 
 Fordingbridge,,,3,1932,8,2b,,, 
 Forehoe,,,4,1938,13,4b,,, 
-Forest of Dean,2,1937,1,2006,,6a,7b,7b,22 
+Forest of Dean,2,1937,1,2006,,6a,7b,7b,22
+F. of Dean,2,1937,1,2006,,6a,7b,7b,22 
 Freebridge Lynn,,,4,1938,13,4b,,, 
 Frome,,,1,1974,10,5c,7c,7c, 
 Fulham,2,1875,4,2000,,1a,5c,5b,12 
 Fylde,,,1,1974,21,8e,10c,10c, 
-Gainsborough,,,1,2003,14,7a,3b,3b,7 
+Gainsbro',,,1,2003,14,7a,3b,3b,7
+Gainsborough,,,1,2003,14,7a,3b,3b,7
+Essex S. W.,4,1935,1,1965,,4a,5a,,
+Essex South Western,4,1935,1,1965,,4a,5a,, 
 Garstang,,,1,1998,21,8e,10c,10c,40 
 Gateshead,,,,,24,10a,1a,1a,2 
 Gipping,2,1935,1,1983,,4a,4b,4b,10 
@@ -372,7 +397,8 @@ Glossop,2,1898,1,1974,,7b,10a,10a,
 Gloucester,,,1,1937,11,6a,,, 
 Gloucester,2,1974,1,2006,,,,,22 
 Gloucester City,2,1937,1,1974,,6a,7b,7b, 
-Gloucester Rural,2,1937,1,1974,,6a,7b,7b, 
+Gloucester Rural,2,1937,1,1974,,6a,7b,7b,
+Gloucester R.,2,1937,1,1974,,6a,7b,7b, 
 Glyndwr,2,1974,1,1996,,,,,24 
 Godstone,,,1,1934,4,2a,,, 
 Goole,1,1838,2,2002,23,9c,2b,2b,7 
@@ -423,7 +449,8 @@ Haywards Heath,4,1980,1,2010,,,,,18
 Headington,,,4,1932,16,3a,,, 
 Helmsley,,,3,1936,24,9d,,, 
 Helston,,,2,1936,9,5c,,, 
-Hemel Hempstead,,,1,1974,6,3a,4b,4b, 
+Hemel Hempstead,,,1,1974,6,3a,4b,4b,
+H. Hempstead,,,1,1974,6,3a,4b,4b, 
 Hemsworth,2,1850,1,1974,22,9c,2b,2b, 
 Hendon,,,3,1947,3,3a,5f,, 
 Hendon,4,1947,1,1999,,,5e,5c,13 
@@ -465,7 +492,8 @@ Hull,,,,,22,9d,2a,2a,7
 Hungerford,,,1,1937,6,2c,,, 
 Hunslet,1,1845,4,1928,23,9b,,, 
 Huntingdon,,,3,2007,14,3b,4b,4b,9 
-Huntingdonshire North,1,1934,4,1967,,3b,4b,4b, 
+Huntingdonshire North,1,1934,4,1967,,3b,4b,4b,
+Hunts N.,1,1934,4,1967,,3b,4b,4b, 
 Hursley,,,3,1837,7,,,, 
 Hyde,2,1937,1,1974,,8a,10a,10a, 
 Hyndburn & Rossendale,2,1974,2,2005,,,,,40 
@@ -473,7 +501,8 @@ Ilford,3,1939,1,1965,,4a,5a,,
 Ilkeston,2,1938,1,1997,,7b,3a,3a,6 
 Ince,3,1936,1,1974,,8c,10c,10c, 
 Ipswich,,,4,2010,12,4a,4b,4b,10 
-Isle of Wight,,,,,8,2b,6b,6b,20 
+Isle of Wight,,,,,8,2b,6b,6b,20
+I. Wight,,,,,8,2b,6b,6b,20 
 Isles of Scilly,2,1901,,,,5c,7a,7a,21 
 Islington,,,,,3,1b,5c,5c,13 
 Jarrow,2,1974,4,2000,,,,,2 
@@ -503,7 +532,8 @@ Kington,2,1870,4,1870,,11b,,,
 Kington,1,1871,1,2008,,6a,9a,9a,29 
 Kirk Deighton,3,1861,2,1869,,9a,,, 
 Kirkstall,4,1862,2,1869,,9b,,, 
-Knaresborough,,,4,1946,23,9a,2c,, 
+Knaresborough,,,4,1946,23,9a,2c,,
+Knaresbro',,,4,1946,23,9a,2c,,  
 Knighton,,,1,1933,26,11b,,, 
 Knowsley,2,1974,,,,,,,36 
 Lambeth,,,,,4,1d,5c,5d,14 
@@ -533,11 +563,14 @@ Limehouse,3,1921,4,1925,,1c,,,
 Lincoln,,,1,2003,14,7a,3b,3b,7 
 Linton,,,1,1935,14,3b,,, 
 Liskeard,,,2,2007,9,5c,7a,7a,21 
-Littleborough,4,1936,1,1974,,8e,10d,10d, 
+Littleborough,4,1936,1,1974,,8e,10d,10d,
+Littlebro',4,1936,1,1974,,8e,10d,10d, 
 Liverpool,,,3,1934,20,8b,,, 
 Liverpool,4,1969,,,,,,10d,36 
 Liverpool North,4,1934,3,1969,,8b,10d,10d, 
-Liverpool South,4,1934,3,1969,,8b,10d,10d, 
+Liverpool N.,4,1934,3,1969,,8b,10d,10d,
+Liverpool South,4,1934,3,1969,,8b,10d,10d,
+Liverpool S.,4,1934,3,1969,,8b,10d,10d, 
 Llandilofawr,,,2,1935,26,11a,,, 
 Llandovery,,,2,1935,26,11a,,, 
 Llanelli,2,1974,,,,,,,24 
@@ -549,7 +582,8 @@ London City,,,,,2,1c,5d,5d,14
 Long Ashton,2,1899,1,1936,,5c,,, 
 Longtown,,,1,1939,25,10b,,, 
 Lothingland,2,1935,1,1974,,4a,4b,4b, 
-Loughborough,,,4,1999,15,7a,3a,3a,6 
+Loughborough,,,4,1999,15,7a,3a,3a,6
+Loughbro',,,4,1999,15,7a,3a,3a,6 
 Louth,,,1,2003,14,7a,3b,3b,7 
 Lower Agbrigg,1,1939,1,1974,,9c,2c,2c, 
 Ludlow,,,3,2005,18,6a,9a,9a,30 
@@ -575,9 +609,12 @@ Manchester North,1,1925,1,1939,,8d,,,
 Manchester South,1,1925,1,1939,,8d,,, 
 Mansfield,,,1,2012,15,7b,3c,3c,8 
 March,2,1938,2,1980,,3b,4a,4a,9 
-Market Bosworth,,,1,1974,15,7a,3a,3a, 
-Market Drayton,,,3,1935,18,6a,,, 
-Market Harborough,,,4,1999,15,7a,3a,3a,6 
+Market Bosworth,,,1,1974,15,7a,3a,3a,
+Mt. Bosworth,,,1,1974,15,7a,3a,3a, 
+Market Drayton,,,3,1935,18,6a,,,
+Mt. Drayton,,,3,1935,18,6a,,, 
+Market Harborough,,,4,1999,15,7a,3a,3a,6
+Mt. Harbro',,,4,1999,15,7a,3a,3a,6 
 Marlborough,,,3,1998,8,5a,7c,7c,23 
 Martley,3,1934,2,1976,,6c,9d,9d,29 
 Martley,,,1,1913,18,6c,,, 
@@ -592,10 +629,12 @@ Meriden,,,4,1977,16,6d,9c,9c,34
 Merioneth East,4,1935,1,1974,,11b,8c,8c, 
 Merioneth North,4,1935,1,1974,,11b,8c,8c, 
 Merioneth South,4,1935,1,1974,,11b,8c,8c, 
-Merthyr Tydfil,,,,,26,11a,8b,8b,27 
+Merthyr Tydfil,,,,,26,11a,8b,8b,27
+Merthyr T.,,,,,26,11a,8b,8b,27 
 Merton,2,1965,,,,,,5d,14 
 Mid Devon,3,1978,1,2007,,,,,21 
 Mid Glamorgan,4,1970,1,1974,,,,8b, 
+Middlesbro',4,1875,1,1968,,9d,1b,1b,
 Middlesbrough,4,1875,1,1968,,9d,1b,1b, 
 Middlesex South,4,1947,1,1965,,,5f,, 
 Middleton,4,1933,1,1974,,8d,10e,10e, 
@@ -619,8 +658,10 @@ New Forest,,,1,2008,8,2b,6b,6b,20
 Newark,,,1,2012,15,7b,3c,3c,8 
 Newbury,,,1,1998,6,2c,6a,6a,19 
 Newcastle in Emlyn,,,2,1936,26,11b,,, 
+Newcastle L.,,,3,2008,17,6b,9b,9b,30
 Newcastle under Lyme,,,3,2008,17,6b,9b,9b,30 
-Newcastle upon Tyne,,,,,25,10b,1b,1b,2 
+Newcastle upon Tyne,,,,,25,10b,1b,1b,2
+Newcastle T.,,,,,25,10b,1b,1b,2 
 Newent,,,1,1937,11,6a,,, 
 Newham,1,1968,,,,,,5e,15 
 Newhaven,,,1,1839,7,,,, 
@@ -632,21 +673,25 @@ Newport M,,,,,26,11a,8c,8c,28
 Newport Pagnell,,,1,1935,6,3a,,, 
 Newport S,,,3,1935,18,6a,,, 
 Newton,2,1934,1,1974,,8c,10f,10f, 
-Newton Abbot,,,1,1998,10,5b,7a,7a,21 
+Newton Abbot,,,1,1998,10,5b,7a,7a,21
+Newton A.,,,1,1998,10,5b,7a,7a,21 
 Newtown,,,,,27,11b,8c,8c,26 
 North Aylesford,,,4,1884,5,2a,,, 
 North Bierley,1,1892,4,1938,,9b,,, 
 North Bucks,2,1935,1,1985,,3a,6a,6a,19 
 North Cleveland,2,1974,1,1996,,,,,3 
-North Cotswold,2,1937,1,2006,,6a,7b,7b,22 
+North Cotswold,2,1937,1,2006,,6a,7b,7b,22
+N. Cotswold,2,1937,1,2006,,6a,7b,7b,22 
 North Dorset,2,1974,4,2005,,,,,23 
-North East Cheshire,2,1937,1,1974,,8a,10a,10a, 
+North East Cheshire,2,1937,1,1974,,8a,10a,10a,
+N. E. Cheshire,2,1937,1,1974,,8a,10a,10a, 
 North East Hampshire,2,1974,1,2008,,,,,20 
 North Kesteven,1,1934,1,1974,,7a,3b,3b, 
 North Shropshire,1,1970,3,2005,,,,9a,30 
 North Tyneside East,2,1974,1,1985,,,,,2 
 North Tyneside West,2,1974,1,1985,,,,,2 
 North Walsham,1,1939,,,,4b,4b,4b,10 
+N. Walsham,1,1939,,,,4b,4b,4b,10
 North Warwickshire,2,1974,2,2005,,,,,31 
 North Witchford,,,1,1938,14,3b,,, 
 Northallerton,,,3,1998,24,9d,1b,1b,2 
@@ -654,11 +699,15 @@ Northampton & Hardingstone,1,1924,2,1936,,3b,,,
 Northampton,,,4,1923,15,3b,,, 
 Northampton,3,1936,3,2010,,3b,3b,3b,7 
 Northleach,,,1,1937,11,6a,,, 
-Northumberland Central,1,1937,1,2008,,10b,1b,1b,1 
+Northumberland Central,1,1937,1,2008,,10b,1b,1b,1
+Nthmbld C.,1,1937,1,2008,,10b,1b,1b,1 
 Northumberland North First,1,1937,1,2008,,10b,1b,1b,1 
-Northumberland North Second,1,1937,1,2008,,10b,1b,1b,1 
-Northumberland South,4,1936,1,1974,,10b,1b,1b, 
-Northumberland West,1,1937,1,2008,,10b,1b,1b,1 
+Northumberland North Second,1,1937,1,2008,,10b,1b,1b,1
+Nthmbld N. 2nd.,1,1937,1,2008,,10b,1b,1b,1 
+Northumberland South,4,1936,1,1974,,10b,1b,1b,
+Nthmbld S.,4,1936,1,1974,,10b,1b,1b, 
+Northumberland West,1,1937,1,2008,,10b,1b,1b,1
+Nthmbld W.,1,1937,1,2008,,10b,1b,1b,1 
 Northwich,,,1,1974,19,8a,10a,10a, 
 Norton Radstock,2,1936,1,1974,,5c,7c,7c, 
 Norwich,,,,,13,4b,4b,4b,10 
@@ -690,7 +739,8 @@ Penllyn,2,1974,,,,,,,25
 Penrith,,,,,25,10b,1a,1a,1 
 Penzance,,,2,2007,9,5c,7a,7a,21 
 Pershore,,,1,2006,18,6c,9d,9d,29 
-Peterborough,,,,,15,3b,3b,4b,9 
+Peterborough,,,,,15,3b,3b,4b,9
+Peterbro',,,,,15,3b,3b,4b,9 
 Petersfield,,,1,2008,7,2c,6b,6b,20 
 Petworth,,,1,1935,7,2b,,, 
 Pewsey,,,1,1936,8,5a,,, 
@@ -744,16 +794,19 @@ Risbridge,,,2,1938,12,4a,,,
 Rochdale,,,,,21,8e,10f,10f,39 
 Rochford,,,1,1974,12,4a,4a,4a, 
 Romford,,,1,1965,12,4a,5a,, 
-Romney Marsh,,,1,1941,5,2a,,, 
+Romney Marsh,,,1,1941,5,2a,,,
+Romney M.,,,1,1941,5,2a,,, 
 Romsey & Stockbridge,4,1932,1,1974,,2c,6b,6b, 
 Romsey,,,3,1932,7,2c,,, 
 Romsey,2,1974,1,2008,,,,,20 
 Ross,,,1,2008,26,6a,9a,9a,29 
 Rothbury,,,4,1936,25,10b,,, 
-Rother Valley,2,1938,1,1974,,9c,2c,2c, 
+Rother Valley,2,1938,1,1974,,9c,2c,2c,
+Rother V.,2,1938,1,1974,,9c,2c,2c, 
 Rotherham,,,,,22,9c,2c,2c,3 
 Rotherhithe,,,4,1869,4,1d,,, 
-Rowley Regis,2,1935,1,1966,,6b,9b,9b, 
+Rowley Regis,2,1935,1,1966,,6b,9b,9b,
+Rowley R.,2,1935,1,1966,,6b,9b,9b, 
 Royston,,,3,1939,6,3a,,, 
 Rugby,,,2,2005,16,6d,9c,9c,31 
 Runcorn,,,1,1974,19,8a,10a,10a, 
@@ -763,13 +816,15 @@ Rutland,2,1974,1,1995,,,,,6
 Rye,,,1,1935,7,2b,,, 
 Ryedale,4,1936,3,1998,,9d,1b,1b,2 
 Saddleworth,,,1,1974,23,9a,2c,2c, 
-Saffron Walden,,,1,1974,12,4a,4a,4a, 
+Saffron Walden,,,1,1974,12,4a,4a,4a,
+Saffron W.,,,1,1974,12,4a,4a,4a, 
 Salford,,,,,20,8d,10f,10f,39 
 Salisbury,,,1,1869,8,5a,,, 
 Salisbury,3,1895,1,2008,,5a,7c,7c,23 
 Samford,,,1,1974,12,4a,4b,4b, 
 Sandwell,2,1974,,,,,,,33 
-Scarborough,,,3,1998,24,9d,1b,1b,2 
+Scarborough,,,3,1998,24,9d,1b,1b,2
+Scarbro',,,3,1998,24,9d,1b,1b,2 
 Scilly Islands,,,1,1901,9,5c,,, 
 Sculcoates,,,1,1937,22,9d,,, 
 Scunthorpe,4,1938,1,1996,,7a,3b,3b,7 
@@ -814,7 +869,8 @@ South East Hampshire,2,1974,1,2008,,,,,20
 South Glamorgan,2,1974,1,1996,,,,,28 
 South Molton,,,2,1936,10,5b,,, 
 South Pembrokeshire,1,1983,,,,,,,24 
-South Shields,,,4,2000,24,10a,1a,1a,2 
+South Shields,,,4,2000,24,10a,1a,1a,2
+S. Shields,,,4,2000,24,10a,1a,1a,2 
 South Staffordshire,2,1974,3,2008,,,,,30 
 South Stoneham,,,1,1927,7,2c,,, 
 Southam,,,3,1985,16,6d,9c,9c,31 
@@ -882,14 +938,20 @@ Sturminster,1,1959,1,1974,,,7c,7c,
 Sturminster,,,4,1958,8,5a,6a,, 
 Sudbury,,,4,2010,12,4a,4b,4b,10 
 Sunderland,,,,,24,10a,1a,1a,2 
-Surrey Mid Eastern,2,1934,3,1996,,2a,5g,5g,17 
-Surrey North Eastern,2,1934,1,1965,,2a,5g,, 
-Surrey North Western,2,1934,3,1996,,2a,5g,5g,17 
+Surrey Mid Eastern,2,1934,3,1996,,2a,5g,5g,17
+Surrey Mid E.,2,1934,3,1996,,2a,5g,5g,17 
+Surrey North Eastern,2,1934,1,1965,,2a,5g,,
+Surrey N. E.,2,1934,1,1965,,2a,5g,, 
+Surrey North Western,2,1934,3,1996,,2a,5g,5g,17
+Surrey N. W.,2,1934,3,1996,,2a,5g,5g,17 
 Surrey Northern,3,1948,1,1965,,,5g,, 
 Surrey Northern,2,1965,3,1996,,,,5g,17 
-Surrey South Eastern,2,1934,3,1996,,2a,5g,5g,17 
-Surrey South Western,2,1934,3,1996,,2a,5g,5g,17 
+Surrey South Eastern,2,1934,3,1996,,2a,5g,5g,17
+Surrey S. E.,2,1934,3,1996,,2a,5g,5g,17 
+Surrey South Western,2,1934,3,1996,,2a,5g,5g,17
+Surrey S. W.,2,1934,3,1996,,2a,5g,5g,17 
 Sutton,2,1965,,,,,,5e,15 
+Sutton Coldf'd,2,1932,1,1974,,6d,9c,9c,
 Sutton Coldfield,2,1932,1,1974,,6d,9c,9c, 
 Swadlincote,2,1974,1,1997,,,,,6 
 Swaffham,,,4,1938,13,4b,,, 
@@ -973,7 +1035,8 @@ Waveney,2,1974,4,2010,,,,,10
 Wayland,,,,,13,4b,4b,4b,10 
 Weardale,,,2,1938,24,10a,,, 
 Wednesbury,4,1932,1,1966,,6b,9b,9b, 
-Wellingborough,,,3,2010,15,3b,3b,3b,7 
+Wellingborough,,,3,2010,15,3b,3b,3b,7
+Wellingbro',,,3,2010,15,3b,3b,3b,7 
 Wellington Sal,,,1,1974,18,6a,9a,9a, 
 Wellington Som,,,1,1936,10,5c,,, 
 Wells,,,1,1974,10,5c,7c,7c, 
@@ -984,14 +1047,19 @@ Wem,,,3,1935,18,6a,,,
 Wenlock,4,1935,2,1948,,6a,9a,, 
 Wensleydale,4,1936,3,1998,,9d,1b,1b,2 
 Weobley,,,1,1997,26,6a,9a,9a,29 
-West Ashford,,,1,1941,5,2a,,, 
+West Ashford,,,1,1941,5,2a,,,
+W. Ashford,,,1,1941,5,2a,,, 
 West Bridgford,4,1976,2,1988,,,,,8 
+W. Bromwich,,,1,1974,18,6b,9b,9b,
 West Bromwich,,,1,1974,18,6b,9b,9b, 
-West Cheshire,2,1937,1,1974,,8a,10a,10a, 
+West Cheshire,2,1937,1,1974,,8a,10a,10a,
+W. Cheshire,2,1937,1,1974,,8a,10a,10a, 
 West Derby,,,3,1934,20,8b,,, 
 West Firle,,,4,1837,7,,,, 
 West Glamorgan,1,1935,1,1974,,11a,8b,8b, 
-West Ham,,,4,1967,12,4a,5a,5e, 
+West Ham,,,4,1967,12,4a,5a,5e,
+W. Ham,,,4,1967,12,4a,5a,5e, 
+W. Hartlepool,3,1938,1,1967,,10a,1a,1a,
 West Hartlepool,3,1938,1,1967,,10a,1a,1a, 
 West Lancashire,2,1974,2,2005,,,,,40 
 West London,2,1838,4,1869,2,1c,,, 
@@ -1005,8 +1073,10 @@ Westhampnett,,,1,1935,7,2b,,,
 Westminster,3,1870,2,1913,,1a,,, 
 Westminster,2,1965,,,,,,5e,15 
 Westminster St Margaret,,,2,1870,1,1a,,, 
-Westmorland North,4,1937,1,1974,,10b,1b,1b, 
-Westmorland South,4,1937,1,1974,,10b,1b,1b, 
+Westmorland North,4,1937,1,1974,,10b,1b,1b,
+Westmorland N.,4,1937,1,1974,,10b,1b,1b, 
+Westmorland South,4,1937,1,1974,,10b,1b,1b,
+Westmorland S.,4,1937,1,1974,,10b,1b,1b, 
 Weston super Mare,2,1936,1,1996,,5c,7c,7c,22 
 Wetherby,3,1854,4,1946,,9a,2d,, 
 Weymouth,1,1959,1,1997,,,7c,7c,23 

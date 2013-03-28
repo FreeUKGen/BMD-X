@@ -405,7 +405,7 @@
 
 - (IBAction)sendBreak:(id)sender
 {
-    [self sendText:[NSString stringWithFormat:@"+BREAK\r", [pageFieldSolo stringValue]]];
+    [self sendText:[NSString stringWithFormat:@"+BREAK\r"]];
 }
 
 - (IBAction)startPage:(id)sender{
@@ -497,7 +497,7 @@
 
     long    yrInt = [mEnteredYear intValue];
     long    qtrInt = [mEnteredMonth intValue];
-    NSLog(@"comparing:with end year '%d' and '%d'", yrInt, qtrInt);
+    NSLog(@"comparing:with end year '%ld' and '%ld'", yrInt, qtrInt);
     
     for(NSString *line in lines)
     {

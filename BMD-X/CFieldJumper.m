@@ -9,6 +9,7 @@
 #import "CFieldJumper.h"
 #import "BMDDocument.h"
 #import "RecordType.h"
+#import "CNoSpaceAutoTextField.h"
 
 @interface CFieldJumper (internals)
     - (BOOL) isModern;
