@@ -8,6 +8,7 @@
 
 #import "CNoSpaceAutoTextField.h"
 #import "BMDDocument.h"
+#import "SpoiledTextField.h"
 
 @implementation CNoSpaceAutoTextField
 
@@ -42,6 +43,19 @@
     }
     return [super textView:atextView doCommandBySelector:command];
 }
+
+-(BOOL) becomeFirstResponder
+{
+    NSLog(@"become first responder");
+    BOOL result = [super becomeFirstResponder];
+
+    BMDDocument* aBDoc = (BMDDocument*)self.delegate;
+    
+    [[aBDoc getFieldEditor] setEditorParent:self];
+    
+    return result;
+}
+
 
 -(void) matchDocs:(NSString*) strtPt
 {

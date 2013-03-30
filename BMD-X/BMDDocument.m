@@ -9,6 +9,7 @@
 #import "BMDDocument.h"
 #import "SpoiledTextField.h"
 #import "NoSpaceTextField.h"
+#import "CNoSpaceAutoTextField.h"
 #import "FormatType.h"
 #import "CQuaterMonth.h"
 #import "CLineItem.h"
@@ -57,6 +58,7 @@
     }
     return self;
 }
+
 -(void)awakeFromNib
 {
     [super awakeFromNib];
@@ -64,7 +66,6 @@
     mLineItem = [[CLineItem alloc] init];
     mJumper = [[CFieldJumper alloc] init:self];
 }
-
 
 - (void)spareFieldClosing:(id)fieldOb
 {
@@ -98,6 +99,7 @@
             break;
         case ( TEXT_EVENT_MIDDLENAME_3 ):
             mLineItem.middleName3 = [msSpareFld2 stringValue];
+            [mFieldEditor setEditorParent:msSpareFld3];
             break;
         case ( TEXT_EVENT_MIDDLENAME_4 ):
             mLineItem.middleName4 = [msSpareFld3 stringValue];
@@ -277,15 +279,25 @@
 - (BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor
 {
     [self updateLine];
+    [mFieldEditor setEditorParent:control];
     return YES;
     
+}
+- (CSpoiledTextField*)getFieldEditor
+{
+    return mFieldEditor;
+}
+
+- (void)controlTextDidBeginEditing:(NSNotification *)aNotification
+{
+    [mFieldEditor setEditorParent:[aNotification object]];
 }
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)atextView doCommandBySelector:(SEL)command
 {
     NSString* cmdStr = NSStringFromSelector(command);
     
-//    NSLog( @"just got command:%@", cmdStr);
+    NSLog( @"just got command:%@", cmdStr);
 
     if ([cmdStr isEqualToString:@"insertNewline:"]) {
         [self textFieldClosing:control];
@@ -317,11 +329,22 @@
     }
     return NO;
 }
+- (void)textDidBeginEditing:(NSNotification *)aNotification
+{
+    [mFieldEditor setEditorParent:[aNotification object]];
+}
+
+- (BOOL)textShouldBeginEditing:(NSText *)aTextObject
+{
+    if ( [aTextObject isKindOfClass:[CNoSpaceTextField class]] ) {
+        [mFieldEditor setEditorParent:aTextObject];
+    }
+    return YES;
+}
 
 - (id)windowWillReturnFieldEditor:(NSWindow *)sender toObject:(id)client
 {
     if ( [client isKindOfClass:[CNoSpaceTextField class]] ) {
-        [mFieldEditor setEditorParent:client];
         return mFieldEditor;
     }
     return nil;

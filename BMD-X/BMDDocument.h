@@ -93,9 +93,12 @@
 - (NSString *)getCompletionOf:(NSControl *)control with:(NSString *)starter  indexOfSelectedItem:(NSUInteger)index;
 
 - (void)fieldText:(id)fieldOb;
+- (BOOL)textShouldBeginEditing:(NSText *)aTextObject;
 
 - (IBAction)setSurNameLock:(id)sender;
 - (void)scrollToTop:(id)sender;
+
+- (void)textDidBeginEditing:(NSNotification *)aNotification;
 
 - (IBAction)sendBreak:(id)sender;
 - (IBAction)startPage:(id)sender;
@@ -116,5 +119,5 @@
 
     - (IBAction)cancelAction:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo;
 
-
+- (CSpoiledTextField*)getFieldEditor;
 @end
