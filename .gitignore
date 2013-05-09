@@ -17,3 +17,8 @@ BMD-X.xcodeproj/project.xcworkspace/xcuserdata/steve.xcuserdatad/UserInterfaceSt
 BMD-X.xcodeproj/xcuserdata/steve.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
 
 BMD-X.xcodeproj/xcuserdata/steve.xcuserdatad/xcschemes/BMD-X.xcscheme
+RubyGems
+
+*.pbxproj
+
+BMD-X.xcodeproj/project.pbxproj
