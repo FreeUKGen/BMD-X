@@ -45,6 +45,7 @@
 		AA632DD3150EEC4900E05721 /* CLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA632DD2150EEC4900E05721 /* CLineItem.m */; };
 		AAABB11915169B34006CA4E4 /* CFieldJumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AAABB11815169B34006CA4E4 /* CFieldJumper.m */; };
 		AAABB121151A00E0006CA4E4 /* RecordType.m in Sources */ = {isa = PBXBuildFile; fileRef = AAABB120151A00E0006CA4E4 /* RecordType.m */; };
+		AAC92F46173C318F00C64AAB /* realIcn.icns in Resources */ = {isa = PBXBuildFile; fileRef = AAC92F45173C318F00C64AAB /* realIcn.icns */; };
 		AAC94DAA14C6EE0200407CF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC94DA914C6EE0200407CF4 /* Cocoa.framework */; };
 		AAC94DB414C6EE0200407CF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DB214C6EE0200407CF4 /* InfoPlist.strings */; };
 		AAC94DB714C6EE0200407CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC94DB614C6EE0200407CF4 /* main.m */; };
@@ -99,7 +100,8 @@
 		AAABB11815169B34006CA4E4 /* CFieldJumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFieldJumper.m; sourceTree = "<group>"; };
 		AAABB11F151A00E0006CA4E4 /* RecordType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordType.h; sourceTree = "<group>"; };
 		AAABB120151A00E0006CA4E4 /* RecordType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordType.m; sourceTree = "<group>"; };
-		AAC94DA514C6EE0200407CF4 /* BMD-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMD-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAC92F45173C318F00C64AAB /* realIcn.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = realIcn.icns; sourceTree = "<group>"; };
+		AAC94DA514C6EE0200407CF4 /* BMD-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "BMD-X.app"; path = "MacBMD-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC94DA914C6EE0200407CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAC94DAC14C6EE0200407CF4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		AAC94DAD14C6EE0200407CF4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -171,6 +173,7 @@
 		AAC94D9A14C6EE0200407CF4 = {
 			isa = PBXGroup;
 			children = (
+				AAC92F45173C318F00C64AAB /* realIcn.icns */,
 				AA266FEF16F815EE004D6E5D /* Newicon.icns */,
 				AAC94DAF14C6EE0200407CF4 /* BMD-X */,
 				AAC94DA814C6EE0200407CF4 /* Frameworks */,
@@ -319,6 +322,7 @@
 				AA2C7CEB14EBE57800856729 /* iconPack.icns in Resources */,
 				AADCAB1816304B8600179490 /* town_data_seed.txt in Resources */,
 				AA266FF016F815EE004D6E5D /* Newicon.icns in Resources */,
+				AAC92F46173C318F00C64AAB /* realIcn.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
