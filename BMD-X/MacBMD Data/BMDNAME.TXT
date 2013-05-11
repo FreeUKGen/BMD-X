@@ -1,26 +1,20 @@
-Blah blah blah
 
 
+ The main rule is keep all names starting with
+ the same letter together. They do not have to
+ be in strict alphabetical order so you may
+ prefer to put the ones you find most frequently
+ near the top.
 
+ Also make sure that each name is typed hard over
+ to the left of the line. Any line starting with
+ a blank (like this one) is ignored when loading
+ the table.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ This file was created to include many forenames
+ in the Free-BMD database. If you come across any
+ obvious omissions, please let me know at:
+ peter65@optonline.net
 
 Aaron
 Abel
