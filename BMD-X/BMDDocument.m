@@ -649,7 +649,7 @@
     NSData *data;
     
     [self setString:[textView textStorage]];
-    NSMutableDictionary *dict = [NSDictionary dictionaryWithObject:NSRTFTextDocumentType forKey:NSDocumentTypeDocumentAttribute];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObject:NSPlainTextDocumentType forKey:NSDocumentTypeDocumentAttribute];
     
     [textView breakUndoCoalescing];
     
