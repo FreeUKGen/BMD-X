@@ -26,8 +26,9 @@ Ampthill,,,2,1999,6,3b,4a,4a,9
 Andover,,,1,2008,7,2c,6b,6b,20 
 Anglesey,,,1,1937,27,11b,,, 
 Anglesey,2,1969,1,1974,,,,8a, 
+Anglesey E.,2,1937,1,1969,,11b,8a,8a, 
 Anglesey East,2,1937,1,1969,,11b,8a,8a, 
-Anglesey West,2,1937,1,1969,,11b,8a,8a, 
+Anglesey West,2,1937,1,1969,,11b,8a,8a,
 Appleby,2,1974,2,1984,,,,,1 
 Ardudwy,2,1974,,,,,,,25 
 Ashbourne,,,,,19,7b,3a,3a,6 
