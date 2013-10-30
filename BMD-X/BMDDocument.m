@@ -84,8 +84,9 @@
     }
 }
     
-- (void)spareFieldOpening:(id)fieldOb
+- (BOOL)spareFieldOpening:(id)fieldOb
 {
+    bool handled = true;
     switch ( [mJumper spareFieldOpening:fieldOb] )
     {
         case ( TEXT_EVENT_FIRSTNAME ):
@@ -104,7 +105,11 @@
         case ( TEXT_EVENT_MIDDLENAME_4 ):
             mLineItem.middleName4 = [msSpareFld3 stringValue];
             break;
+        default:
+            handled = false;
+            break;
     }
+    return handled;
 }
 - (void)fieldText:(id)fieldOb
 {

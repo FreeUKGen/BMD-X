@@ -85,7 +85,7 @@
 @private
 }
 - (NSAttributedString *) string;
-- (void)spareFieldOpening:(id)fieldOb;
+- (BOOL)spareFieldOpening:(id)fieldOb;
 
 - (void) setString: (NSAttributedString *) value;
 - (void)textFieldClosing:(id)fieldOb;

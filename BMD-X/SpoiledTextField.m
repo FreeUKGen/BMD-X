@@ -35,11 +35,14 @@
 }
 - (void)keyDown:(NSEvent *)theEvent
 {
+    BOOL isHandled = false;
     if ( [[theEvent characters] isEqualToString:@" "] )
-        [mParentDoc spareFieldOpening:mFieldEditorsParent];
+        isHandled = [mParentDoc spareFieldOpening:mFieldEditorsParent];
     else if ( [[theEvent characters] isEqualToString:@" "] )
-        [mParentDoc spareFieldOpening:mFieldEditorsParent];
-    else {
+        isHandled = [mParentDoc spareFieldOpening:mFieldEditorsParent];
+    
+    if ( ! isHandled )
+    {
         [super keyDown:theEvent];
         int keyCode = [theEvent.characters characterAtIndex:0];
         
