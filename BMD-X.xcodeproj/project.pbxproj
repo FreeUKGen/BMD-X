@@ -97,7 +97,7 @@
 		AAABB11815169B34006CA4E4 /* CFieldJumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFieldJumper.m; sourceTree = "<group>"; };
 		AAABB11F151A00E0006CA4E4 /* RecordType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordType.h; sourceTree = "<group>"; };
 		AAABB120151A00E0006CA4E4 /* RecordType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordType.m; sourceTree = "<group>"; };
-		AAC94DA514C6EE0200407CF4 /* BMD-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "BMD-X.app"; path = "MacBMD-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAC94DA514C6EE0200407CF4 /* MacBMD-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacBMD-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC94DA914C6EE0200407CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAC94DAC14C6EE0200407CF4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		AAC94DAD14C6EE0200407CF4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -179,7 +179,7 @@
 		AAC94DA614C6EE0200407CF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AAC94DA514C6EE0200407CF4 /* BMD-X.app */,
+				AAC94DA514C6EE0200407CF4 /* MacBMD-X.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,11 +216,11 @@
 				AA632DD1150EEC4900E05721 /* CLineItem.h */,
 				AA632DD2150EEC4900E05721 /* CLineItem.m */,
 				AA2E176115514E570031A657 /* CAutoTextField.m */,
-				AA541B55150D9CD100073D47 /* CNoSpaceAutoTextField.m */,
 				AA2E175D15514D7F0031A657 /* NoSpaceTextField.h */,
 				AAF3D28114EACB5E001DB689 /* SpoiledTextField.m */,
 				AA2E176015514E570031A657 /* CAutoTextField.h */,
 				AA2E175E15514D7F0031A657 /* NoSpaceTextField.m */,
+				AA541B55150D9CD100073D47 /* CNoSpaceAutoTextField.m */,
 				AA541B54150D9CD000073D47 /* CNoSpaceAutoTextField.h */,
 				AAF3D28014EACB5E001DB689 /* SpoiledTextField.h */,
 				AA541B22150C0DA500073D47 /* Gemfile */,
@@ -273,7 +273,7 @@
 			);
 			name = "MacBMD-X";
 			productName = "BMD-X";
-			productReference = AAC94DA514C6EE0200407CF4 /* BMD-X.app */;
+			productReference = AAC94DA514C6EE0200407CF4 /* MacBMD-X.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
