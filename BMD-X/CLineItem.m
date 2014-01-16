@@ -96,7 +96,7 @@
 
         if ( mDoFinal )
         {
-            [answer appendString:@"\r"];
+            [answer appendString:@"\n"];
             mDoFinal = false;
             self.firstName = self.lastName = self.middleName1 = self.middleName2
                 = self.middleName3 = self.middleName4 = self.middleName5 = self.spouseName

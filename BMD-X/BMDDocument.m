@@ -433,7 +433,7 @@
 
 - (IBAction)sendBreak:(id)sender
 {
-    [self sendText:[NSString stringWithFormat:@"+BREAK\r"]];
+    [self sendText:[NSString stringWithFormat:@"+BREAK\n"]];
 }
 
 - (IBAction)startPage:(id)sender{
@@ -442,7 +442,7 @@
 
 - (IBAction)okPageDLOG:(id)sender
 {    
-    [self sendText:[NSString stringWithFormat:@"+PAGE,%@\r", [pageFieldSolo stringValue]]];
+    [self sendText:[NSString stringWithFormat:@"+PAGE,%@\n", [pageFieldSolo stringValue]]];
     [NSApp endSheet:mPageWindow returnCode:[sender tag]];
 }
 
@@ -454,7 +454,7 @@
     [NSApp beginSheet:mCommentWindow modalForWindow:self.windowForSheet modalDelegate:self didEndSelector:@selector(cancelAction:returnCode:contextInfo:) contextInfo:@"entry"];
 }
 - (IBAction)okCommentDLOG:(id)sender{
-    NSString* string = [NSString stringWithFormat:@"#THEORY %@\r", [commentField stringValue]];
+    NSString* string = [NSString stringWithFormat:@"#THEORY %@\n", [commentField stringValue]];
 
     [[[textView textStorage] mutableString] appendString: string];
     [NSApp endSheet:mCommentWindow returnCode:[sender tag]];
@@ -479,10 +479,10 @@
     if ( ! [[freeBMDRefField stringValue] isEqualToString:@""] )
         [string appendString:[NSString stringWithFormat:@",%@", [freeBMDRefField stringValue]]];
 
-    [string appendString:[NSString stringWithFormat:@",%@\r",aStr]];
+    [string appendString:[NSString stringWithFormat:@",%@\n",aStr]];
     
     if ( ! [[pageField stringValue] isEqualToString:@""] )
-        [string appendString:[NSString stringWithFormat:@"+PAGE,%@\r", [pageField stringValue]]];
+        [string appendString:[NSString stringWithFormat:@"+PAGE,%@\n", [pageField stringValue]]];
     
     NSString* mnt = [[quarterMenu selectedItem] title];
     
@@ -565,7 +565,7 @@
 
 - (IBAction)okEntryDLOG:(id)sender
 {
-    [self sendText:[NSString stringWithFormat:@"+INFO,%@,%@,%@,%@,macintosh\r", [emailField stringValue], [passwordField stringValue], 
+    [self sendText:[NSString stringWithFormat:@"+INFO,%@,%@,%@,%@,macintosh\n", [emailField stringValue], [passwordField stringValue], 
                     [[orderMenu selectedItem] title], [[typeMenu selectedItem] title]]];
     
     [mJumper setType:[CRecordType recordTypeForTitle:[[typeMenu selectedItem] title]]];
@@ -654,11 +654,10 @@
     NSData *data;
     
     [self setString:[textView textStorage]];
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObject:NSPlainTextDocumentType forKey:NSDocumentTypeDocumentAttribute];
     
     [textView breakUndoCoalescing];
     
-    data = [[self string] dataFromRange:NSMakeRange(0, [[self string] length]) documentAttributes:dict error:outError];
+    data = [[[self string] string] dataUsingEncoding:NSUTF8StringEncoding];
     
     return data;    
 }
