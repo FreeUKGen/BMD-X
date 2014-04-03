@@ -15,7 +15,7 @@
 {
     if ( [titleString isEqualToString:@"BIRTHS"] ) {
         return BIRTH_TYPE;
-    } else if ( [titleString isEqualToString:@"MARRAIGES"] ) {
+    } else if ( [titleString isEqualToString:@"MARRIAGES"] ) {
         return MARRAIGE_TYPE;
     } else if ( [titleString isEqualToString:@"DEATHS"] ) {
         return DEATH_TYPE;
