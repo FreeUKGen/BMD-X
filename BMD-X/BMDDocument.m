@@ -657,7 +657,7 @@
     
     [textView breakUndoCoalescing];
     
-    data = [[[self string] string] dataUsingEncoding:NSUTF8StringEncoding];
+    data = [[[self string] string] dataUsingEncoding:NSMacOSRomanStringEncoding];
     
     return data;    
 }
