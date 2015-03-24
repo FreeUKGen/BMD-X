@@ -90,20 +90,20 @@
     switch ( [mJumper spareFieldOpening:fieldOb] )
     {
         case ( TEXT_EVENT_FIRSTNAME ):
-            mLineItem.firstName = [msFirstnameFld stringValue];
+            mLineItem.firstName = [self correctedFieldValue:msFirstnameFld];
             break;
         case ( TEXT_EVENT_MIDDLENAME ):
-            mLineItem.middleName1 = [msMiddleNameFld stringValue];
+            mLineItem.middleName1 = [self correctedFieldValue:msMiddleNameFld];
             break;
         case ( TEXT_EVENT_MIDDLENAME_2 ):
-            mLineItem.middleName2 = [msSpareFld1 stringValue];
+            mLineItem.middleName2 = [self correctedFieldValue:msSpareFld1];
             break;
         case ( TEXT_EVENT_MIDDLENAME_3 ):
-            mLineItem.middleName3 = [msSpareFld2 stringValue];
+            mLineItem.middleName3 = [self correctedFieldValue:msSpareFld2];
             [mFieldEditor setEditorParent:msSpareFld3];
             break;
         case ( TEXT_EVENT_MIDDLENAME_4 ):
-            mLineItem.middleName4 = [msSpareFld3 stringValue];
+            mLineItem.middleName4 = [self correctedFieldValue:msSpareFld3];
             break;
         default:
             handled = false;
@@ -111,55 +111,73 @@
     }
     return handled;
 }
+
+- (NSString*)correctedFieldValue:(NSTextField*)fld
+{
+    NSString* strtr = [fld stringValue];
+    if ( [msCapsBtn state] == NSOnState )
+        return [strtr uppercaseString];
+    else if ( [strtr length] > 1 )
+    {
+        NSString* firstChr = [strtr substringWithRange:NSMakeRange(0, 1)];
+        NSString* endStr = [strtr substringFromIndex:1];
+        return [NSString stringWithFormat:@"%@%@", [firstChr uppercaseString], endStr];
+    }
+    else
+        return [strtr uppercaseString];
+
+    return strtr;
+}
+
 - (void)fieldText:(id)fieldOb
 {
     NSString* val;
     if ( ! [mLineItem lineFinalized] ) {
         switch ( [mJumper actionForTextField:fieldOb] ) {
             case ( TEXT_EVENT_SURNAME ):
-                mLineItem.lastName = ( [msCapsBtn state] == NSOnState ) ? [[msSurnameFld stringValue] uppercaseString] : [msSurnameFld stringValue];
+                mLineItem.lastName = [self correctedFieldValue:msSurnameFld];
                 break;
             case ( TEXT_EVENT_FIRSTNAME ):
-                mLineItem.firstName = [msFirstnameFld stringValue];
+                mLineItem.firstName = [self correctedFieldValue:msFirstnameFld];
                 break;
             case ( TEXT_EVENT_MIDDLENAME ):
                 if ( [[msMiddleNameFld stringValue] isEqualToString:@""] )
                     [self spareFieldClosing:fieldOb];
                 else
-                    mLineItem.middleName1 = [msMiddleNameFld stringValue];
+                    mLineItem.middleName1 = [self correctedFieldValue:msMiddleNameFld];
                 break;
             case ( TEXT_EVENT_MIDDLENAME_2 ):
                 if ( [[msSpareFld1 stringValue] isEqualToString:@""] )
                     mLineItem.middleName2 = nil;
                 else
-                    mLineItem.middleName2 = [msSpareFld1 stringValue];
+                    mLineItem.middleName2 = [self correctedFieldValue:msSpareFld1];
                 break;
             case ( TEXT_EVENT_MIDDLENAME_3 ):
                 if ( [[msSpareFld2 stringValue] isEqualToString:@""] )
                     mLineItem.middleName3 = nil;
                 else
-                    mLineItem.middleName3 = [msSpareFld2 stringValue];
+                    mLineItem.middleName3 = [self correctedFieldValue:msSpareFld2];
                 break;
             case ( TEXT_EVENT_MIDDLENAME_4 ):
                 if ( [[msSpareFld3 stringValue] isEqualToString:@""] )
                     mLineItem.middleName4 = nil;
                 else
-                    mLineItem.middleName4 = [msSpareFld3 stringValue];
+                    mLineItem.middleName4 = [self correctedFieldValue:msSpareFld3];
                 break;
             case ( TEXT_EVENT_MIDDLENAME_5 ):
                 if ( [[msSpareFld4 stringValue] isEqualToString:@""] )
                     mLineItem.middleName5 = nil;
                 else
-                    mLineItem.middleName5 = [msSpareFld4 stringValue];
+                    mLineItem.middleName5 = [self correctedFieldValue:msSpareFld4];
                 break;
                 
             case ( TEXT_EVENT_MOTHER ):
-                mLineItem.spouseName = [msMotherSpouse stringValue];
-                [msMotherSpouse setStringValue:[mLineItem.spouseName capitalizedString]];
+                mLineItem.spouseName = [self correctedFieldValue:msMotherSpouse];
+                [msMotherSpouse setStringValue:mLineItem.spouseName];
                 break;
                 
             case ( TEXT_EVENT_DISTRICT ):
-                mLineItem.districtName = [msDistrictFld stringValue];
+                mLineItem.districtName = [self correctedFieldValue:msDistrictFld];
                 if ( ( val = [mNameBook valueForKey:[msDistrictFld stringValue]] ) != NULL ) {
                     [msVolumeFld setStringValue:val];
                     mLineItem.volumeName = [msVolumeFld stringValue];
@@ -203,7 +221,7 @@
 }
 
 - (void)textFieldClosing:(id)fieldOb
-{    
+{
     NSArray *lines = [[[textView textStorage] mutableString] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];    
     
     BOOL    emptyLine = false;
@@ -214,10 +232,10 @@
 
     switch ( [mJumper actionForTextEvent:fieldOb] ) {
         case ( TEXT_EVENT_SURNAME ):
-            mLineItem.lastName = ( [msCapsBtn state] == NSOnState ) ? [[msSurnameFld stringValue] uppercaseString] : [msSurnameFld stringValue];
+            mLineItem.lastName = [self correctedFieldValue:msSurnameFld];
             break;
         case ( TEXT_EVENT_FIRSTNAME ):
-            mLineItem.firstName = [msFirstnameFld stringValue];
+            mLineItem.firstName = [self correctedFieldValue:msFirstnameFld];
             break;
         case ( TEXT_EVENT_MIDDLENAME ):
             if ( [[msMiddleNameFld stringValue] isEqualToString:@""] )
@@ -229,40 +247,42 @@
             if ( [[msSpareFld1 stringValue] isEqualToString:@""] )
                 [self spareFieldClosing:fieldOb];
             else
-                mLineItem.middleName2 = [msSpareFld1 stringValue];
+                mLineItem.middleName2 = [self correctedFieldValue:msSpareFld1];
             break;
         case ( TEXT_EVENT_MIDDLENAME_3 ):
             if ( [[msSpareFld2 stringValue] isEqualToString:@""] )
                 [self spareFieldClosing:fieldOb];
             else
-                mLineItem.middleName3 = [msSpareFld2 stringValue];
+                mLineItem.middleName3 = [self correctedFieldValue:msSpareFld2];
             break;
         case ( TEXT_EVENT_MIDDLENAME_4 ):
             if ( [[msSpareFld3 stringValue] isEqualToString:@""] )
                 [self spareFieldClosing:fieldOb];
             else
-                mLineItem.middleName4 = [msSpareFld3 stringValue];
+                mLineItem.middleName4 = [self correctedFieldValue:msSpareFld3];
             break;
         case ( TEXT_EVENT_MIDDLENAME_5 ):
             if ( [[msSpareFld4 stringValue] isEqualToString:@""] )
                 [self spareFieldClosing:fieldOb];
             else
-                mLineItem.middleName5 = [msSpareFld4 stringValue];
+                mLineItem.middleName5 = [self correctedFieldValue:msSpareFld4];
             break;
 
         case ( TEXT_EVENT_MOTHER ):
-            mLineItem.spouseName = [msMotherSpouse stringValue];
+            mLineItem.spouseName = [self correctedFieldValue:msMotherSpouse];
             break;
 
         case ( TEXT_EVENT_DISTRICT ):
-            mLineItem.districtName = [msDistrictFld stringValue];
+            mLineItem.districtName = [self correctedFieldValue:msDistrictFld];
             if ( ( val = [mNameBook valueForKey:[msDistrictFld stringValue]] ) != NULL ) {
                 [msVolumeFld setStringValue:val];
             }        
             break;
+
         case ( TEXT_EVENT_VOLUME ):
             mLineItem.volumeName = [msVolumeFld stringValue];
             break;
+
         case ( TEXT_EVENT_PAGE ):
             if ( [msLockedBtn state] == NSOnState )
                 [self textFieldClosing:msSurnameFld];
@@ -519,7 +539,7 @@
     [mNameBook release];
     mNameBook   = [[NSMutableDictionary alloc] init];
     
-    NSString* filPath = [[NSBundle mainBundle] pathForResource:@"bmd_town_dump" ofType:@"txt"];
+    NSString* filPath = [[NSBundle mainBundle] pathForResource:@"bmd_districts" ofType:@"txt"];
     NSString *filesContent = [[NSString alloc] initWithContentsOfFile:filPath usedEncoding:&theEnc error:&error];
     NSArray *lines = [filesContent componentsSeparatedByString:@"\n"];
 

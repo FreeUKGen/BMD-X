@@ -52,7 +52,7 @@
 		AAC94DC014C6EE0200407CF4 /* BMDDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DBE14C6EE0200407CF4 /* BMDDocument.xib */; };
 		AAC94DC314C6EE0200407CF4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC94DC114C6EE0200407CF4 /* MainMenu.xib */; };
 		AADCAB1816304B8600179490 /* town_data_seed.txt in Resources */ = {isa = PBXBuildFile; fileRef = AADCAB1716304B8600179490 /* town_data_seed.txt */; };
-		AADEB3A015C023A500AC9ACD /* bmd_town_dump.txt in Resources */ = {isa = PBXBuildFile; fileRef = AADEB39F15C023A500AC9ACD /* bmd_town_dump.txt */; };
+		AADEB3A015C023A500AC9ACD /* bmd_districts.txt in Resources */ = {isa = PBXBuildFile; fileRef = AADEB39F15C023A500AC9ACD /* bmd_districts.txt */; };
 		AAF3D28214EACB5E001DB689 /* SpoiledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF3D28114EACB5E001DB689 /* SpoiledTextField.m */; };
 /* End PBXBuildFile section */
 
@@ -114,7 +114,7 @@
 		AAC94DBF14C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BMDDocument.xib; sourceTree = "<group>"; };
 		AAC94DC214C6EE0200407CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AADCAB1716304B8600179490 /* town_data_seed.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = town_data_seed.txt; sourceTree = "<group>"; };
-		AADEB39F15C023A500AC9ACD /* bmd_town_dump.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = bmd_town_dump.txt; sourceTree = "<group>"; };
+		AADEB39F15C023A500AC9ACD /* bmd_districts.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = bmd_districts.txt; sourceTree = "<group>"; };
 		AAF3D28014EACB5E001DB689 /* SpoiledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpoiledTextField.h; sourceTree = "<group>"; };
 		AAF3D28114EACB5E001DB689 /* SpoiledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpoiledTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,7 +242,7 @@
 		AAC94DB014C6EE0200407CF4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AADEB39F15C023A500AC9ACD /* bmd_town_dump.txt */,
+				AADEB39F15C023A500AC9ACD /* bmd_districts.txt */,
 				AA2C7CE114EBE3B300856729 /* icon.png */,
 				AA8DE5F514EBE9CC00C46806 /* appcast */,
 				AA2C7CDC14EBD3E600856729 /* Rakefile */,
@@ -285,7 +285,12 @@
 		AAC94D9C14C6EE0200407CF4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0620;
+				TargetAttributes = {
+					AAC94DA414C6EE0200407CF4 = {
+						DevelopmentTeam = H763MHB9RQ;
+					};
+				};
 			};
 			buildConfigurationList = AAC94D9F14C6EE0200407CF4 /* Build configuration list for PBXProject "BMD-X" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -315,7 +320,7 @@
 				AAC94DC014C6EE0200407CF4 /* BMDDocument.xib in Resources */,
 				AAC94DC314C6EE0200407CF4 /* MainMenu.xib in Resources */,
 				AA2B1BE514D262FD00FB6ECB /* BMDNAME.TXT in Resources */,
-				AADEB3A015C023A500AC9ACD /* bmd_town_dump.txt in Resources */,
+				AADEB3A015C023A500AC9ACD /* bmd_districts.txt in Resources */,
 				AA69FE571841902200509103 /* doc_icon.png in Resources */,
 				AADCAB1816304B8600179490 /* town_data_seed.txt in Resources */,
 				AA266FF016F815EE004D6E5D /* Newicon.icns in Resources */,
@@ -460,7 +465,9 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -486,7 +493,9 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -504,6 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -520,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

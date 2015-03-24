@@ -71,22 +71,22 @@
     {
         [answer appendFormat:@"%@,", self.lastName == nil ? @"" : self.lastName ];
         if ( self.firstName ) {
-            NSMutableArray* middles = [NSMutableArray arrayWithObject:[self.firstName capitalizedString]];
+            NSMutableArray* middles = [NSMutableArray arrayWithObject:self.firstName];
             if ( self.middleName1 )
-                [middles addObject:[self.middleName1 capitalizedString] ];
+                [middles addObject:self.middleName1 ];
             if ( self.middleName2 )
-                [middles addObject:[self.middleName2 capitalizedString] ];
+                [middles addObject:self.middleName2 ];
             if ( self.middleName3 )
-                [middles addObject:[self.middleName3 capitalizedString] ];
+                [middles addObject:self.middleName3 ];
             if ( self.middleName4 )
-                [middles addObject:[self.middleName4 capitalizedString] ];
+                [middles addObject:self.middleName4 ];
             if ( self.middleName5 )
-                [middles addObject:[self.middleName5 capitalizedString] ];
+                [middles addObject:self.middleName5 ];
             
             [answer appendFormat:@"%@,", [middles componentsJoinedByString:@" "], nil];
         }
         if ( self.spouseName && ( ( mRecordType == DEATH_TYPE ) || [self isModern] ) )
-            [answer appendFormat:@"%@,", [self.spouseName capitalizedString], nil ];
+            [answer appendFormat:@"%@,", self.spouseName, nil ];
         if ( self.districtName )
             [answer appendFormat:@"%@,", self.districtName, nil ];
         if ( self.volumeName )
