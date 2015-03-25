@@ -72,6 +72,12 @@
     [msDistrictFld setStringValue:@""];
     [msVolumeFld setStringValue:@""];
     [msPageFld setStringValue:@""];
+
+    mMiddleNameOn = false;
+    mSpare1On = false;
+    mSpare2On = false;
+    mSpare3On = false;
+    mSpare4On = false;
 }
 
 -(void)adjustFields

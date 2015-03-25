@@ -142,7 +142,7 @@
                 break;
             case ( TEXT_EVENT_MIDDLENAME ):
                 if ( [[msMiddleNameFld stringValue] isEqualToString:@""] )
-                    [self spareFieldClosing:fieldOb];
+                    mLineItem.middleName1 = nil;
                 else
                     mLineItem.middleName1 = [self correctedFieldValue:msMiddleNameFld];
                 break;
