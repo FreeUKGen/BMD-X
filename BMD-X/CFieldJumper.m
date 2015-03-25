@@ -20,7 +20,7 @@
 
 @implementation CFieldJumper
 
-#define ADJ_SIZE 200
+#define ADJ_SIZE 206
 
 
 - (id)init:(BMDDocument*) parDoc
