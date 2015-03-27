@@ -491,13 +491,19 @@
     NSString* formatCode = [CFormatType codeForTitle:[[formatMenu selectedItem] title]];
     NSMutableString* string = [NSMutableString stringWithFormat:@"+%@,%@,%@", formatCode, [yearField stringValue], [[quarterMenu selectedItem] title]];
 
-    if ( ! [[rangeField stringValue] isEqualToString:@""] )
-        [string appendString:[NSString stringWithFormat:@",%@", [rangeField stringValue]]];
-    if ( ! [[locationField stringValue] isEqualToString:@""] )
-        [string appendString:[NSString stringWithFormat:@",%@", [locationField stringValue]]];
-    if ( ! [[freeBMDRefField stringValue] isEqualToString:@""] )
+    if ( ([formatCode isEqualToString:@"F"]) || ([formatCode isEqualToString:@"M"]) )
+        if ( ! [[rangeField stringValue] isEqualToString:@""] )
+            [string appendString:[NSString stringWithFormat:@",%@", [rangeField stringValue]]];
+
+
+    if ( !([[freeBMDRefField stringValue] isEqualToString:@""]) && !([formatCode isEqualToString:@"B"]) )
         [string appendString:[NSString stringWithFormat:@",%@", [freeBMDRefField stringValue]]];
 
+    if ( ([formatCode isEqualToString:@"F"]) || ([formatCode isEqualToString:@"M"]) || ([formatCode isEqualToString:@"B"]) )
+        if ( ! [[locationField stringValue] isEqualToString:@""] )
+            [string appendString:[NSString stringWithFormat:@",%@", [locationField stringValue]]];
+    
+    
     [string appendString:[NSString stringWithFormat:@",%@\n",aStr]];
     
     if ( ! [[pageField stringValue] isEqualToString:@""] )
