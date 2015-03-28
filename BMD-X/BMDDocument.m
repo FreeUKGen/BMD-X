@@ -469,15 +469,40 @@
     [NSApp endSheet:mPageWindow returnCode:[sender tag]];
 }
 
+- (IBAction)changeCommentType:(id)sender{
+    if ([commentMenu indexOfSelectedItem] == 0) {
+        [mTheoryLabel setHidden:YES];
+        [mCommentLabel setHidden:NO];
+        [mHashLabel setHidden:YES];
+    } else if ([commentMenu indexOfSelectedItem] == 1) {
+        [mTheoryLabel setHidden:NO];
+        [mCommentLabel setHidden:YES];
+        [mHashLabel setHidden:YES];
+    } else {
+        [mTheoryLabel setHidden:YES];
+        [mCommentLabel setHidden:YES];
+        [mHashLabel setHidden:NO];
+    }
+}
+
 - (IBAction)startComment:(id)sender{
     [NSApp beginSheet:mCommentWindow modalForWindow:self.windowForSheet modalDelegate:self didEndSelector:@selector(cancelAction:returnCode:contextInfo:) contextInfo:@"entry"];
 }
-- (IBAction)okCommentDLOG:(id)sender{
-    NSString* string = [NSString stringWithFormat:@"#THEORY %@\n", [commentField stringValue]];
 
+- (IBAction)okCommentDLOG:(id)sender{
+    
+    NSString* string = nil;
+    if ([commentMenu indexOfSelectedItem] == 0)
+        string = [NSString stringWithFormat:@"#COMMENT %@\n", [commentField stringValue]];
+    else if ([commentMenu indexOfSelectedItem] == 1)
+        string = [NSString stringWithFormat:@"#THEORY %@\n", [commentField stringValue]];
+    else
+        string = [NSString stringWithFormat:@"# %@\n", [commentField stringValue]];
+    
     [[[textView textStorage] mutableString] appendString: string];
     [NSApp endSheet:mCommentWindow returnCode:[sender tag]];
 }
+
 - (IBAction)cancelComment:(id)sender{
     [NSApp endSheet:mCommentWindow returnCode:[sender tag]];
 }

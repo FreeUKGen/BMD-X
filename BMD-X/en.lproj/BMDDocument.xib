@@ -7,7 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BMDDocument">
             <connections>
-                <outlet property="commentField" destination="100198" id="100216"/>
+                <outlet property="commentField" destination="lXx-JO-aZt" id="gGE-nK-zbB"/>
+                <outlet property="commentMenu" destination="ROU-Lv-f16" id="9IL-c1-yl6"/>
                 <outlet property="dateField" destination="100140" id="100178"/>
                 <outlet property="emailField" destination="100068" id="100174"/>
                 <outlet property="fieldsQueue" destination="100391" id="100393"/>
@@ -15,10 +16,13 @@
                 <outlet property="freeBMDRefField" destination="100132" id="100180"/>
                 <outlet property="locationField" destination="100134" id="100181"/>
                 <outlet property="mAppDelegate" destination="100376" id="100377"/>
-                <outlet property="mCommentWindow" destination="100194" id="100217"/>
+                <outlet property="mCommentLabel" destination="eqp-9g-ZGD" id="4Ry-CS-djT"/>
+                <outlet property="mCommentWindow" destination="vNT-PC-T9k" id="hPL-F9-jZE"/>
                 <outlet property="mEntryWindow" destination="100061" id="100142"/>
+                <outlet property="mHashLabel" destination="gpT-oW-PbC" id="dC4-pQ-kME"/>
                 <outlet property="mPageWindow" destination="100221" id="100237"/>
                 <outlet property="mSourceWindow" destination="100094" id="100143"/>
+                <outlet property="mTheoryLabel" destination="EgZ-5a-n85" id="6Mp-5a-QVG"/>
                 <outlet property="mWindow" destination="5" id="100356"/>
                 <outlet property="msCapsBtn" destination="100271" id="100339"/>
                 <outlet property="msDistrictFld" destination="100378" id="100382"/>
@@ -82,7 +86,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="100210">
-                        <rect key="frame" x="317" y="10" width="92" height="25"/>
+                        <rect key="frame" x="338" y="10" width="71" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="roundTextured" title="Theory" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="100211">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -374,6 +378,17 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" id="CjN-BE-nTe">
+                        <rect key="frame" x="213" y="10" width="101" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="roundTextured" title="Comment..." bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7eF-Ox-2g4">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="startComment:" target="-2" id="VMa-bZ-VbJ"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <connections>
@@ -767,83 +782,6 @@ Gw
                 </subviews>
             </view>
         </window>
-        <window title="Enter Comment" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" visibleAtLaunch="NO" animationBehavior="default" id="100194" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="132" width="447" height="216"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <view key="contentView" id="100195">
-                <rect key="frame" x="7" y="11" width="447" height="216"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <textField verticalHuggingPriority="750" id="100196">
-                        <rect key="frame" x="32" y="173" width="65" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Theory" id="100197">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="100198">
-                        <rect key="frame" x="102" y="168" width="318" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="100199">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="100202">
-                        <rect key="frame" x="17" y="110" width="413" height="42"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="100203">
-                            <font key="font" metaFont="smallSystem"/>
-                            <string key="title">#THEORY is a special type of comment that you can use to identify a record which you think could be wrong. Using #THEORY makes it easy for a record to be identified.</string>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" id="100204">
-                        <rect key="frame" x="20" y="20" width="201" height="56"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Make sure you enter THEORY (and COMMENT) on a new line. Not in the middle of an entry." id="100205">
-                            <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <button verticalHuggingPriority="750" id="100206">
-                        <rect key="frame" x="236" y="30" width="96" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="100207">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                        </buttonCell>
-                        <connections>
-                            <action selector="cancelComment:" target="-2" id="100214"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" id="100208">
-                        <rect key="frame" x="337" y="30" width="96" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="100209">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                        </buttonCell>
-                        <connections>
-                            <action selector="okCommentDLOG:" target="-2" id="100215"/>
-                        </connections>
-                    </button>
-                </subviews>
-            </view>
-        </window>
         <window title="Page Number" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" visibleAtLaunch="NO" animationBehavior="default" id="100221" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -913,6 +851,120 @@ DQ
             </view>
         </window>
         <customObject id="100376" customClass="AppDelegate"/>
+        <window title="Enter Comment, Theory or #" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" visibleAtLaunch="NO" animationBehavior="default" id="vNT-PC-T9k" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="132" width="447" height="164"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="ENB-MW-yb6">
+                <rect key="frame" x="0.0" y="-5" width="447" height="164"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" id="8f6-Fm-xMM">
+                        <rect key="frame" x="26" y="121" width="77" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" title="Comment" id="TUc-S7-1ro">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" id="inP-gN-zzT">
+                        <rect key="frame" x="236" y="13" width="96" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JCJ-p2-r8Y">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelComment:" target="-2" id="MUy-lc-al9"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="QwF-ST-TuF">
+                        <rect key="frame" x="332" y="13" width="96" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gKx-WY-KnG">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="okCommentDLOG:" target="-2" id="cKe-4e-dVL"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" id="lXx-JO-aZt">
+                        <rect key="frame" x="109" y="119" width="318" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="zsP-V7-WDk">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" id="ROU-Lv-f16">
+                        <rect key="frame" x="32" y="17" width="140" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="COMMENT" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="MMc-GK-c6C" id="dhV-C7-3a7">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" title="COMMENT" id="Mfr-en-zXQ">
+                                <items>
+                                    <menuItem title="COMMENT" state="on" id="MMc-GK-c6C">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="THEORY" id="2tF-33-iPB">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="#" id="qqX-Gd-hv3">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="changeCommentType:" target="-2" id="mpu-Oh-b8R"/>
+                        </connections>
+                    </popUpButton>
+                    <textField hidden="YES" verticalHuggingPriority="750" id="EgZ-5a-n85">
+                        <rect key="frame" x="44" y="45" width="381" height="57"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="EPk-uj-lAv">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">Line starts with #THEORY: indicates that what has been transcribed is what is in the index but there is reason to believe the index is wrong. It describes what it is believed should be in the index.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField hidden="YES" verticalHuggingPriority="750" id="gpT-oW-PbC">
+                        <rect key="frame" x="44" y="45" width="369" height="57"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" id="00g-AN-5yt">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">Line starts with # : Is used to give information about the transcription
+   e.g. # scan got very faint at this point.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="eqp-9g-ZGD">
+                        <rect key="frame" x="44" y="45" width="385" height="57"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="dTW-9m-I7q">
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="title">Line starts with #COMMENT:  indicates that what has been transcribed is not what is in the index but is an attempt to get as close as possible. The difference is described.</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="-309.5" y="-54"/>
+        </window>
     </objects>
     <resources>
         <image name="NSLockLockedTemplate" width="10" height="14"/>
