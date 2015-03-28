@@ -486,6 +486,7 @@
 }
 
 - (IBAction)startComment:(id)sender{
+    [commentField setStringValue:@""];
     [NSApp beginSheet:mCommentWindow modalForWindow:self.windowForSheet modalDelegate:self didEndSelector:@selector(cancelAction:returnCode:contextInfo:) contextInfo:@"entry"];
 }
 
