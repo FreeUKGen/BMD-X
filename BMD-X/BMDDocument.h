@@ -20,7 +20,12 @@
 @public
     IBOutlet	NSTextField*            msSurnameFld;
     IBOutlet	CNoSpaceAutoTextField*            msFirstnameFld;
+    IBOutlet	NSTextField*            mTheoryLabel;
+    IBOutlet	NSTextField*            mCommentLabel;
+    IBOutlet	NSTextField*            mHashLabel;
     IBOutlet	NSTextField*            msDistrictFld;
+
+    
     IBOutlet	NSTextField*            msVolumeFld;
     IBOutlet	NSTextField*            msPageFld;
     IBOutlet	CNoSpaceAutoTextField*            msMiddleNameFld;
@@ -44,6 +49,7 @@
     IBOutlet	NSTextField*            yearField;
     IBOutlet	NSTextField*			pageField;
     IBOutlet	NSTextField*			commentField;
+    IBOutlet	NSPopUpButton*          commentMenu;
     IBOutlet	NSPopUpButton*          formatMenu;
     IBOutlet	NSPopUpButton*          quarterMenu;
     IBOutlet	NSTextField*            rangeField;
@@ -106,6 +112,7 @@
 - (IBAction)cancelPage:(id)sender;
 
 - (IBAction)startComment:(id)sender;
+- (IBAction)changeCommentType:(id)sender;
 - (IBAction)okCommentDLOG:(id)sender;
 - (IBAction)cancelComment:(id)sender;
 
