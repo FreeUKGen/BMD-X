@@ -309,7 +309,7 @@ Durham E.,3,1938,2,2006,,10a,1a,1a,1
 Durham Eastern,3,1938,2,2006,,10a,1a,1a,1 
 Durham N. E.,1,1938,4,1970,,10a,1a,,
 Durham N E,1,1971,,,,,1a,1a,
-Durham North Eastern,1,1938,1,1974,,10a,1a,1a,
+Durham North Eastern,1,1938,1,1974,,10a,1a,1a, 
 Durham N. W.,3,1938,4,1970,,10a,1a,,
 Durham N W,1,1971,,,,,1a,1a,
 Durham North Western,3,1938,1,1974,,10a,1a,1a, 
