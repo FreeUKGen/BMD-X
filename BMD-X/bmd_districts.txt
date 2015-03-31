@@ -681,7 +681,7 @@ Newcastle under Lyme,,,3,2008,17,6b,9b,9b,30
 Newcastle upon Tyne,,,,,25,10b,1b,1b,2
 Newcastle T.,,,4,1970,25,10b,1b,,2
 Newcastle/T,1,1971,,,,,1b,1b,2
-Newent,,,1,1937,11,6a,,,
+Newent,,,1,1937,11,6a,,, 
 Newham,1,1968,,,,,,5e,15 
 Newhaven,,,1,1839,7,,,, 
 Newhaven,4,1901,1,1935,,2b,,, 
@@ -895,7 +895,7 @@ Solihull North,1,1978,1,2001,,,,,34
 Solihull South,1,1978,1,2001,,,,,34 
 South East Hampshire,2,1974,1,2008,,,,,20 
 South Glamorgan,2,1974,1,1996,,,,,28 
-South Molton,,,2,1936,10,5b,,,
+South Molton,,,2,1936,10,5b,,, 
 S. Newington,1,1971,,,,,5e,5e,
 South Pembrokeshire,1,1983,,,,,,,24 
 South Shields,,,4,2000,24,10a,1a,1a,2
@@ -917,7 +917,7 @@ St Asaph,,,4,1970,27,11b,8a,,
 St. Asaph,1,1971,,,,,8a,8a,
 St Austell,,,4,1970,9,5c,7a,,21
 St. Austell,1,1971,,,,,7a,7a,21
-St Columb,,,2,1936,9,5c,,,
+St Columb,,,2,1936,9,5c,,, 
 St Faiths,,,4,1938,13,4b,,, 
 St George Hanover Square,,,3,1933,1,1a,,, 
 St George in the East,,,4,1925,2,1c,,, 
@@ -1171,7 +1171,7 @@ Wrexham,,,1,1974,27,11b,8a,8a,
 Wrexham Maelor,2,1974,1,1996,,,,,24 
 Wycombe,,,4,1998,6,3a,6a,6a,19 
 Yarmouth & Flegg,1,1925,4,1938,,4b,,, 
-Yarmouth,,,4,1924,13,4b,,,
+Yarmouth,,,4,1924,13,4b,,, 
 Yarmouth,1,1971,,,,,4b,4b,
 Yeovil,,,1,2003,10,5c,7c,7c,23 
 Ynys Mon,2,1974,1,1996,,,,,25 
