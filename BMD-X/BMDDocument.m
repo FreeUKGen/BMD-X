@@ -112,19 +112,12 @@
     return handled;
 }
 
-- (NSString*)correctedSurname:(NSTextField*)fld
+- (NSString*)correctedFieldValue:(NSTextField*)fld
 {
     NSString* strtr = [fld stringValue];
     if ( [msCapsBtn state] == NSOnState )
         return [strtr uppercaseString];
-    
-    return [self correctedFieldValue:fld];
-}
-
-- (NSString*)correctedFieldValue:(NSTextField*)fld
-{
-    NSString* strtr = [fld stringValue];
-    if ( [strtr length] > 1 )
+    else if ( [strtr length] > 1 )
     {
         NSString* firstChr = [strtr substringWithRange:NSMakeRange(0, 1)];
         NSString* endStr = [strtr substringFromIndex:1];
@@ -142,7 +135,7 @@
     if ( ! [mLineItem lineFinalized] ) {
         switch ( [mJumper actionForTextField:fieldOb] ) {
             case ( TEXT_EVENT_SURNAME ):
-                mLineItem.lastName = [self correctedSurname:msSurnameFld];
+                mLineItem.lastName = [self correctedFieldValue:msSurnameFld];
                 break;
             case ( TEXT_EVENT_FIRSTNAME ):
                 mLineItem.firstName = [self correctedFieldValue:msFirstnameFld];
@@ -238,7 +231,7 @@
 
     switch ( [mJumper actionForTextEvent:fieldOb] ) {
         case ( TEXT_EVENT_SURNAME ):
-            mLineItem.lastName = [self correctedSurname:msSurnameFld];
+            mLineItem.lastName = [self correctedFieldValue:msSurnameFld];
             break;
         case ( TEXT_EVENT_FIRSTNAME ):
             mLineItem.firstName = [self correctedFieldValue:msFirstnameFld];
@@ -493,10 +486,6 @@
 }
 
 - (IBAction)startComment:(id)sender{
-    [commentMenu selectItemAtIndex:0];
-    [mTheoryLabel setHidden:YES];
-    [mCommentLabel setHidden:NO];
-    [mHashLabel setHidden:YES];
     [commentField setStringValue:@""];
     [NSApp beginSheet:mCommentWindow modalForWindow:self.windowForSheet modalDelegate:self didEndSelector:@selector(cancelAction:returnCode:contextInfo:) contextInfo:@"entry"];
 }
@@ -698,7 +687,7 @@
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
     BOOL readSuccess = NO;
-    NSMutableAttributedString *fileContents = [[NSMutableAttributedString alloc]
+    NSAttributedString *fileContents = [[NSAttributedString alloc]
                                         initWithData:data options:NULL documentAttributes:NULL
                                         error:outError];
     
@@ -719,15 +708,9 @@
     
     [textView breakUndoCoalescing];
     
+    data = [[[self string] string] dataUsingEncoding:NSMacOSRomanStringEncoding];
     
-    
-    
-    NSMutableString*    targ = [NSMutableString stringWithString:[[self string] string]];
-    NSUInteger rep1 = [targ replaceOccurrencesOfString:@"‘" withString:@"'" options:NSLiteralSearch range:NSMakeRange(0, [targ length])];
-    NSUInteger rep2 = [targ replaceOccurrencesOfString:@"’" withString:@"'" options:NSLiteralSearch range:NSMakeRange(0, [targ length])];
-
-    data = [targ dataUsingEncoding:NSMacOSRomanStringEncoding];
-    return data;
+    return data;    
 }
 
 - (NSString *)getCompletionOf:(NSControl *)control
