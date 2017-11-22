@@ -5,4 +5,4 @@ This is the code for a port of the original MacBMD software which stopped runnin
 
 If you are not already a transcriber for the FreeBMD project you have no need to download this software. It has no use other than transcribing records.
 
-Please refer to the main FreeBMD project webpage at http://freebmd.rootsweb.com/ for more info
+Please refer to the main FreeBMD project webpage at https://www.freebmd.org.uk/ for more info
